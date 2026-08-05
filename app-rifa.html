@@ -1,0 +1,1159 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PIXELS RIFA - Controle</title>
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jspdf-autotable@3.8.2/dist/jspdf.plugin.autotable.min.js"></script>
+  <style>
+    :root {
+      --bg: #0d0f14;
+      --card: #171a22;
+      --text: #f7f7f7;
+      --muted: #9ea5b3;
+      --accent: #7c4dff;
+      --green: #1fc77a;
+      --yellow: #f2b84b;
+      --red: #ef5350;
+      --border: #2a2f3a;
+    }
+
+    .app-topbar {
+      position: sticky; top: 0; z-index: 999;
+      display:flex; align-items:center; justify-content:space-between; gap:12px;
+      padding:10px 14px; background:rgba(9,10,15,.96);
+      border-bottom:2px solid #7c4dff; backdrop-filter:blur(8px);
+    }
+    .app-topbar strong { color:#fff; }
+    .app-topbar a {
+      width:auto; display:inline-flex; align-items:center; justify-content:center;
+      text-decoration:none; color:#fff; font-weight:800; padding:9px 13px;
+      border-radius:10px; border:1px solid #b99cff; background:#7c4dff;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(135deg, #090a0f, #17142b);
+      color: var(--text);
+      min-height: 100vh;
+    }
+    header {
+      padding: 24px 16px 14px;
+      text-align: center;
+    }
+    header h1 { margin: 0; font-size: 30px; }
+    header p { color: var(--muted); margin: 8px 0 0; }
+    .container { max-width: 1200px; margin: auto; padding: 0 14px 30px; }
+    .toolbar, .summary {
+      background: rgba(23,26,34,.95);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 14px;
+      margin-bottom: 14px;
+    }
+    .toolbar {
+      display: grid;
+      grid-template-columns: 1fr 170px 145px 145px 145px;
+      gap: 10px;
+    }
+    input, select, button {
+      width: 100%;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 11px 12px;
+      font-size: 14px;
+    }
+    input, select {
+      background: #10131a;
+      color: white;
+    }
+    button {
+      background: var(--accent);
+      color: white;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    button.secondary { background: #242a36; }
+    button.danger { background: var(--red); }
+    .summary {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 10px;
+    }
+    .stat {
+      background: #11141b;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 12px;
+      text-align: center;
+    }
+    .stat strong { display:block; font-size: 24px; margin-top:4px; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0,1fr));
+      gap: 10px;
+    }
+    .ticket {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 12px;
+      transition: .2s;
+    }
+    .ticket:hover { transform: translateY(-2px); }
+    .ticket.pago { border-color: var(--green); box-shadow: 0 0 0 1px rgba(31,199,122,.25); }
+    .ticket.reservado { border-color: var(--yellow); }
+    .ticket.disponivel { border-color: #3b4250; }
+    .num {
+      font-size: 20px;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+    .badge {
+      display: inline-block;
+      font-size: 11px;
+      border-radius: 999px;
+      padding: 4px 8px;
+      margin-bottom: 8px;
+      background: #2a2f3a;
+    }
+    .ticket.pago .badge { background: rgba(31,199,122,.18); color: #78f0b5; }
+    .ticket.reservado .badge { background: rgba(242,184,75,.18); color: #ffd47e; }
+    .ticket input, .ticket select { margin-top: 7px; }
+    .small-actions {
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:6px;
+      margin-top:8px;
+    }
+    .small-actions button { padding:8px; font-size:12px; }
+    .hidden { display:none !important; }
+
+    .import-panel {
+      background: rgba(23,26,34,.95);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 16px;
+      margin-bottom: 14px;
+    }
+    .import-panel h2 { margin: 0 0 10px; font-size: 20px; }
+    .import-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    textarea {
+      width: 100%;
+      min-height: 160px;
+      resize: vertical;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 11px 12px;
+      font-size: 14px;
+      background: #10131a;
+      color: white;
+    }
+    .import-actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-top: 8px;
+    }
+    .preview-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 12px;
+      font-size: 13px;
+    }
+    .preview-table th, .preview-table td {
+      border: 1px solid var(--border);
+      padding: 7px;
+      text-align: left;
+    }
+    .preview-wrap {
+      max-height: 280px;
+      overflow: auto;
+      margin-top: 10px;
+    }
+    .import-help {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.5;
+      margin-top: 6px;
+    }
+
+
+    .buyers-panel {
+      background: rgba(23,26,34,.95);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 16px;
+      margin-bottom: 14px;
+    }
+    .buyers-panel h2 { margin: 0 0 10px; font-size: 20px; }
+    .buyers-summary {
+      display: grid;
+      gap: 8px;
+      margin-top: 10px;
+    }
+    .buyer-row {
+      background: #11141b;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 10px 12px;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+    .buyer-row strong {
+      display: block;
+      font-size: 14px;
+      margin-bottom: 2px;
+    }
+
+    .draw-panel {
+      background: rgba(23,26,34,.95);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 16px;
+      margin-bottom: 14px;
+    }
+    .draw-panel h2 { margin: 0 0 10px; font-size: 20px; }
+    .draw-controls {
+      display: grid;
+      grid-template-columns: 1fr 180px;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+    .winner {
+      background: #11141b;
+      border: 1px solid var(--green);
+      border-radius: 14px;
+      padding: 18px;
+      text-align: center;
+      margin-top: 10px;
+    }
+    .winner strong { display: block; font-size: 34px; margin: 8px 0; }
+    .draw-history { margin-top: 14px; display: grid; gap: 8px; }
+    .history-item {
+      background: #11141b;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 10px;
+      font-size: 13px;
+    }
+    footer {
+      color: var(--muted);
+      text-align:center;
+      padding: 18px;
+      font-size: 12px;
+    }
+    @media (max-width: 900px) {
+      .toolbar { grid-template-columns: 1fr 1fr; }
+      .draw-controls { grid-template-columns: 1fr; }
+      .import-grid { grid-template-columns: 1fr; }
+      .summary { grid-template-columns: 1fr 1fr; }
+      .grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+    }
+    @media (max-width: 520px) {
+      .toolbar { grid-template-columns: 1fr; }
+      .grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="app-topbar"><strong>🎮 APP RIFA PIXELS</strong><a href="central-rifas.html">← Voltar à Central de Rifas</a></div>
+  <header>
+    <h1>🎮 PIXELS RIFA</h1>
+    <p>Controle de nomes, números, pagamentos e tamanho da rifa</p>
+  </header>
+
+  <main class="container">
+
+    <section class="toolbar" style="grid-template-columns: 1fr 180px 180px;">
+      <input id="tamanhoRifa" type="number" min="1" max="5000" value="100" placeholder="Quantidade de números" />
+      <input id="valorNumero" type="number" min="0" step="0.01" value="0" placeholder="Valor por número (R$)" />
+      <button id="aplicarTamanho">Aplicar configurações</button>
+    </section>
+
+    <section class="toolbar">
+      <input id="busca" placeholder="Buscar por número, nome ou telefone" />
+      <select id="filtro">
+        <option value="todos">Todos os status</option>
+        <option value="disponivel">Disponíveis</option>
+        <option value="reservado">Reservados</option>
+        <option value="pago">Pagos</option>
+      </select>
+      <button id="exportar">Exportar CSV</button>
+      <button id="gerarPdf" class="secondary">Gerar PDF</button>
+      <button id="limpar" class="danger">Resetar rifa</button>
+    </section>
+
+    <section class="summary">
+      <div class="stat">Disponíveis<strong id="qtdDisponivel">0</strong></div>
+      <div class="stat">Reservados<strong id="qtdReservado">0</strong></div>
+      <div class="stat">Pagos<strong id="qtdPago">0</strong></div>
+      <div class="stat">Total recebido<strong id="totalRecebido">R$ 0,00</strong></div>
+    </section>
+
+
+    <section class="import-panel">
+      <h2>📥 Preencher por lista ou planilha</h2>
+      <div class="import-grid">
+        <div>
+          <label><strong>Colar lista de nomes e números</strong></label>
+          <textarea id="listaTexto" placeholder="Cole a lista do WhatsApp, por exemplo:
+🎮 01 =duda-Pago💰
+🕹️ 02 =
+👾 03 =
+⭐ 04 =iagor
+🍄 05 =adilson-Pago💰"></textarea>
+          <div class="import-help">
+            Aceita linhas com número, nome, telefone e status separados por hífen, ponto e vírgula, vírgula ou tabulação. Quando houver número e nome, o status será Pago automaticamente. Aceita formatos como “1 Maria”, “1 - Maria”, “001;Maria” e “🎮 01 João”.
+          </div>
+          <div class="import-actions">
+            <button id="visualizarLista">Visualizar lista</button>
+            <button id="aplicarLista" class="secondary">Aplicar lista</button>
+          </div>
+        </div>
+
+        <div>
+          <label><strong>Importar Excel ou CSV</strong></label>
+          <input type="file" id="arquivoPlanilha" accept=".xlsx,.xls,.csv" />
+          <div class="import-help">
+            Colunas reconhecidas: Número, Nome, Telefone, Valor e Status. A primeira linha deve conter os títulos.
+          </div>
+          <div class="import-actions">
+            <button id="baixarModelo" class="secondary">Baixar modelo CSV</button>
+            <button id="aplicarPlanilha">Aplicar planilha</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="mensagemImportacao" class="import-help"></div>
+      <div id="previewImportacao" class="preview-wrap"></div>
+    </section>
+
+
+    <section class="buyers-panel">
+      <h2>👥 Resumo por comprador</h2>
+      <div class="import-help">
+        Agrupa automaticamente compradores com o mesmo nome e mostra quantos números compraram, quais são e o total.
+      </div>
+      <div id="resumoCompradores" class="buyers-summary"></div>
+    </section>
+
+    <section class="draw-panel">
+      <h2>🏆 Sorteio da Rifa</h2>
+      <div class="draw-controls">
+        <select id="criterioSorteio">
+          <option value="pago">Sortear somente entre pagos</option>
+          <option value="reservado_pago">Sortear entre reservados e pagos</option>
+          <option value="todos_ocupados">Sortear entre todos os números com nome</option>
+        </select>
+        <button id="sortear">Realizar sorteio</button>
+      </div>
+      <button id="limparHistorico" class="secondary">Limpar histórico</button>
+      <div id="resultadoSorteio"></div>
+      <div id="historicoSorteios" class="draw-history"></div>
+    </section>
+
+    <section id="grid" class="grid"></section>
+  </main>
+
+  <footer>Os dados ficam salvos neste navegador.</footer>
+
+  <script>
+    const STORAGE_KEY = 'pixels_rifa_v1';
+    const SIZE_KEY = 'pixels_rifa_tamanho_v1';
+    const PRICE_KEY = 'pixels_rifa_valor_numero_v1';
+    let TOTAL = Math.max(1, parseInt(localStorage.getItem(SIZE_KEY) || '100', 10));
+    let VALOR_NUMERO = Math.max(0, parseFloat(localStorage.getItem(PRICE_KEY) || '0'));
+
+    let dados = JSON.parse(localStorage.getItem(STORAGE_KEY) || 'null') || [];
+
+    function ajustarDadosAoTamanho() {
+      const atuais = new Map(dados.map(item => [Number(item.numero), item]));
+      dados = Array.from({length: TOTAL}, (_, i) => {
+        const numero = i + 1;
+        return atuais.get(numero) || {
+          numero,
+          nome: '',
+          telefone: '',
+          valor: '',
+          status: 'disponivel'
+        };
+      });
+    }
+
+    ajustarDadosAoTamanho();
+
+    let historicoSorteios = JSON.parse(localStorage.getItem('pixels_rifa_sorteios_v1') || '[]');
+
+    const grid = document.getElementById('grid');
+    document.getElementById('tamanhoRifa').value = TOTAL;
+    document.getElementById('valorNumero').value = VALOR_NUMERO || '';
+    const busca = document.getElementById('busca');
+    const filtro = document.getElementById('filtro');
+
+    function moedaBR(valor) {
+      return Number(valor || 0).toLocaleString('pt-BR', {
+        style: 'currency',
+        currency: 'BRL'
+      });
+    }
+
+    function salvar() {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(dados));
+      atualizarResumo();
+    }
+
+    function atualizarResumo() {
+      const disponivel = dados.filter(x => x.status === 'disponivel').length;
+      const reservado = dados.filter(x => x.status === 'reservado').length;
+      const pago = dados.filter(x => x.status === 'pago').length;
+      const total = dados
+        .filter(x => x.status === 'pago')
+        .reduce((s, x) => {
+          const valorIndividual = Number(String(x.valor).replace(',', '.') || 0);
+          return s + (valorIndividual || VALOR_NUMERO);
+        }, 0);
+
+      document.getElementById('qtdDisponivel').textContent = disponivel;
+      document.getElementById('qtdReservado').textContent = reservado;
+      document.getElementById('qtdPago').textContent = pago;
+      document.getElementById('totalRecebido').textContent = moedaBR(total);
+    }
+
+
+    function normalizarNomeComprador(nome) {
+      return String(nome || '')
+        .trim()
+        .replace(/\s+/g, ' ')
+        .toLowerCase();
+    }
+
+    function renderizarResumoCompradores() {
+      const box = document.getElementById('resumoCompradores');
+      if (!box) return;
+
+      const grupos = new Map();
+
+      dados.forEach(item => {
+        const chave = normalizarNomeComprador(item.nome);
+        if (!chave || item.status === 'disponivel') return;
+
+        if (!grupos.has(chave)) {
+          grupos.set(chave, {
+            nome: item.nome.trim(),
+            numeros: [],
+            pagos: 0,
+            reservados: 0
+          });
+        }
+
+        const grupo = grupos.get(chave);
+        grupo.numeros.push(item.numero);
+        if (item.status === 'pago') grupo.pagos++;
+        if (item.status === 'reservado') grupo.reservados++;
+      });
+
+      const lista = Array.from(grupos.values())
+        .sort((a, b) => b.numeros.length - a.numeros.length || a.nome.localeCompare(b.nome, 'pt-BR'));
+
+      if (!lista.length) {
+        box.innerHTML = '<div class="buyer-row">Nenhum comprador cadastrado.</div>';
+        return;
+      }
+
+      box.innerHTML = lista.map(grupo => {
+        const numeros = grupo.numeros
+          .sort((a, b) => a - b)
+          .map(n => String(n).padStart(2, '0'))
+          .join(', ');
+
+        const total = grupo.numeros.length * VALOR_NUMERO;
+
+        return `
+          <div class="buyer-row">
+            <strong>${escapeHtml(grupo.nome)}</strong>
+            Comprou ${grupo.numeros.length} número(s): ${numeros}<br>
+            Pagos: ${grupo.pagos} • Reservados: ${grupo.reservados}
+            ${VALOR_NUMERO > 0 ? ` • Total: ${moedaBR(total)}` : ''}
+          </div>
+        `;
+      }).join('');
+    }
+
+    function renderizar() {
+      grid.innerHTML = '';
+      const termo = busca.value.trim().toLowerCase();
+      const statusFiltro = filtro.value;
+
+      dados.forEach((item, index) => {
+        const correspondeBusca =
+          !termo ||
+          String(item.numero).padStart(3,'0').includes(termo) ||
+          item.nome.toLowerCase().includes(termo) ||
+          item.telefone.toLowerCase().includes(termo);
+
+        const correspondeFiltro =
+          statusFiltro === 'todos' || item.status === statusFiltro;
+
+        const card = document.createElement('article');
+        card.className = `ticket ${item.status}`;
+        if (!correspondeBusca || !correspondeFiltro) card.classList.add('hidden');
+
+        const statusLabel = {
+          disponivel: 'Disponível',
+          reservado: 'Reservado',
+          pago: 'Pagamento confirmado'
+        }[item.status];
+
+        card.innerHTML = `
+          <div class="num">🎮 Nº ${String(item.numero).padStart(3,'0')}</div>
+          <span class="badge">${statusLabel}</span>
+          <input type="text" value="${escapeHtml(item.nome)}" placeholder="Nome do participante" data-campo="nome">
+          <input type="text" value="${escapeHtml(item.telefone)}" placeholder="Telefone / WhatsApp" data-campo="telefone">
+          <input type="number" min="0" step="0.01" value="${item.valor}" placeholder="Valor pago (R$)" data-campo="valor">
+          <select data-campo="status">
+            <option value="disponivel" ${item.status==='disponivel'?'selected':''}>Disponível</option>
+            <option value="reservado" ${item.status==='reservado'?'selected':''}>Reservado</option>
+            <option value="pago" ${item.status==='pago'?'selected':''}>Pago</option>
+          </select>
+          <div class="small-actions">
+            <button class="secondary" data-acao="whatsapp">WhatsApp</button>
+            <button class="secondary" data-acao="limparNumero">Limpar</button>
+          </div>
+        `;
+
+        card.querySelectorAll('[data-campo]').forEach(el => {
+          el.addEventListener('input', e => {
+            dados[index][e.target.dataset.campo] = e.target.value;
+            salvar();
+            if (e.target.dataset.campo === 'status') renderizar();
+          });
+          el.addEventListener('change', e => {
+            dados[index][e.target.dataset.campo] = e.target.value;
+            salvar();
+            if (e.target.dataset.campo === 'status') renderizar();
+          });
+        });
+
+        card.querySelector('[data-acao="limparNumero"]').addEventListener('click', () => {
+          dados[index] = {numero: item.numero, nome:'', telefone:'', valor:'', status:'disponivel'};
+          salvar();
+          renderizar();
+        });
+
+        card.querySelector('[data-acao="whatsapp"]').addEventListener('click', () => {
+          const tel = item.telefone.replace(/\D/g, '');
+          const msg = encodeURIComponent(
+            `Olá, ${item.nome || 'participante'}! Seu número ${String(item.numero).padStart(3,'0')} na PIXELS RIFA está como: ${statusLabel}.`
+          );
+          const url = tel ? `https://wa.me/55${tel}?text=${msg}` : `https://wa.me/?text=${msg}`;
+          window.open(url, '_blank');
+        });
+
+        grid.appendChild(card);
+      });
+
+      atualizarResumo();
+      renderizarResumoCompradores();
+    }
+
+    function escapeHtml(texto) {
+      return String(texto || '')
+        .replaceAll('&','&amp;')
+        .replaceAll('<','&lt;')
+        .replaceAll('>','&gt;')
+        .replaceAll('"','&quot;');
+    }
+
+
+
+    let dadosImportacao = [];
+
+    function normalizarStatus(valor) {
+      const s = String(valor || '').trim().toLowerCase();
+      if (['pago', 'pagamento confirmado', 'confirmado'].includes(s)) return 'pago';
+      if (['reservado', 'reserva', 'pendente'].includes(s)) return 'reservado';
+      return 'disponivel';
+    }
+
+    function pegarCampo(obj, nomes) {
+      const entradas = Object.entries(obj);
+      for (const [chave, valor] of entradas) {
+        const k = String(chave).trim().toLowerCase();
+        if (nomes.includes(k)) return valor;
+      }
+      return '';
+    }
+
+    function prepararLinha(obj) {
+      const numero = parseInt(pegarCampo(obj, ['número','numero','num','nº','no']), 10);
+      return {
+        numero,
+        nome: String(pegarCampo(obj, ['nome','participante','cliente']) || '').trim(),
+        telefone: String(pegarCampo(obj, ['telefone','whatsapp','celular','fone']) || '').trim(),
+        valor: String(pegarCampo(obj, ['valor','valor pago','pagamento']) || '').replace('R$','').trim().replace(',','.'),
+        status: normalizarStatus(pegarCampo(obj, ['status','situação','situacao']))
+      };
+    }
+
+    function renderizarPreviewImportacao() {
+      const box = document.getElementById('previewImportacao');
+      if (!dadosImportacao.length) {
+        box.innerHTML = '';
+        return;
+      }
+
+      const linhas = dadosImportacao.slice(0, 100).map(item => `
+        <tr>
+          <td>${Number.isFinite(item.numero) ? String(item.numero).padStart(3,'0') : '-'}</td>
+          <td>${escapeHtml(item.nome)}</td>
+          <td>${escapeHtml(item.telefone)}</td>
+          <td>${escapeHtml(item.valor)}</td>
+          <td>${escapeHtml(item.status)}</td>
+        </tr>
+      `).join('');
+
+      box.innerHTML = `
+        <table class="preview-table">
+          <thead><tr><th>Número</th><th>Nome</th><th>Telefone</th><th>Valor</th><th>Status</th></tr></thead>
+          <tbody>${linhas}</tbody>
+        </table>`;
+    }
+
+    function consolidarImportacao(lista) {
+      const mapa = new Map();
+
+      lista.forEach(item => {
+        if (!item || !Number.isFinite(item.numero) || item.numero < 1 || item.numero > TOTAL) return;
+
+        const anterior = mapa.get(item.numero);
+        if (!anterior) {
+          mapa.set(item.numero, {
+            numero: item.numero,
+            nome: item.nome || '',
+            telefone: item.telefone || '',
+            valor: item.valor || '',
+            status: item.status || 'disponivel',
+            substituir: Boolean(item.substituir)
+          });
+          return;
+        }
+
+        mapa.set(item.numero, {
+          numero: item.numero,
+          nome: item.nome !== '' ? item.nome : anterior.nome,
+          telefone: item.telefone !== '' ? item.telefone : anterior.telefone,
+          valor: item.valor !== '' ? item.valor : anterior.valor,
+          status: item.status || anterior.status || 'disponivel',
+          substituir: Boolean(item.substituir || anterior.substituir)
+        });
+      });
+
+      return Array.from(mapa.values()).sort((a, b) => a.numero - b.numero);
+    }
+
+    function limparTextoWhatsApp(valor) {
+      const texto = String(valor || '').replace(/\uFE0F/g, '').trim();
+      const inicioNumero = texto.search(/\d/);
+      return inicioNumero >= 0 ? texto.slice(inicioNumero).trim() : texto;
+    }
+
+    function interpretarLinhaLista(linha) {
+      const original = String(linha || '').trim();
+      if (!original) return null;
+
+      const semEmoji = limparTextoWhatsApp(original);
+
+      const matchIgual = semEmoji.match(/^0*(\d{1,4})\s*=\s*(.*)$/);
+      if (matchIgual) {
+        const numero = parseInt(matchIgual[1], 10);
+        let conteudo = matchIgual[2].trim();
+
+        const marcadoPago = /(?:^|[\s-])pago\b/i.test(conteudo);
+        const marcadoReservado = /(?:^|[\s-])reservad[oa]\b/i.test(conteudo);
+
+        conteudo = conteudo
+          .replace(/(?:\s*-\s*|\s+)pago\b.*$/i, '')
+          .replace(/(?:\s*-\s*|\s+)reservad[oa]\b.*$/i, '')
+          .trim();
+
+        const nome = conteudo;
+        let status = 'disponivel';
+
+        if (nome) {
+          status = marcadoPago ? 'pago' : (marcadoReservado ? 'reservado' : 'reservado');
+        }
+
+        return {
+          numero,
+          nome,
+          telefone: '',
+          valor: '',
+          status,
+          substituir: true
+        };
+      }
+
+      const matchAlternativo = semEmoji.match(/^0*(\d{1,4})\s*(?:[-;,\t:]\s*|\s+)(.*)$/);
+      if (!matchAlternativo) return null;
+
+      const numero = parseInt(matchAlternativo[1], 10);
+      let restante = matchAlternativo[2].trim();
+
+      const marcadoPago = /\bpago\b/i.test(restante);
+      const marcadoReservado = /\breservad[oa]\b/i.test(restante);
+
+      restante = restante
+        .replace(/(?:\s*-\s*|\s+)pago\b.*$/i, '')
+        .replace(/(?:\s*-\s*|\s+)reservad[oa]\b.*$/i, '')
+        .trim();
+
+      const partes = restante.split(/\t|;|,/).map(x => x.trim()).filter(Boolean);
+      const nome = partes[0] || '';
+      const telefone = partes[1] || '';
+
+      return {
+        numero,
+        nome,
+        telefone,
+        valor: '',
+        status: nome ? (marcadoPago ? 'pago' : (marcadoReservado ? 'reservado' : 'reservado')) : 'disponivel',
+        substituir: true
+      };
+    }
+
+    function analisarListaTexto() {
+      const texto = document.getElementById('listaTexto').value.trim();
+      const msg = document.getElementById('mensagemImportacao');
+
+      if (!texto) {
+        dadosImportacao = [];
+        renderizarPreviewImportacao();
+        msg.textContent = 'Cole uma lista para visualizar.';
+        return;
+      }
+
+      const interpretados = texto
+        .split(/\r?\n/)
+        .map(interpretarLinhaLista)
+        .filter(x => x && Number.isFinite(x.numero) && x.numero >= 1 && x.numero <= TOTAL);
+
+      dadosImportacao = consolidarImportacao(interpretados);
+
+      renderizarPreviewImportacao();
+
+      const pagos = dadosImportacao.filter(x => x.status === 'pago').length;
+      const reservados = dadosImportacao.filter(x => x.status === 'reservado').length;
+      const disponiveis = dadosImportacao.filter(x => x.status === 'disponivel').length;
+
+      msg.textContent =
+        `${dadosImportacao.length} linha(s) reconhecida(s): ` +
+        `${pagos} pago(s), ${reservados} reservado(s) e ${disponiveis} disponível(is).`;
+    }
+
+    function aplicarDadosImportados() {
+      const msg = document.getElementById('mensagemImportacao');
+
+      if (!dadosImportacao.length) {
+        msg.textContent = 'Nenhum dado válido para aplicar.';
+        return;
+      }
+
+      const consolidados = consolidarImportacao(dadosImportacao);
+      let novos = 0;
+      let atualizados = 0;
+      let inalterados = 0;
+
+      consolidados.forEach(item => {
+        const idx = item.numero - 1;
+        const atual = dados[idx];
+
+        const proximo = item.substituir ? {
+          numero: item.numero,
+          nome: item.nome || '',
+          telefone: item.telefone || '',
+          valor: item.valor || '',
+          status: item.status || 'disponivel'
+        } : {
+          numero: item.numero,
+          nome: item.nome || atual.nome || '',
+          telefone: item.telefone || atual.telefone || '',
+          valor: item.valor || atual.valor || '',
+          status: item.status || atual.status || 'reservado'
+        };
+
+        const tinhaCadastro = Boolean(
+          atual.nome || atual.telefone || atual.valor || atual.status !== 'disponivel'
+        );
+
+        const mudou =
+          atual.nome !== proximo.nome ||
+          atual.telefone !== proximo.telefone ||
+          String(atual.valor) !== String(proximo.valor) ||
+          atual.status !== proximo.status;
+
+        if (!mudou) {
+          inalterados++;
+          return;
+        }
+
+        dados[idx] = proximo;
+        if (tinhaCadastro) atualizados++;
+        else novos++;
+      });
+
+      salvar();
+      renderizar();
+
+      msg.textContent =
+        `${novos} novo(s), ${atualizados} atualizado(s) e ${inalterados} já estavam iguais. ` +
+        `Nenhum número foi duplicado.`;
+    }
+
+    document.getElementById('visualizarLista').addEventListener('click', analisarListaTexto);
+    document.getElementById('aplicarLista').addEventListener('click', () => {
+      analisarListaTexto();
+      aplicarDadosImportados();
+    });
+
+    document.getElementById('arquivoPlanilha').addEventListener('change', async (evento) => {
+      const arquivo = evento.target.files[0];
+      const msg = document.getElementById('mensagemImportacao');
+      if (!arquivo) return;
+
+      try {
+        const buffer = await arquivo.arrayBuffer();
+        const workbook = XLSX.read(buffer, {type:'array'});
+        const primeiraAba = workbook.Sheets[workbook.SheetNames[0]];
+        const linhas = XLSX.utils.sheet_to_json(primeiraAba, {defval:''});
+        dadosImportacao = consolidarImportacao(
+          linhas.map(prepararLinha)
+            .filter(x => Number.isFinite(x.numero) && x.numero >= 1 && x.numero <= TOTAL)
+        );
+
+        renderizarPreviewImportacao();
+        msg.textContent = `${dadosImportacao.length} linha(s) válida(s) encontradas na planilha.`;
+      } catch (erro) {
+        dadosImportacao = [];
+        renderizarPreviewImportacao();
+        msg.textContent = 'Não foi possível ler o arquivo. Verifique se é Excel ou CSV válido.';
+      }
+    });
+
+    document.getElementById('aplicarPlanilha').addEventListener('click', aplicarDadosImportados);
+
+    document.getElementById('baixarModelo').addEventListener('click', () => {
+      const csv = '\ufeffNúmero;Nome;Telefone;Valor;Status\n1;Maria;11999999999;10,00;pago\n2;João;11888888888;10,00;reservado';
+      const blob = new Blob([csv], {type:'text/csv;charset=utf-8;'});
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'modelo-importacao-pixels-rifa.csv';
+      a.click();
+      URL.revokeObjectURL(a.href);
+    });
+
+
+    function alterarTamanhoRifa() {
+      const campo = document.getElementById('tamanhoRifa');
+      const campoValor = document.getElementById('valorNumero');
+      const novoTotal = parseInt(campo.value, 10);
+      const novoValor = parseFloat(String(campoValor.value || '0').replace(',', '.'));
+
+      if (!Number.isFinite(novoTotal) || novoTotal < 1 || novoTotal > 5000) {
+        alert('Informe uma quantidade entre 1 e 5000 números.');
+        campo.value = TOTAL;
+        return;
+      }
+
+      if (!Number.isFinite(novoValor) || novoValor < 0) {
+        alert('Informe um valor válido por número.');
+        campoValor.value = VALOR_NUMERO || '';
+        return;
+      }
+
+      if (novoTotal < TOTAL) {
+        const ocupadosFora = dados.filter(item =>
+          item.numero > novoTotal &&
+          (item.nome || item.telefone || item.valor || item.status !== 'disponivel')
+        );
+
+        if (ocupadosFora.length) {
+          const confirmar = confirm(
+            `Existem ${ocupadosFora.length} número(s) preenchido(s) acima de ${novoTotal}. ` +
+            'Ao reduzir, esses registros serão apagados. Deseja continuar?'
+          );
+          if (!confirmar) {
+            campo.value = TOTAL;
+            return;
+          }
+        }
+      }
+
+      const anteriores = new Map(dados.map(item => [Number(item.numero), item]));
+      TOTAL = novoTotal;
+
+      dados = Array.from({length: TOTAL}, (_, i) => {
+        const numero = i + 1;
+        return anteriores.get(numero) || {
+          numero,
+          nome: '',
+          telefone: '',
+          valor: '',
+          status: 'disponivel'
+        };
+      });
+
+      VALOR_NUMERO = novoValor;
+      localStorage.setItem(SIZE_KEY, String(TOTAL));
+      localStorage.setItem(PRICE_KEY, String(VALOR_NUMERO));
+      salvar();
+      renderizar();
+
+      const mensagem = document.getElementById('mensagemImportacao');
+      if (mensagem) mensagem.textContent = `Rifa ajustada para ${TOTAL} número(s), no valor de ${moedaBR(VALOR_NUMERO)} cada.`;
+    }
+
+    document.getElementById('aplicarTamanho').addEventListener('click', alterarTamanhoRifa);
+
+    function numeroAleatorioSeguro(max) {
+      if (max <= 0) return -1;
+      if (window.crypto && window.crypto.getRandomValues) {
+        const limite = Math.floor(0x100000000 / max) * max;
+        const array = new Uint32Array(1);
+        let valor;
+        do {
+          window.crypto.getRandomValues(array);
+          valor = array[0];
+        } while (valor >= limite);
+        return valor % max;
+      }
+      return Math.floor(Math.random() * max);
+    }
+
+    function renderizarHistorico() {
+      const box = document.getElementById('historicoSorteios');
+      if (!historicoSorteios.length) {
+        box.innerHTML = '<div class="history-item">Nenhum sorteio realizado.</div>';
+        return;
+      }
+
+      box.innerHTML = historicoSorteios.slice().reverse().map(s => `
+        <div class="history-item">
+          <strong>🏆 Nº ${String(s.numero).padStart(3,'0')} — ${escapeHtml(s.nome || 'Sem nome')}</strong><br>
+          ${escapeHtml(s.criterio)} • ${escapeHtml(s.data)}
+        </div>
+      `).join('');
+    }
+
+    function realizarSorteio() {
+      const criterio = document.getElementById('criterioSorteio').value;
+      let participantes = [];
+      let criterioTexto = '';
+
+      if (criterio === 'pago') {
+        participantes = dados.filter(x => x.status === 'pago');
+        criterioTexto = 'Somente pagos';
+      } else if (criterio === 'reservado_pago') {
+        participantes = dados.filter(x => x.status === 'pago' || x.status === 'reservado');
+        criterioTexto = 'Reservados e pagos';
+      } else {
+        participantes = dados.filter(x => x.nome.trim() !== '');
+        criterioTexto = 'Todos os números com nome';
+      }
+
+      const resultado = document.getElementById('resultadoSorteio');
+
+      if (!participantes.length) {
+        resultado.innerHTML = '<div class="winner" style="border-color:var(--yellow)">Nenhum participante disponível para esse critério.</div>';
+        return;
+      }
+
+      const vencedor = participantes[numeroAleatorioSeguro(participantes.length)];
+      const data = new Date().toLocaleString('pt-BR');
+
+      historicoSorteios.push({
+        numero: vencedor.numero,
+        nome: vencedor.nome,
+        telefone: vencedor.telefone,
+        criterio: criterioTexto,
+        data
+      });
+
+      localStorage.setItem('pixels_rifa_sorteios_v1', JSON.stringify(historicoSorteios));
+
+      resultado.innerHTML = `
+        <div class="winner">
+          🎉 VENCEDOR DO SORTEIO
+          <strong>Nº ${String(vencedor.numero).padStart(3,'0')}</strong>
+          <div>${escapeHtml(vencedor.nome || 'Participante sem nome')}</div>
+          <div>${escapeHtml(vencedor.telefone || '')}</div>
+          <div style="margin-top:8px;color:var(--muted)">${criterioTexto} • ${data}</div>
+        </div>
+      `;
+
+      renderizarHistorico();
+    }
+
+    document.getElementById('sortear').addEventListener('click', realizarSorteio);
+
+    document.getElementById('limparHistorico').addEventListener('click', () => {
+      if (confirm('Deseja apagar todo o histórico de sorteios?')) {
+        historicoSorteios = [];
+        localStorage.removeItem('pixels_rifa_sorteios_v1');
+        document.getElementById('resultadoSorteio').innerHTML = '';
+        renderizarHistorico();
+      }
+    });
+
+    busca.addEventListener('input', renderizar);
+    filtro.addEventListener('change', renderizar);
+
+
+    function gerarPDFRifa() {
+      if (!window.jspdf || !window.jspdf.jsPDF) {
+        alert('Não foi possível carregar o gerador de PDF. Verifique sua conexão com a internet e abra o aplicativo novamente.');
+        return;
+      }
+
+      const { jsPDF } = window.jspdf;
+      const doc = new jsPDF({ orientation: 'portrait', unit: 'mm', format: 'a4' });
+
+      const disponiveis = dados.filter(x => x.status === 'disponivel').length;
+      const reservados = dados.filter(x => x.status === 'reservado').length;
+      const pagos = dados.filter(x => x.status === 'pago').length;
+      const total = dados
+        .filter(x => x.status === 'pago')
+        .reduce((s, x) => {
+          const valorIndividual = Number(String(x.valor).replace(',', '.') || 0);
+          return s + (valorIndividual || VALOR_NUMERO);
+        }, 0);
+
+      doc.setFontSize(18);
+      doc.text('PIXELS RIFA - Relatorio', 14, 17);
+
+      doc.setFontSize(10);
+      doc.text(`Gerado em: ${new Date().toLocaleString('pt-BR')}`, 14, 24);
+      doc.text(
+        `Valor por numero: ${moedaBR(VALOR_NUMERO)}   Disponiveis: ${disponiveis}   Reservados: ${reservados}   Pagos: ${pagos}   Total recebido: ${moedaBR(total)}`,
+        14,
+        30
+      );
+
+      const linhas = dados.map(item => [
+        String(item.numero).padStart(3, '0'),
+        item.nome || '',
+        item.telefone || '',
+        item.valor ? moedaBR(String(item.valor).replace(',', '.')) : (VALOR_NUMERO > 0 ? moedaBR(VALOR_NUMERO) : ''),
+        item.status === 'pago'
+          ? 'Pago'
+          : item.status === 'reservado'
+            ? 'Reservado'
+            : 'Disponivel'
+      ]);
+
+      doc.autoTable({
+        startY: 36,
+        head: [['Numero', 'Nome', 'Telefone', 'Valor', 'Status']],
+        body: linhas,
+        theme: 'grid',
+        styles: { fontSize: 8, cellPadding: 1.7 },
+        headStyles: { fontSize: 8.5 },
+        columnStyles: {
+          0: { cellWidth: 18 },
+          1: { cellWidth: 56 },
+          2: { cellWidth: 42 },
+          3: { cellWidth: 28 },
+          4: { cellWidth: 28 }
+        },
+        margin: { left: 14, right: 14, bottom: 14 },
+        didDrawPage: function(data) {
+          const pagina = doc.internal.getNumberOfPages();
+          doc.setFontSize(8);
+          doc.text(
+            `PIXELS RIFA - Pagina ${pagina}`,
+            14,
+            doc.internal.pageSize.getHeight() - 7
+          );
+        }
+      });
+
+      const dataArquivo = new Date().toISOString().slice(0, 10);
+      doc.save(`pixels-rifa-${dataArquivo}.pdf`);
+    }
+
+    document.getElementById('gerarPdf').addEventListener('click', gerarPDFRifa);
+
+    document.getElementById('exportar').addEventListener('click', () => {
+      const linhas = [['Número','Nome','Telefone','Valor','Status']];
+      dados.forEach(x => linhas.push([
+        String(x.numero).padStart(3,'0'),
+        x.nome,
+        x.telefone,
+        x.valor,
+        x.status
+      ]));
+
+      const csv = '\ufeff' + linhas.map(l =>
+        l.map(v => `"${String(v).replaceAll('"','""')}"`).join(';')
+      ).join('\n');
+
+      const blob = new Blob([csv], {type:'text/csv;charset=utf-8;'});
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'pixels-rifa.csv';
+      a.click();
+      URL.revokeObjectURL(a.href);
+    });
+
+    document.getElementById('limpar').addEventListener('click', () => {
+      const confirmar = confirm(
+        'ATENCAO: isso apagará todos os nomes, telefones, valores, status e o histórico de sorteios. Deseja realmente resetar a rifa?'
+      );
+
+      if (!confirmar) return;
+
+      dados = Array.from({length: TOTAL}, (_, i) => ({
+        numero: i + 1,
+        nome: '',
+        telefone: '',
+        valor: '',
+        status: 'disponivel'
+      }));
+
+      historicoSorteios = [];
+      dadosImportacao = [];
+
+      localStorage.removeItem(STORAGE_KEY);
+      localStorage.removeItem('pixels_rifa_sorteios_v1');
+
+      const listaTexto = document.getElementById('listaTexto');
+      const arquivoPlanilha = document.getElementById('arquivoPlanilha');
+      const preview = document.getElementById('previewImportacao');
+      const mensagem = document.getElementById('mensagemImportacao');
+      const resultado = document.getElementById('resultadoSorteio');
+
+      if (listaTexto) listaTexto.value = '';
+      if (arquivoPlanilha) arquivoPlanilha.value = '';
+      if (preview) preview.innerHTML = '';
+      if (mensagem) mensagem.textContent = 'Rifa resetada com sucesso.';
+      if (resultado) resultado.innerHTML = '';
+
+      salvar();
+      renderizar();
+      renderizarHistorico();
+
+      alert(`A rifa foi resetada. Todos os ${TOTAL} números estão disponíveis novamente.`);
+    });
+
+    renderizar();
+    renderizarHistorico();
+  </script>
+</body>
+</html>

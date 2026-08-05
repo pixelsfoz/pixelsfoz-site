@@ -1,0 +1,20 @@
+PACOTE COMPLETO PARA ATUALIZAR O GITHUB
+
+Arquivos principais:
+- index.html: página principal da Pixels
+- central-rifas.html: Central de Rifas
+- app-rifa.html: aplicativo de controle das rifas
+- assets/: logos, fundo e imagens das rifas
+
+ALTERAÇÃO DESTA VERSÃO
+A Central de Rifas ganhou um botão roxo "APP RIFA", diferente dos demais botões e dentro da paleta visual do projeto. O menu da Central também possui acesso ao aplicativo.
+
+COMO ATUALIZAR
+1. Extraia este ZIP.
+2. Envie todos os arquivos e a pasta assets para a raiz do repositório no GitHub.
+3. Substitua os arquivos antigos quando solicitado.
+4. Confirme o commit.
+5. Aguarde o Cloudflare Pages publicar a atualização.
+
+IMPORTANTE
+O APP RIFA salva os dados no navegador usando localStorage. Os dados não são compartilhados automaticamente entre celulares ou computadores diferentes.
