@@ -24,3 +24,8 @@ ATUALIZAÇÃO DO APP RIFA:
 - Lista colada com o ícone 💰, 💵 ou 🤑 é reconhecida como paga.
 - Visual remodelado conforme a identidade Pixels: #1155C0, #0093E5, #F9A232 e #ED3237.
 - Fundo pixelado e logotipo oficial aplicados ao APP.
+
+ATUALIZAÇÃO DO POP-UP:
+- A página principal exibe um convite para participar da rifa ao abrir o site.
+- O botão verde abre o grupo oficial do WhatsApp.
+- O convite aparece uma vez por sessão do navegador e pode ser fechado no X, em "Agora não" ou pela tecla Esc.

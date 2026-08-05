@@ -31,12 +31,74 @@ body:before{background:linear-gradient(rgba(1,7,20,.78),rgba(1,7,20,.92)),url('a
 .card,.winner,.result-row,.stat,.trust-card{backdrop-filter:blur(7px)}
 @media(max-width:700px){.hero{min-height:520px;background-position:35% center!important}.hero h1{text-shadow:3px 3px 0 #1155c0}}
 
+
+/* APRESENTAÇÃO RICA DA CENTRAL */
+.invite-showcase{padding-top:56px;background:linear-gradient(180deg,rgba(3,9,22,.98),rgba(7,17,39,.96));border-bottom:3px solid var(--azul-escuro)}
+.invite-grid{display:grid;grid-template-columns:minmax(300px,.82fr) minmax(0,1.18fr);gap:30px;align-items:center}
+.invite-poster{background:#020814;border:3px solid var(--azul);box-shadow:12px 12px 0 rgba(17,85,192,.45);padding:8px}
+.invite-poster img{width:100%;height:auto}
+.invite-copy .pixel-tag{margin-bottom:18px}.invite-copy h2{font-size:clamp(1.7rem,4vw,3.15rem);line-height:1.1;color:#fff;text-shadow:4px 4px 0 var(--azul-escuro)}
+.invite-copy h2 span{color:var(--laranja)}.invite-copy>p{color:var(--suave);font-size:1.02rem;margin:18px 0 22px}
+.category-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:20px 0}
+.category{background:#091632;border:2px solid rgba(0,147,229,.65);padding:13px 10px;text-align:center;font-family:var(--titulo);font-size:.72rem;font-weight:900;box-shadow:4px 4px 0 rgba(17,85,192,.35)}
+.category .cat-icon{display:block;font-size:1.65rem;margin-bottom:5px}
+.benefit-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:34px}
+.benefit{background:#091632;border:2px solid rgba(0,147,229,.55);padding:18px;text-align:center}.benefit .icon{font-size:2.1rem}.benefit b{display:block;color:var(--laranja);font-family:var(--titulo);font-size:.78rem;margin:8px 0}.benefit p{color:var(--suave);font-size:.86rem}
+.how-panel{margin-top:20px;background:#071127;border:2px solid var(--azul);padding:24px;box-shadow:8px 8px 0 rgba(17,85,192,.35)}
+.how-panel h3{text-align:center;color:var(--laranja);margin-bottom:18px}.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.step{text-align:center;padding:12px}.step-number{width:42px;height:42px;display:grid;place-items:center;margin:0 auto 10px;background:var(--azul-escuro);border:2px solid var(--azul);font-family:var(--titulo);font-weight:900}.step strong{display:block;font-family:var(--titulo);font-size:.75rem;margin-top:8px}.step span{font-size:2rem}
+.store-callout{margin-top:20px;padding:20px;border:2px dashed var(--laranja);background:linear-gradient(90deg,rgba(249,162,50,.09),rgba(0,147,229,.08));text-align:center}.store-callout strong{font-family:var(--titulo);color:var(--laranja)}
+@media(max-width:900px){.invite-grid{grid-template-columns:1fr}.invite-poster{max-width:650px;margin:auto}.benefit-strip{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.category-grid{grid-template-columns:repeat(2,1fr)}.benefit-strip,.steps{grid-template-columns:1fr}.invite-showcase{padding-top:38px}.invite-copy{text-align:center}}
+
 </style>
 </head>
 <body>
 <header><nav class="nav"><a class="marca" href="index.html"><img src="assets/logos/logo-horizontal.png" alt="Pixels Real Acessórios"></a><button class="menu" id="menu">☰</button><ul id="links"><li><a href="#rifas">Rifas</a></li><li><a href="#ganhadores">Ganhadores</a></li><li><a href="#resultados">Resultados</a></li><li><a href="#transparencia">Transparência</a></li><li><a href="app-rifa.html">APP RIFA</a></li><li><a href="index.html">Página da loja</a></li></ul></nav></header>
 <main>
 <section class="hero"><div class="container"><img class="hero-logo" src="assets/logos/logo-horizontal.png" alt="Logo Pixels Real Acessórios"><span class="pixel-tag">RESULTADOS OFICIAIS PIXELS</span><h1>Central de <span>Rifas</span></h1><p>Acompanhe as rifas realizadas pela Pixels, confira os prêmios, os números sorteados e os ganhadores em um só lugar.</p><div class="btns"><a class="btn primary" href="#rifas">Ver as rifas</a><a class="btn" href="#resultados">Conferir resultados</a><a class="btn app-rifa" href="app-rifa.html">🎮 Abrir APP RIFA</a><a class="btn whatsapp" href="https://chat.whatsapp.com/G2bYbJ6h5SN7rEwsr2hhng?s=cl&p=i&mlu=4&amv=1" target="_blank">Entrar no grupo da rifa</a></div></div></section>
+<section class="invite-showcase" id="participe">
+  <div class="container">
+    <div class="invite-grid">
+      <div class="invite-poster">
+        <img src="assets/rifas/convite-central-rifas.png" alt="Convite para participar das rifas da Pixels Real Acessórios">
+      </div>
+      <div class="invite-copy">
+        <span class="pixel-tag">PARTICIPE DA NOSSA RIFA</span>
+        <h2>Prêmios incríveis da <span>nossa loja</span></h2>
+        <p>As rifas da Pixels reúnem produtos geek, gamer e colecionáveis em sorteios transparentes, com bilhetes numerados e divulgação dos resultados na Central de Rifas.</p>
+        <div class="category-grid">
+          <div class="category"><span class="cat-icon">🦸</span>Action Figures</div>
+          <div class="category"><span class="cat-icon">🖥️</span>PCs Gamer</div>
+          <div class="category"><span class="cat-icon">🎮</span>Videogames</div>
+          <div class="category"><span class="cat-icon">🎧</span>Acessórios</div>
+          <div class="category"><span class="cat-icon">⌨️</span>Periféricos</div>
+          <div class="category"><span class="cat-icon">💿</span>Jogos</div>
+        </div>
+        <div class="btns" style="justify-content:flex-start">
+          <a class="btn whatsapp" href="https://chat.whatsapp.com/G2bYbJ6h5SN7rEwsr2hhng?s=cl&p=i&mlu=4&amv=1" target="_blank" rel="noopener">Garantir meu número</a>
+          <a class="btn primary" href="#rifas">Ver rifa em andamento</a>
+        </div>
+        <div class="store-callout"><strong>PIXELS REAL ACESSÓRIOS</strong><br>Sua loja geek e gamer de confiança.</div>
+      </div>
+    </div>
+    <div class="benefit-strip">
+      <div class="benefit"><div class="icon">🎟️</div><b>Bilhetes numerados</b><p>Mais organização, conferência e transparência para cada participante.</p></div>
+      <div class="benefit"><div class="icon">🛡️</div><b>Participação segura</b><p>Lista de números revisada e atendimento direto pela Pixels.</p></div>
+      <div class="benefit"><div class="icon">🏆</div><b>Sorteios divulgados</b><p>Resultados publicados nesta Central e nas redes da loja.</p></div>
+      <div class="benefit"><div class="icon">🤝</div><b>Você ajuda a loja</b><p>Participa, concorre a prêmios e fortalece nosso projeto familiar.</p></div>
+    </div>
+    <div class="how-panel">
+      <h3>Como funciona</h3>
+      <div class="steps">
+        <div class="step"><div class="step-number">1</div><span>🎟️</span><strong>Escolha seu número</strong></div>
+        <div class="step"><div class="step-number">2</div><span>💰</span><strong>Faça sua contribuição</strong></div>
+        <div class="step"><div class="step-number">3</div><span>✅</span><strong>Aguarde o sorteio</strong></div>
+        <div class="step"><div class="step-number">4</div><span>🎁</span><strong>Torça para ganhar</strong></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="rifas"><div class="container"><div class="heading"><h2>Rifas da Pixels</h2><div class="divider"></div><p>Confira as rifas encerradas e a rifa que está em andamento.</p></div><div class="filters"><button class="filter active" data-filter="all">Todas</button><button class="filter" data-filter="finished">Encerradas</button><button class="filter" data-filter="open">Em andamento</button></div><div class="raffles" id="raffles"></div></div></section>
 <section class="winners" id="ganhadores"><div class="container"><div class="heading"><h2>Galeria de ganhadores</h2><div class="divider"></div><p>Conheça os ganhadores e os números premiados das rifas já concluídas.</p></div><div class="winner-grid" id="winners"></div></div></section>
 <section id="resultados"><div class="container"><div class="heading"><h2>Resultados dos sorteios</h2><div class="divider"></div><p>Consulte os resultados oficiais, números sorteados e datas de cada rifa.</p></div><div class="results" id="results"></div></div></section>
