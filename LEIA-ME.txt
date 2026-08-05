@@ -18,3 +18,9 @@ COMO ATUALIZAR
 
 IMPORTANTE
 O APP RIFA salva os dados no navegador usando localStorage. Os dados não são compartilhados automaticamente entre celulares ou computadores diferentes.
+
+
+ATUALIZAÇÃO DO APP RIFA:
+- Lista colada com o ícone 💰, 💵 ou 🤑 é reconhecida como paga.
+- Visual remodelado conforme a identidade Pixels: #1155C0, #0093E5, #F9A232 e #ED3237.
+- Fundo pixelado e logotipo oficial aplicados ao APP.

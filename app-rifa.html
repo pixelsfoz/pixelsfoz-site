@@ -9,264 +9,209 @@
   <script src="https://cdn.jsdelivr.net/npm/jspdf-autotable@3.8.2/dist/jspdf.plugin.autotable.min.js"></script>
   <style>
     :root {
-      --bg: #0d0f14;
-      --card: #171a22;
-      --text: #f7f7f7;
-      --muted: #9ea5b3;
-      --accent: #7c4dff;
-      --green: #1fc77a;
-      --yellow: #f2b84b;
-      --red: #ef5350;
-      --border: #2a2f3a;
-    }
-
-    .app-topbar {
-      position: sticky; top: 0; z-index: 999;
-      display:flex; align-items:center; justify-content:space-between; gap:12px;
-      padding:10px 14px; background:rgba(9,10,15,.96);
-      border-bottom:2px solid #7c4dff; backdrop-filter:blur(8px);
-    }
-    .app-topbar strong { color:#fff; }
-    .app-topbar a {
-      width:auto; display:inline-flex; align-items:center; justify-content:center;
-      text-decoration:none; color:#fff; font-weight:800; padding:9px 13px;
-      border-radius:10px; border:1px solid #b99cff; background:#7c4dff;
+      --azul-principal: #1155C0;
+      --azul-claro: #0093E5;
+      --laranja: #F9A232;
+      --vermelho: #ED3237;
+      --verde: #22c96b;
+      --preto: #05070b;
+      --card: rgba(6, 12, 27, .94);
+      --card-2: rgba(11, 25, 55, .96);
+      --text: #ffffff;
+      --muted: #b9c9e7;
+      --border: rgba(0,147,229,.46);
+      --shadow: 0 14px 34px rgba(0,0,0,.36);
     }
     * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
       margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: linear-gradient(135deg, #090a0f, #17142b);
+      font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+      background-color: var(--preto);
+      background-image:
+        linear-gradient(rgba(0,0,0,.72), rgba(0,0,0,.84)),
+        url('assets/fundos/fundo-pixels.png');
+      background-size: cover;
+      background-position: center top;
+      background-attachment: fixed;
       color: var(--text);
       min-height: 100vh;
     }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: -1;
+      background-image:
+        linear-gradient(rgba(17,85,192,.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(17,85,192,.08) 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
+    .app-topbar {
+      position: sticky; top: 0; z-index: 999;
+      display:flex; align-items:center; justify-content:space-between; gap:12px;
+      padding:10px 14px; background:rgba(2,5,12,.94);
+      border-bottom:3px solid var(--azul-principal); backdrop-filter:blur(10px);
+      box-shadow: 0 6px 20px rgba(0,0,0,.35);
+    }
+    .app-topbar strong {
+      color:#fff; font-weight:900; letter-spacing:.5px;
+      text-shadow: 2px 2px 0 #0b2f72;
+    }
+    .app-topbar a {
+      width:auto; display:inline-flex; align-items:center; justify-content:center;
+      text-decoration:none; color:#071225; font-weight:900; padding:10px 14px;
+      border-radius:10px; border:2px solid #ffd07b; background:var(--laranja);
+      box-shadow: 0 4px 0 #a95e00;
+    }
     header {
-      padding: 24px 16px 14px;
+      padding: 28px 16px 20px;
       text-align: center;
     }
-    header h1 { margin: 0; font-size: 30px; }
-    header p { color: var(--muted); margin: 8px 0 0; }
-    .container { max-width: 1200px; margin: auto; padding: 0 14px 30px; }
-    .toolbar, .summary {
-      background: rgba(23,26,34,.95);
-      border: 1px solid var(--border);
+    .app-logo {
+      width: min(430px, 86vw);
+      max-height: 150px;
+      object-fit: contain;
+      filter: drop-shadow(0 8px 16px rgba(0,0,0,.55));
+      margin: 0 auto 12px;
+    }
+    header h1 {
+      margin: 0;
+      font-family: Impact, "Arial Black", sans-serif;
+      font-size: clamp(30px, 5vw, 50px);
+      letter-spacing: 2px;
+      color: white;
+      text-shadow: 4px 4px 0 #073482, 7px 7px 0 rgba(0,0,0,.55);
+    }
+    header p { color: var(--muted); margin: 10px 0 0; font-weight:700; }
+    .container { max-width: 1240px; margin: auto; padding: 0 14px 34px; }
+    .toolbar, .summary, .import-panel, .buyers-panel, .draw-panel {
+      background: linear-gradient(145deg, var(--card-2), var(--card));
+      border: 2px solid var(--border);
       border-radius: 16px;
-      padding: 14px;
-      margin-bottom: 14px;
+      padding: 15px;
+      margin-bottom: 15px;
+      box-shadow: var(--shadow), inset 0 0 0 1px rgba(255,255,255,.035);
     }
     .toolbar {
       display: grid;
       grid-template-columns: 1fr 170px 145px 145px 145px;
       gap: 10px;
     }
-    input, select, button {
+    input, select, button, textarea {
       width: 100%;
-      border: 1px solid var(--border);
+      border: 2px solid rgba(0,147,229,.42);
       border-radius: 10px;
       padding: 11px 12px;
       font-size: 14px;
+      font-family: inherit;
     }
-    input, select {
-      background: #10131a;
+    input, select, textarea {
+      background: rgba(1,8,22,.92);
       color: white;
+      outline: none;
+    }
+    input:focus, select:focus, textarea:focus {
+      border-color: var(--laranja);
+      box-shadow: 0 0 0 3px rgba(249,162,50,.15);
     }
     button {
-      background: var(--accent);
+      background: linear-gradient(180deg, var(--azul-claro), var(--azul-principal));
       color: white;
       cursor: pointer;
-      font-weight: bold;
+      font-weight: 900;
+      border-color: #52caff;
+      box-shadow: 0 4px 0 #073482;
+      transition: transform .15s, filter .15s;
     }
-    button.secondary { background: #242a36; }
-    button.danger { background: var(--red); }
-    .summary {
-      display: grid;
-      grid-template-columns: repeat(4,1fr);
-      gap: 10px;
-    }
+    button:hover { transform: translateY(-2px); filter: brightness(1.1); }
+    button:active { transform: translateY(2px); box-shadow: 0 1px 0 #073482; }
+    button.secondary { background: linear-gradient(180deg,#303b55,#172138); border-color:#526487; box-shadow:0 4px 0 #080d19; }
+    button.danger { background: linear-gradient(180deg,#ff5258,var(--vermelho)); border-color:#ff8e91; box-shadow:0 4px 0 #8f1014; }
+    #sortear, #aplicarTamanho, #aplicarLista, #aplicarPlanilha { background:linear-gradient(180deg,#ffb94e,var(--laranja)); color:#201200; border-color:#ffd58a; box-shadow:0 4px 0 #a75b00; }
+    .summary { display: grid; grid-template-columns: repeat(4,1fr); gap: 10px; }
     .stat {
-      background: #11141b;
-      border: 1px solid var(--border);
+      background: rgba(1,8,22,.86);
+      border: 2px solid rgba(0,147,229,.34);
       border-radius: 12px;
-      padding: 12px;
+      padding: 13px;
       text-align: center;
+      font-weight:800;
     }
-    .stat strong { display:block; font-size: 24px; margin-top:4px; }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(5, minmax(0,1fr));
-      gap: 10px;
-    }
+    .stat strong { display:block; font-size: 25px; margin-top:5px; color:var(--laranja); text-shadow:2px 2px 0 #000; }
+    .grid { display: grid; grid-template-columns: repeat(5, minmax(0,1fr)); gap: 10px; }
     .ticket {
-      background: var(--card);
-      border: 1px solid var(--border);
+      background: linear-gradient(145deg, rgba(12,31,66,.97), rgba(2,8,19,.97));
+      border: 2px solid var(--border);
       border-radius: 14px;
       padding: 12px;
       transition: .2s;
+      box-shadow: 0 8px 20px rgba(0,0,0,.26);
     }
-    .ticket:hover { transform: translateY(-2px); }
-    .ticket.pago { border-color: var(--green); box-shadow: 0 0 0 1px rgba(31,199,122,.25); }
-    .ticket.reservado { border-color: var(--yellow); }
-    .ticket.disponivel { border-color: #3b4250; }
-    .num {
-      font-size: 20px;
-      font-weight: 800;
-      margin-bottom: 8px;
-    }
-    .badge {
-      display: inline-block;
-      font-size: 11px;
-      border-radius: 999px;
-      padding: 4px 8px;
-      margin-bottom: 8px;
-      background: #2a2f3a;
-    }
-    .ticket.pago .badge { background: rgba(31,199,122,.18); color: #78f0b5; }
-    .ticket.reservado .badge { background: rgba(242,184,75,.18); color: #ffd47e; }
+    .ticket:hover { transform: translateY(-3px); }
+    .ticket.pago { border-color: var(--verde); box-shadow: 0 0 0 1px rgba(34,201,107,.25),0 8px 20px rgba(0,0,0,.26); }
+    .ticket.reservado { border-color: var(--laranja); }
+    .ticket.disponivel { border-color: var(--azul-principal); }
+    .num { font-size: 20px; font-weight: 950; margin-bottom: 8px; color:white; text-shadow:2px 2px 0 #073482; }
+    .badge { display:inline-block; font-size:11px; border-radius:999px; padding:5px 9px; margin-bottom:8px; background:#22304c; font-weight:900; }
+    .ticket.pago .badge { background: rgba(34,201,107,.18); color: #7dffb4; }
+    .ticket.reservado .badge { background: rgba(249,162,50,.18); color: #ffd28f; }
     .ticket input, .ticket select { margin-top: 7px; }
-    .small-actions {
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap:6px;
-      margin-top:8px;
-    }
+    .small-actions { display:grid; grid-template-columns:1fr 1fr; gap:6px; margin-top:8px; }
     .small-actions button { padding:8px; font-size:12px; }
     .hidden { display:none !important; }
-
-    .import-panel {
-      background: rgba(23,26,34,.95);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 16px;
-      margin-bottom: 14px;
+    h2 {
+      margin: 0 0 11px;
+      font-family: Impact, "Arial Black", sans-serif;
+      letter-spacing: 1px;
+      font-size: 23px;
+      color: var(--laranja);
+      text-shadow: 2px 2px 0 #000;
     }
-    .import-panel h2 { margin: 0 0 10px; font-size: 20px; }
-    .import-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
+    .import-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+    textarea { min-height:170px; resize:vertical; }
+    .import-actions { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:8px; }
+    .preview-table { width:100%; border-collapse:collapse; margin-top:12px; font-size:13px; background:rgba(0,0,0,.35); }
+    .preview-table th, .preview-table td { border:1px solid rgba(0,147,229,.38); padding:8px; text-align:left; }
+    .preview-table th { background:var(--azul-principal); color:#fff; }
+    .preview-wrap { max-height:280px; overflow:auto; margin-top:10px; }
+    .import-help { color:var(--muted); font-size:12px; line-height:1.55; margin-top:6px; }
+    .buyers-summary, .draw-history { display:grid; gap:8px; margin-top:10px; }
+    .buyer-row, .history-item {
+      background:rgba(1,8,22,.86); border:1px solid rgba(0,147,229,.35);
+      border-radius:10px; padding:11px 12px; font-size:13px; line-height:1.5;
     }
-    textarea {
-      width: 100%;
-      min-height: 160px;
-      resize: vertical;
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 11px 12px;
-      font-size: 14px;
-      background: #10131a;
-      color: white;
-    }
-    .import-actions {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 8px;
-      margin-top: 8px;
-    }
-    .preview-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 12px;
-      font-size: 13px;
-    }
-    .preview-table th, .preview-table td {
-      border: 1px solid var(--border);
-      padding: 7px;
-      text-align: left;
-    }
-    .preview-wrap {
-      max-height: 280px;
-      overflow: auto;
-      margin-top: 10px;
-    }
-    .import-help {
-      color: var(--muted);
-      font-size: 12px;
-      line-height: 1.5;
-      margin-top: 6px;
-    }
-
-
-    .buyers-panel {
-      background: rgba(23,26,34,.95);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 16px;
-      margin-bottom: 14px;
-    }
-    .buyers-panel h2 { margin: 0 0 10px; font-size: 20px; }
-    .buyers-summary {
-      display: grid;
-      gap: 8px;
-      margin-top: 10px;
-    }
-    .buyer-row {
-      background: #11141b;
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 10px 12px;
-      font-size: 13px;
-      line-height: 1.5;
-    }
-    .buyer-row strong {
-      display: block;
-      font-size: 14px;
-      margin-bottom: 2px;
-    }
-
-    .draw-panel {
-      background: rgba(23,26,34,.95);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 16px;
-      margin-bottom: 14px;
-    }
-    .draw-panel h2 { margin: 0 0 10px; font-size: 20px; }
-    .draw-controls {
-      display: grid;
-      grid-template-columns: 1fr 180px;
-      gap: 10px;
-      margin-bottom: 12px;
-    }
+    .buyer-row strong { display:block; font-size:14px; margin-bottom:2px; color:#fff; }
+    .draw-controls { display:grid; grid-template-columns:1fr 180px; gap:10px; margin-bottom:12px; }
     .winner {
-      background: #11141b;
-      border: 1px solid var(--green);
-      border-radius: 14px;
-      padding: 18px;
-      text-align: center;
-      margin-top: 10px;
+      background:linear-gradient(145deg,rgba(17,85,192,.35),rgba(1,8,22,.95));
+      border:3px solid var(--verde); border-radius:14px; padding:20px; text-align:center; margin-top:10px;
+      box-shadow:0 0 22px rgba(34,201,107,.2);
     }
-    .winner strong { display: block; font-size: 34px; margin: 8px 0; }
-    .draw-history { margin-top: 14px; display: grid; gap: 8px; }
-    .history-item {
-      background: #11141b;
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 10px;
-      font-size: 13px;
+    .winner strong { display:block; font-size:38px; margin:8px 0; color:var(--laranja); text-shadow:3px 3px 0 #000; }
+    footer { color:var(--muted); text-align:center; padding:20px; font-size:12px; background:rgba(0,0,0,.5); border-top:1px solid rgba(0,147,229,.28); }
+    @media (max-width:900px) {
+      .toolbar { grid-template-columns:1fr 1fr; }
+      .draw-controls, .import-grid { grid-template-columns:1fr; }
+      .summary { grid-template-columns:1fr 1fr; }
+      .grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
     }
-    footer {
-      color: var(--muted);
-      text-align:center;
-      padding: 18px;
-      font-size: 12px;
-    }
-    @media (max-width: 900px) {
-      .toolbar { grid-template-columns: 1fr 1fr; }
-      .draw-controls { grid-template-columns: 1fr; }
-      .import-grid { grid-template-columns: 1fr; }
-      .summary { grid-template-columns: 1fr 1fr; }
-      .grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
-    }
-    @media (max-width: 520px) {
-      .toolbar { grid-template-columns: 1fr; }
-      .grid { grid-template-columns: 1fr; }
+    @media (max-width:520px) {
+      .app-topbar { align-items:stretch; flex-direction:column; text-align:center; }
+      .app-topbar a { width:100%; }
+      .toolbar, .summary { grid-template-columns:1fr; }
+      .grid { grid-template-columns:1fr; }
+      .import-actions, .small-actions { grid-template-columns:1fr; }
+      header { padding-top:20px; }
     }
   </style>
 </head>
 <body>
   <div class="app-topbar"><strong>🎮 APP RIFA PIXELS</strong><a href="central-rifas.html">← Voltar à Central de Rifas</a></div>
   <header>
-    <h1>🎮 PIXELS RIFA</h1>
+    <img class="app-logo" src="assets/logos/logo-horizontal.png" alt="Pixels Real Acessórios">
+    <h1>🎮 APP PIXELS RIFA</h1>
     <p>Controle de nomes, números, pagamentos e tamanho da rifa</p>
   </header>
 
@@ -311,7 +256,7 @@
 ⭐ 04 =iagor
 🍄 05 =adilson-Pago💰"></textarea>
           <div class="import-help">
-            Aceita linhas com número, nome, telefone e status separados por hífen, ponto e vírgula, vírgula ou tabulação. Quando houver número e nome, o status será Pago automaticamente. Aceita formatos como “1 Maria”, “1 - Maria”, “001;Maria” e “🎮 01 João”.
+            Aceita linhas com número, nome, telefone e status separados por hífen, ponto e vírgula, vírgula ou tabulação. Quando houver número e nome, o status será reservado. Linhas com “Pago” ou com o ícone de saco de dinheiro 💰 serão reconhecidas automaticamente como pagas. Aceita formatos como “1 Maria”, “1 - Maria”, “001;Maria” e “🎮 01 João”.
           </div>
           <div class="import-actions">
             <button id="visualizarLista">Visualizar lista</button>
@@ -676,12 +621,13 @@
         const numero = parseInt(matchIgual[1], 10);
         let conteudo = matchIgual[2].trim();
 
-        const marcadoPago = /(?:^|[\s-])pago\b/i.test(conteudo);
+        const marcadoPago = /(?:^|[\s-])pago\b/i.test(conteudo) || /[💰💵🤑]/u.test(conteudo);
         const marcadoReservado = /(?:^|[\s-])reservad[oa]\b/i.test(conteudo);
 
         conteudo = conteudo
           .replace(/(?:\s*-\s*|\s+)pago\b.*$/i, '')
           .replace(/(?:\s*-\s*|\s+)reservad[oa]\b.*$/i, '')
+          .replace(/[💰💵🤑]/gu, '')
           .trim();
 
         const nome = conteudo;
@@ -707,12 +653,13 @@
       const numero = parseInt(matchAlternativo[1], 10);
       let restante = matchAlternativo[2].trim();
 
-      const marcadoPago = /\bpago\b/i.test(restante);
+      const marcadoPago = /\bpago\b/i.test(restante) || /[💰💵🤑]/u.test(restante);
       const marcadoReservado = /\breservad[oa]\b/i.test(restante);
 
       restante = restante
         .replace(/(?:\s*-\s*|\s+)pago\b.*$/i, '')
         .replace(/(?:\s*-\s*|\s+)reservad[oa]\b.*$/i, '')
+        .replace(/[💰💵🤑]/gu, '')
         .trim();
 
       const partes = restante.split(/\t|;|,/).map(x => x.trim()).filter(Boolean);
