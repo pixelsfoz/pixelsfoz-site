@@ -126,10 +126,38 @@ const results=[
 {raffle:'Rifa Épica — 3º prêmio',winner:'Andreia',number:'13',date:'01/08/2026',proof:'#'},
 {raffle:'Rifa Gamer Premium — 3 Prêmios',winner:'Sorteio em andamento',number:'--',date:'Em andamento',proof:'#'}
 ];
+
+const CLOSED_RAFFLE_KEY='pixels_rifa_encerrada_v1';
+function aplicarFechamentoDoApp(){
+  let fechamento=null;
+  try{fechamento=JSON.parse(localStorage.getItem(CLOSED_RAFFLE_KEY)||'null')}catch(_){fechamento=null}
+  if(!fechamento)return;
+  const rifaAtual=raffles.find(r=>r.id===3);
+  if(rifaAtual){
+    rifaAtual.status='finished';
+    rifaAtual.statusText='Encerrada';
+    rifaAtual.price='Resultado publicado';
+    if(fechamento.image)rifaAtual.image=fechamento.image;
+  }
+  const ganhadoresFechamento=Array.isArray(fechamento.winners)&&fechamento.winners.length
+    ? fechamento.winners
+    : [{position:1,name:fechamento.winner,number:fechamento.number,prize:'1º prêmio'}];
+  const pendente=results.findIndex(r=>r.raffle==='Rifa Gamer Premium — 3 Prêmios');
+  if(pendente>=0)results.splice(pendente,1);
+  ganhadoresFechamento.forEach(g=>{
+    const posicao=Number(g.position)||1;
+    const titulo=ganhadoresFechamento.length>1?`Rifa Gamer Premium — ${posicao}º prêmio`:'Rifa Gamer Premium — 3 Prêmios';
+    results.push({raffle:titulo,winner:g.name,number:String(g.number).padStart(2,'0'),date:fechamento.date,proof:'#'});
+    const premio=g.prize||`${posicao}º prêmio — Rifa Gamer Premium`;
+    const jaExiste=winners.some(w=>w.name===g.name&&String(w.number)===String(g.number)&&w.date.includes(fechamento.date));
+    if(!jaExiste)winners.push({number:String(g.number).padStart(2,'0'),name:g.name,prize:`${posicao}º lugar — ${premio}`,date:`Rifa encerrada em ${fechamento.date}`});
+  });
+}
+
 function renderRaffles(filter='all'){const list=filter==='all'?raffles:raffles.filter(x=>x.status===filter);document.getElementById('raffles').innerHTML=list.map(r=>`<article class="card"><div class="poster"><img src="${r.image}" alt="${r.title}"></div><div class="card-body"><span class="status ${r.status}">${r.statusText}</span><h3>${r.title}</h3><p>${r.desc}</p><div class="meta"><div><small>Quantidade</small><strong>${r.numbers}</strong></div><div><small>Valor</small><strong>${r.price}</strong></div></div><a class="btn" href="${r.status==='open'?'https://chat.whatsapp.com/G2bYbJ6h5SN7rEwsr2hhng?s=cl&p=i&mlu=4&amv=1':'#resultados'}" ${r.status==='open'?'target="_blank" rel="noopener"':''}>${r.status==='open'?'Entrar no grupo da rifa':'Ver resultado'}</a></div></article>`).join('')}
 function renderWinners(){document.getElementById('winners').innerHTML=winners.map(w=>`<article class="winner"><span class="number">${w.number}</span><h3>${w.name}</h3><p>🏆 ${w.prize}</p><small>${w.date}</small></article>`).join('')}
 function renderResults(){document.getElementById('results').innerHTML=`<div class="row head"><div>Rifa / ganhador</div><div>Número</div><div>Data</div><div>Comprovação</div></div>`+results.map((r,i)=>`<div class="row"><div class="result-name"><strong>${r.raffle}</strong><small>${r.winner}</small></div><div><span class="ball">${r.number}</span></div><div>${r.date}</div><div><button class="btn proofBtn" data-i="${i}">Ver resultado</button></div></div>`).join('');document.querySelectorAll('.proofBtn').forEach(b=>b.onclick=()=>openProof(+b.dataset.i))}
 function openProof(i){const r=results[i],m=document.getElementById('modal'),p=document.getElementById('proof');document.getElementById('modalText').textContent=r.proof==='#'?'A comprovação ainda não foi cadastrada. Substitua o símbolo # no código pelo link do vídeo ou da publicação do sorteio.':`Resultado da ${r.raffle}, realizado em ${r.date}.`;p.href=r.proof;p.style.display=r.proof==='#'?'none':'inline-block';m.classList.add('open')}
-document.querySelectorAll('.filter').forEach(b=>b.onclick=()=>{document.querySelectorAll('.filter').forEach(x=>x.classList.remove('active'));b.classList.add('active');renderRaffles(b.dataset.filter)});document.getElementById('menu').onclick=()=>document.getElementById('links').classList.toggle('open');document.querySelectorAll('#links a').forEach(a=>a.onclick=()=>document.getElementById('links').classList.remove('open'));document.getElementById('close').onclick=()=>document.getElementById('modal').classList.remove('open');document.getElementById('modal').onclick=e=>{if(e.target.id==='modal')e.currentTarget.classList.remove('open')};document.getElementById('year').textContent=new Date().getFullYear();renderRaffles();renderWinners();renderResults();
+document.querySelectorAll('.filter').forEach(b=>b.onclick=()=>{document.querySelectorAll('.filter').forEach(x=>x.classList.remove('active'));b.classList.add('active');renderRaffles(b.dataset.filter)});document.getElementById('menu').onclick=()=>document.getElementById('links').classList.toggle('open');document.querySelectorAll('#links a').forEach(a=>a.onclick=()=>document.getElementById('links').classList.remove('open'));document.getElementById('close').onclick=()=>document.getElementById('modal').classList.remove('open');document.getElementById('modal').onclick=e=>{if(e.target.id==='modal')e.currentTarget.classList.remove('open')};document.getElementById('year').textContent=new Date().getFullYear();aplicarFechamentoDoApp();renderRaffles();renderWinners();renderResults();window.addEventListener('storage',e=>{if(e.key===CLOSED_RAFFLE_KEY)location.reload()});
 </script>
 </body></html>

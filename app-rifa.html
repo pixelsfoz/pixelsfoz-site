@@ -191,6 +191,35 @@
     }
     .winner strong { display:block; font-size:38px; margin:8px 0; color:var(--laranja); text-shadow:3px 3px 0 #000; }
     footer { color:var(--muted); text-align:center; padding:20px; font-size:12px; background:rgba(0,0,0,.5); border-top:1px solid rgba(0,147,229,.28); }
+
+    .current-raffle-panel {
+      display:grid; grid-template-columns:minmax(240px,420px) 1fr; gap:18px; align-items:center;
+      background:linear-gradient(145deg,rgba(17,85,192,.32),rgba(1,8,22,.97));
+      border:3px solid var(--laranja); border-radius:18px; padding:17px; margin-bottom:15px;
+      box-shadow:var(--shadow),0 0 24px rgba(249,162,50,.12);
+    }
+    .current-raffle-image { aspect-ratio:2/3; background:#020714; border:2px solid var(--azul-claro); border-radius:14px; overflow:hidden; }
+    .current-raffle-image img { width:100%; height:100%; object-fit:cover; object-position:top; }
+    .current-raffle-info h2 { font-size:clamp(24px,4vw,38px); margin-bottom:8px; }
+    .current-raffle-info p { color:var(--muted); line-height:1.6; }
+    .raffle-status-box { margin:14px 0; padding:12px; border:2px solid var(--azul-principal); border-radius:12px; background:rgba(0,0,0,.32); font-weight:900; }
+    .raffle-status-box.closed { border-color:var(--vermelho); color:#ffb8ba; }
+    .raffle-admin-actions { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:12px; }
+    .file-label { display:block; margin-top:12px; color:#fff; font-weight:900; }
+    #encerrarRifa { background:linear-gradient(180deg,#ff5258,var(--vermelho)); border-color:#ff8e91; box-shadow:0 4px 0 #8f1014; }
+
+    .manual-winners-panel { background:rgba(7,18,43,.96); border:2px solid var(--azul-claro); border-radius:18px; padding:18px; margin-bottom:14px; box-shadow:0 0 0 3px rgba(17,85,192,.20), 0 16px 40px rgba(0,0,0,.28); }
+    .manual-winners-panel h2 { margin:0 0 8px; color:var(--laranja); }
+    .manual-winners-panel > p { color:var(--muted); margin:0 0 14px; line-height:1.5; }
+    .manual-winners-grid { display:grid; gap:10px; }
+    .manual-winner-row { display:grid; grid-template-columns:115px minmax(180px,1.4fr) 130px minmax(190px,1fr); gap:10px; align-items:center; padding:11px; background:#071126; border:1px solid #1f65cc; border-radius:13px; }
+    .manual-winner-row .place { font-family:var(--titulo); color:white; text-align:center; background:linear-gradient(180deg,var(--azul-claro),var(--azul)); border:1px solid #61c8ff; border-radius:9px; padding:11px 8px; }
+    .manual-winner-row input { margin:0; }
+    .manual-winners-actions { display:flex; flex-wrap:wrap; gap:10px; margin-top:12px; }
+    .manual-winners-actions button { width:auto; min-width:190px; }
+    .manual-saved-message { min-height:20px; margin-top:8px; color:#75efb4; font-size:13px; }
+    @media(max-width:760px){.current-raffle-panel{grid-template-columns:1fr}.current-raffle-image{max-width:420px;width:100%;margin:auto}.raffle-admin-actions{grid-template-columns:1fr}}
+
     @media (max-width:900px) {
       .toolbar { grid-template-columns:1fr 1fr; }
       .draw-controls, .import-grid { grid-template-columns:1fr; }
@@ -201,6 +230,9 @@
       .app-topbar { align-items:stretch; flex-direction:column; text-align:center; }
       .app-topbar a { width:100%; }
       .toolbar, .summary { grid-template-columns:1fr; }
+      .manual-winner-row { grid-template-columns:1fr; }
+      .manual-winner-row .place { text-align:left; }
+      .manual-winners-actions button { width:100%; }
       .grid { grid-template-columns:1fr; }
       .import-actions, .small-actions { grid-template-columns:1fr; }
       header { padding-top:20px; }
@@ -216,6 +248,43 @@
   </header>
 
   <main class="container">
+
+
+    <section class="current-raffle-panel" id="currentRafflePanel">
+      <div class="current-raffle-image">
+        <img id="imagemRifaAtual" src="assets/rifas/rifa-03-gamer-premium.png" alt="Imagem da rifa em andamento">
+      </div>
+      <div class="current-raffle-info">
+        <h2>🎟️ Rifa em andamento</h2>
+        <p>Esta imagem identifica a rifa que está sendo administrada. Você pode trocar o cartaz pelo arquivo da nova rifa antes de iniciar os cadastros.</p>
+        <div class="raffle-status-box" id="statusRifaAtual">🟢 Rifa aberta para cadastros e sorteio.</div>
+        <label class="file-label" for="arquivoImagemRifa">Trocar imagem da rifa</label>
+        <input type="file" id="arquivoImagemRifa" accept="image/png,image/jpeg,image/webp">
+        <div class="import-help">A imagem escolhida é reduzida e salva neste navegador. Recomendamos cartaz vertical.</div>
+        <div class="raffle-admin-actions">
+          <button id="restaurarImagem" class="secondary">Restaurar imagem padrão</button>
+          <button id="encerrarRifa" type="button">🔒 Encerrar rifa</button>
+        </div>
+        <div class="import-help">Antes de encerrar, registre manualmente de 1 a 5 ganhadores na área abaixo. O fechamento solicitará a senha de 4 dígitos.</div>
+      </div>
+    </section>
+
+    <section class="manual-winners-panel" id="manualWinnersPanel">
+      <h2>🏆 Registrar ganhadores manualmente</h2>
+      <p>Use esta área quando o sorteio for realizado em outro sistema. Preencha do 1º ao 5º lugar. Somente as linhas preenchidas serão publicadas na Central de Rifas após o encerramento.</p>
+      <div class="manual-winners-grid">
+        <div class="manual-winner-row"><div class="place">🥇 1º lugar</div><input class="winner-name" data-position="1" placeholder="Nome do ganhador"><input class="winner-number" data-position="1" type="number" min="1" max="5000" placeholder="Número"><input class="winner-prize" data-position="1" placeholder="Prêmio do 1º lugar"></div>
+        <div class="manual-winner-row"><div class="place">🥈 2º lugar</div><input class="winner-name" data-position="2" placeholder="Nome do ganhador"><input class="winner-number" data-position="2" type="number" min="1" max="5000" placeholder="Número"><input class="winner-prize" data-position="2" placeholder="Prêmio do 2º lugar"></div>
+        <div class="manual-winner-row"><div class="place">🥉 3º lugar</div><input class="winner-name" data-position="3" placeholder="Nome do ganhador"><input class="winner-number" data-position="3" type="number" min="1" max="5000" placeholder="Número"><input class="winner-prize" data-position="3" placeholder="Prêmio do 3º lugar"></div>
+        <div class="manual-winner-row"><div class="place">🏅 4º lugar</div><input class="winner-name" data-position="4" placeholder="Nome do ganhador"><input class="winner-number" data-position="4" type="number" min="1" max="5000" placeholder="Número"><input class="winner-prize" data-position="4" placeholder="Prêmio do 4º lugar"></div>
+        <div class="manual-winner-row"><div class="place">🏅 5º lugar</div><input class="winner-name" data-position="5" placeholder="Nome do ganhador"><input class="winner-number" data-position="5" type="number" min="1" max="5000" placeholder="Número"><input class="winner-prize" data-position="5" placeholder="Prêmio do 5º lugar"></div>
+      </div>
+      <div class="manual-winners-actions">
+        <button id="salvarGanhadores" type="button">💾 Salvar ganhadores</button>
+        <button id="limparGanhadores" type="button" class="secondary">Limpar campos</button>
+      </div>
+      <div id="mensagemGanhadores" class="manual-saved-message"></div>
+    </section>
 
     <section class="toolbar" style="grid-template-columns: 1fr 180px 180px;">
       <input id="tamanhoRifa" type="number" min="1" max="5000" value="100" placeholder="Quantidade de números" />
@@ -314,6 +383,13 @@
     const STORAGE_KEY = 'pixels_rifa_v1';
     const SIZE_KEY = 'pixels_rifa_tamanho_v1';
     const PRICE_KEY = 'pixels_rifa_valor_numero_v1';
+
+    const CLOSED_RAFFLE_KEY = 'pixels_rifa_encerrada_v1';
+    const CURRENT_RAFFLE_IMAGE_KEY = 'pixels_rifa_imagem_atual_v1';
+    const MANUAL_WINNERS_KEY = 'pixels_rifa_ganhadores_manuais_v1';
+    const DEFAULT_RAFFLE_IMAGE = 'assets/rifas/rifa-03-gamer-premium.png';
+    const CLOSE_PASSWORD = '1807';
+
     let TOTAL = Math.max(1, parseInt(localStorage.getItem(SIZE_KEY) || '100', 10));
     let VALOR_NUMERO = Math.max(0, parseFloat(localStorage.getItem(PRICE_KEY) || '0'));
 
@@ -342,6 +418,147 @@
     document.getElementById('valorNumero').value = VALOR_NUMERO || '';
     const busca = document.getElementById('busca');
     const filtro = document.getElementById('filtro');
+
+
+
+    function lerGanhadoresManuais() {
+      try { return JSON.parse(localStorage.getItem(MANUAL_WINNERS_KEY) || '[]'); }
+      catch (_) { return []; }
+    }
+
+    function coletarGanhadoresManuais(validar = false) {
+      const ganhadores = [];
+      for (let posicao = 1; posicao <= 5; posicao++) {
+        const nome = document.querySelector(`.winner-name[data-position="${posicao}"]`).value.trim();
+        const numeroTexto = document.querySelector(`.winner-number[data-position="${posicao}"]`).value.trim();
+        const premio = document.querySelector(`.winner-prize[data-position="${posicao}"]`).value.trim();
+        const linhaTemAlgo = nome || numeroTexto || premio;
+        if (!linhaTemAlgo) continue;
+        const numero = parseInt(numeroTexto, 10);
+        if (validar && (!nome || !Number.isFinite(numero) || numero < 1 || numero > TOTAL)) {
+          throw new Error(`Preencha corretamente o nome e o número do ${posicao}º lugar.`);
+        }
+        ganhadores.push({ position: posicao, name: nome, number: numero, prize: premio || `${posicao}º prêmio` });
+      }
+      if (validar && !ganhadores.length) throw new Error('Registre pelo menos o ganhador do 1º lugar antes de encerrar a rifa.');
+      return ganhadores;
+    }
+
+    function preencherGanhadoresManuais() {
+      const salvos = lerGanhadoresManuais();
+      salvos.forEach(g => {
+        const nome = document.querySelector(`.winner-name[data-position="${g.position}"]`);
+        const numero = document.querySelector(`.winner-number[data-position="${g.position}"]`);
+        const premio = document.querySelector(`.winner-prize[data-position="${g.position}"]`);
+        if (nome) nome.value = g.name || '';
+        if (numero) numero.value = g.number || '';
+        if (premio) premio.value = g.prize || '';
+      });
+    }
+
+    function salvarGanhadoresManuais() {
+      try {
+        const ganhadores = coletarGanhadoresManuais(false).filter(g => g.name || Number.isFinite(g.number) || g.prize);
+        localStorage.setItem(MANUAL_WINNERS_KEY, JSON.stringify(ganhadores));
+        document.getElementById('mensagemGanhadores').textContent = `${ganhadores.length} ganhador(es) salvo(s) neste navegador.`;
+      } catch (_) {
+        document.getElementById('mensagemGanhadores').textContent = 'Não foi possível salvar os campos.';
+      }
+    }
+
+    function obterRifaEncerrada() {
+      try { return JSON.parse(localStorage.getItem(CLOSED_RAFFLE_KEY) || 'null'); }
+      catch (_) { return null; }
+    }
+
+    function atualizarEstadoFechamento() {
+      const encerrada = obterRifaEncerrada();
+      const status = document.getElementById('statusRifaAtual');
+      const botao = document.getElementById('encerrarRifa');
+      const sortearBtn = document.getElementById('sortear');
+      if (!status || !botao) return;
+      if (encerrada) {
+        status.classList.add('closed');
+        const listaFechada = Array.isArray(encerrada.winners) && encerrada.winners.length ? encerrada.winners : [{name:encerrada.winner,number:encerrada.number}];
+        const primeiro = listaFechada[0];
+        status.textContent = `🔴 Rifa encerrada em ${encerrada.date} — ${listaFechada.length} ganhador(es). 1º lugar: ${primeiro.name}, número ${String(primeiro.number).padStart(2,'0')}.`;
+        botao.disabled = true;
+        botao.textContent = '✅ Rifa encerrada';
+        if (sortearBtn) sortearBtn.disabled = true;
+      } else {
+        status.classList.remove('closed');
+        status.textContent = '🟢 Rifa aberta para cadastros e sorteio.';
+        botao.disabled = false;
+        botao.textContent = '🔒 Encerrar rifa';
+        if (sortearBtn) sortearBtn.disabled = false;
+      }
+    }
+
+    function salvarImagemRifa(dataUrl) {
+      try {
+        localStorage.setItem(CURRENT_RAFFLE_IMAGE_KEY, dataUrl);
+        document.getElementById('imagemRifaAtual').src = dataUrl;
+      } catch (erro) {
+        alert('A imagem ficou grande demais para salvar no navegador. Escolha uma imagem menor.');
+      }
+    }
+
+    function comprimirImagemRifa(arquivo) {
+      const leitor = new FileReader();
+      leitor.onload = () => {
+        const img = new Image();
+        img.onload = () => {
+          const maxW = 900, maxH = 1350;
+          const escala = Math.min(1, maxW / img.width, maxH / img.height);
+          const canvas = document.createElement('canvas');
+          canvas.width = Math.max(1, Math.round(img.width * escala));
+          canvas.height = Math.max(1, Math.round(img.height * escala));
+          const ctx = canvas.getContext('2d');
+          ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+          salvarImagemRifa(canvas.toDataURL('image/jpeg', .82));
+        };
+        img.onerror = () => alert('Não foi possível abrir essa imagem.');
+        img.src = leitor.result;
+      };
+      leitor.readAsDataURL(arquivo);
+    }
+
+    function encerrarRifa() {
+      if (obterRifaEncerrada()) {
+        alert('Esta rifa já está encerrada. Para iniciar outra, use “Resetar rifa”.');
+        return;
+      }
+      let ganhadores;
+      try {
+        ganhadores = coletarGanhadoresManuais(true);
+      } catch (erro) {
+        alert(erro.message);
+        return;
+      }
+      const senha = prompt('Digite a senha de 4 dígitos para encerrar a rifa:');
+      if (senha === null) return;
+      if (!/^\d{4}$/.test(senha) || senha !== CLOSE_PASSWORD) {
+        alert('Senha incorreta. A rifa não foi encerrada.');
+        return;
+      }
+      const agora = new Date();
+      const fechamento = {
+        raffle: 'Rifa Gamer Premium — 3 Prêmios',
+        winners: ganhadores,
+        winner: ganhadores[0].name,
+        number: ganhadores[0].number,
+        date: agora.toLocaleDateString('pt-BR'),
+        closedAt: agora.toISOString(),
+        image: localStorage.getItem(CURRENT_RAFFLE_IMAGE_KEY) || DEFAULT_RAFFLE_IMAGE
+      };
+      const resumo = ganhadores.map(g => `${g.position}º: Nº ${String(g.number).padStart(2,'0')} — ${g.name}`).join('\n');
+      const confirmar = confirm(`Encerrar a rifa e publicar ${ganhadores.length} ganhador(es)?\n\n${resumo}`);
+      if (!confirmar) return;
+      localStorage.setItem(MANUAL_WINNERS_KEY, JSON.stringify(ganhadores));
+      localStorage.setItem(CLOSED_RAFFLE_KEY, JSON.stringify(fechamento));
+      atualizarEstadoFechamento();
+      alert('Rifa encerrada. Os ganhadores foram enviados para a Central de Rifas neste mesmo navegador.');
+    }
 
     function moedaBR(valor) {
       return Number(valor || 0).toLocaleString('pt-BR', {
@@ -954,6 +1171,9 @@
       if (confirm('Deseja apagar todo o histórico de sorteios?')) {
         historicoSorteios = [];
         localStorage.removeItem('pixels_rifa_sorteios_v1');
+      localStorage.removeItem(CLOSED_RAFFLE_KEY);
+      localStorage.removeItem(CURRENT_RAFFLE_IMAGE_KEY);
+      localStorage.removeItem(MANUAL_WINNERS_KEY);
         document.getElementById('resultadoSorteio').innerHTML = '';
         renderizarHistorico();
       }
@@ -1096,11 +1316,37 @@
       renderizar();
       renderizarHistorico();
 
+      document.getElementById('imagemRifaAtual').src = DEFAULT_RAFFLE_IMAGE;
+      atualizarEstadoFechamento();
       alert(`A rifa foi resetada. Todos os ${TOTAL} números estão disponíveis novamente.`);
     });
 
+
+
+    const imagemSalvaRifa = localStorage.getItem(CURRENT_RAFFLE_IMAGE_KEY);
+    if (imagemSalvaRifa) document.getElementById('imagemRifaAtual').src = imagemSalvaRifa;
+    document.getElementById('arquivoImagemRifa').addEventListener('change', evento => {
+      const arquivo = evento.target.files && evento.target.files[0];
+      if (arquivo) comprimirImagemRifa(arquivo);
+    });
+    document.getElementById('restaurarImagem').addEventListener('click', () => {
+      localStorage.removeItem(CURRENT_RAFFLE_IMAGE_KEY);
+      document.getElementById('imagemRifaAtual').src = DEFAULT_RAFFLE_IMAGE;
+      document.getElementById('arquivoImagemRifa').value = '';
+    });
+    document.getElementById('salvarGanhadores').addEventListener('click', salvarGanhadoresManuais);
+    document.getElementById('limparGanhadores').addEventListener('click', () => {
+      document.querySelectorAll('.winner-name,.winner-number,.winner-prize').forEach(campo => campo.value = '');
+      localStorage.removeItem(MANUAL_WINNERS_KEY);
+      document.getElementById('mensagemGanhadores').textContent = 'Campos de ganhadores limpos.';
+    });
+    document.querySelectorAll('.winner-name,.winner-number,.winner-prize').forEach(campo => campo.addEventListener('change', salvarGanhadoresManuais));
+    preencherGanhadoresManuais();
+    document.getElementById('encerrarRifa').addEventListener('click', encerrarRifa);
+
     renderizar();
     renderizarHistorico();
+    atualizarEstadoFechamento();
   </script>
 </body>
 </html>

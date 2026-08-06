@@ -29,3 +29,16 @@ ATUALIZAÇÃO DO POP-UP:
 - A página principal exibe um convite para participar da rifa ao abrir o site.
 - O botão verde abre o grupo oficial do WhatsApp.
 - O convite aparece uma vez por sessão do navegador e pode ser fechado no X, em "Agora não" ou pela tecla Esc.
+
+
+NOVO - ENCERRAMENTO DA RIFA
+- No APP RIFA, realize o sorteio e clique em Encerrar rifa.
+- Senha de encerramento: 1807.
+- O resultado aparece automaticamente na Central de Rifas no mesmo navegador e domínio.
+- Como o site é estático, essa atualização não é enviada sozinha ao GitHub nem aparece em outros aparelhos. Para sincronização pública será necessário um banco de dados ou publicar uma nova versão dos arquivos.
+
+
+ATUALIZAÇÃO — GANHADORES MANUAIS
+- O APP permite registrar de 1 a 5 ganhadores manualmente antes do encerramento.
+- Preencha nome e número; o prêmio é opcional.
+- O botão Encerrar rifa usa a senha 1807 e publica todos os ganhadores preenchidos na Central de Rifas do mesmo navegador.
