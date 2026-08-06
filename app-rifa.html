@@ -220,6 +220,34 @@
     .manual-saved-message { min-height:20px; margin-top:8px; color:#75efb4; font-size:13px; }
     @media(max-width:760px){.current-raffle-panel{grid-template-columns:1fr}.current-raffle-image{max-width:420px;width:100%;margin:auto}.raffle-admin-actions{grid-template-columns:1fr}}
 
+
+    /* PIXELS RIFA HTML PRO - modos público e administrador */
+    .admin-access-btn{width:auto;min-width:190px;background:linear-gradient(180deg,var(--laranja),#df7910);border-color:#ffd18a;color:#10182b;box-shadow:0 4px 0 #8b4705}
+    .admin-access-btn.unlocked{background:linear-gradient(180deg,#35dc8d,#169c5c);border-color:#8ff4c2;box-shadow:0 4px 0 #09663a;color:#06160e}
+    .admin-only{display:none!important}
+    body.admin-mode .admin-only{display:initial!important}
+    body.admin-mode section.admin-only{display:block!important}
+    body.admin-mode .toolbar.admin-only{display:grid!important}
+    body.admin-mode .raffle-admin-actions.admin-only{display:grid!important}
+    body.admin-mode .manual-winners-actions.admin-only{display:flex!important}
+    .public-note{margin:10px 0;padding:11px 13px;border:1px solid rgba(0,147,229,.55);border-radius:11px;background:rgba(0,147,229,.09);color:#d9f4ff;font-size:13px;line-height:1.5}
+    body.admin-mode .public-note{display:none}
+    .admin-bar{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+    .admin-bar button,.admin-bar label{width:auto;min-width:190px}
+    .backup-file-label{display:inline-flex;align-items:center;justify-content:center;padding:11px 14px;border:1px solid #4f80cc;border-radius:10px;background:#172947;color:#fff;font-family:var(--titulo);cursor:pointer}
+    #arquivoBackup{display:none}
+    .admin-modal{position:fixed;inset:0;z-index:9999;display:none;place-items:center;padding:18px;background:rgba(0,0,0,.78);backdrop-filter:blur(8px)}
+    .admin-modal.open{display:grid}
+    .admin-dialog{width:min(430px,100%);padding:24px;border:2px solid var(--azul-claro);border-radius:18px;background:linear-gradient(145deg,#071126,#0a1a3b);box-shadow:0 24px 80px #000}
+    .admin-dialog h2{margin:0 0 8px;color:var(--laranja);font-family:var(--titulo)}
+    .admin-dialog p{color:var(--muted);line-height:1.5}
+    .admin-dialog input{font-size:22px;text-align:center;letter-spacing:10px}
+    .admin-dialog-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+    .admin-message{min-height:22px;margin-top:8px;color:#ffb1b4;font-weight:700}
+    .raffle-details-fields{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0}
+    .raffle-details-fields textarea{grid-column:1/-1;min-height:86px}
+    @media(max-width:620px){.raffle-details-fields{grid-template-columns:1fr}.raffle-details-fields textarea{grid-column:auto}.admin-dialog-actions{grid-template-columns:1fr}.admin-access-btn{width:100%}}
+
     @media (max-width:900px) {
       .toolbar { grid-template-columns:1fr 1fr; }
       .draw-controls, .import-grid { grid-template-columns:1fr; }
@@ -240,7 +268,7 @@
   </style>
 </head>
 <body>
-  <div class="app-topbar"><strong>🎮 APP RIFA PIXELS</strong><a href="central-rifas.html">← Voltar à Central de Rifas</a></div>
+  <div class="app-topbar"><strong>🎮 APP RIFA PIXELS</strong><div style="display:flex;gap:10px;flex-wrap:wrap"><button id="abrirAdmin" class="admin-access-btn" type="button">🔒 Área Administrativa</button><a href="central-rifas.html">← Voltar à Central de Rifas</a></div></div>
   <header>
     <img class="app-logo" src="assets/logos/logo-horizontal.png" alt="Pixels Real Acessórios">
     <h1>🎮 APP PIXELS RIFA</h1>
@@ -258,10 +286,17 @@
         <h2>🎟️ Rifa em andamento</h2>
         <p>Esta imagem identifica a rifa que está sendo administrada. Você pode trocar o cartaz pelo arquivo da nova rifa antes de iniciar os cadastros.</p>
         <div class="raffle-status-box" id="statusRifaAtual">🟢 Rifa aberta para cadastros e sorteio.</div>
-        <label class="file-label" for="arquivoImagemRifa">Trocar imagem da rifa</label>
-        <input type="file" id="arquivoImagemRifa" accept="image/png,image/jpeg,image/webp">
-        <div class="import-help">A imagem escolhida é reduzida e salva neste navegador. Recomendamos cartaz vertical.</div>
-        <div class="raffle-admin-actions">
+        <div class="public-note">🔐 O APP está no modo público. Entre na Área Administrativa para trocar o cartaz, editar a rifa, registrar ganhadores, encerrar ou resetar.</div>
+        <div class="raffle-details-fields admin-only">
+          <input id="nomeRifa" placeholder="Nome da rifa">
+          <input id="dataRifa" type="date" aria-label="Data da rifa">
+          <textarea id="descricaoRifa" placeholder="Descrição, prêmios ou regulamento resumido"></textarea>
+          <button id="salvarInfoRifa" type="button">💾 Salvar informações</button>
+        </div>
+        <label class="file-label admin-only" for="arquivoImagemRifa">Trocar imagem da rifa</label>
+        <input class="admin-only" type="file" id="arquivoImagemRifa" accept="image/png,image/jpeg,image/webp">
+        <div class="import-help admin-only">A imagem escolhida é reduzida e salva neste navegador. Recomendamos cartaz vertical.</div>
+        <div class="raffle-admin-actions admin-only">
           <button id="restaurarImagem" class="secondary">Restaurar imagem padrão</button>
           <button id="encerrarRifa" type="button">🔒 Encerrar rifa</button>
         </div>
@@ -269,7 +304,7 @@
       </div>
     </section>
 
-    <section class="manual-winners-panel" id="manualWinnersPanel">
+    <section class="manual-winners-panel admin-only" id="manualWinnersPanel">
       <h2>🏆 Registrar ganhadores manualmente</h2>
       <p>Use esta área quando o sorteio for realizado em outro sistema. Preencha do 1º ao 5º lugar. Somente as linhas preenchidas serão publicadas na Central de Rifas após o encerramento.</p>
       <div class="manual-winners-grid">
@@ -286,7 +321,7 @@
       <div id="mensagemGanhadores" class="manual-saved-message"></div>
     </section>
 
-    <section class="toolbar" style="grid-template-columns: 1fr 180px 180px;">
+    <section class="toolbar admin-only" style="grid-template-columns: 1fr 180px 180px;">
       <input id="tamanhoRifa" type="number" min="1" max="5000" value="100" placeholder="Quantidade de números" />
       <input id="valorNumero" type="number" min="0" step="0.01" value="0" placeholder="Valor por número (R$)" />
       <button id="aplicarTamanho">Aplicar configurações</button>
@@ -302,7 +337,15 @@
       </select>
       <button id="exportar">Exportar CSV</button>
       <button id="gerarPdf" class="secondary">Gerar PDF</button>
-      <button id="limpar" class="danger">Resetar rifa</button>
+      <button id="limpar" class="danger admin-only">Resetar rifa</button>
+    </section>
+
+
+    <section class="toolbar admin-only" style="grid-template-columns:repeat(3,minmax(180px,1fr));">
+      <button id="exportarBackup" type="button">📦 Exportar backup JSON</button>
+      <label class="backup-file-label" for="arquivoBackup">📂 Restaurar backup</label>
+      <input id="arquivoBackup" type="file" accept="application/json,.json">
+      <button id="sairAdmin" class="secondary" type="button">🔒 Sair do administrador</button>
     </section>
 
     <section class="summary">
@@ -359,7 +402,7 @@
       <div id="resumoCompradores" class="buyers-summary"></div>
     </section>
 
-    <section class="draw-panel">
+    <section class="draw-panel admin-only">
       <h2>🏆 Sorteio da Rifa</h2>
       <div class="draw-controls">
         <select id="criterioSorteio">
@@ -377,9 +420,99 @@
     <section id="grid" class="grid"></section>
   </main>
 
-  <footer>Os dados ficam salvos neste navegador.</footer>
+
+  <div class="admin-modal" id="adminModal" role="dialog" aria-modal="true" aria-labelledby="adminTitle">
+    <div class="admin-dialog">
+      <h2 id="adminTitle">🔐 PIXELS ADMIN</h2>
+      <p>Digite a senha de 4 dígitos para liberar as funções administrativas nesta sessão.</p>
+      <input id="senhaAdmin" type="password" inputmode="numeric" maxlength="4" autocomplete="off" placeholder="••••">
+      <div class="admin-message" id="mensagemAdmin"></div>
+      <div class="admin-dialog-actions">
+        <button id="confirmarAdmin" type="button">Entrar</button>
+        <button id="cancelarAdmin" class="secondary" type="button">Cancelar</button>
+      </div>
+    </div>
+  </div>
+
+  <footer>Os dados ficam salvos neste navegador. Faça backups periódicos em JSON.</footer>
 
   <script>
+
+    const ADMIN_SESSION_KEY = 'pixels_rifa_admin_session_v1';
+    const ADMIN_PASSWORD = '1807';
+    const RAFFLE_INFO_KEY = 'pixels_rifa_info_v1';
+
+    function modoAdministradorAtivo(){ return sessionStorage.getItem(ADMIN_SESSION_KEY) === '1'; }
+    function atualizarModoAdministrador(){
+      const ativo = modoAdministradorAtivo();
+      document.body.classList.toggle('admin-mode', ativo);
+      const botao = document.getElementById('abrirAdmin');
+      if(botao){
+        botao.textContent = ativo ? '🟢 Administrador conectado' : '🔒 Área Administrativa';
+        botao.classList.toggle('unlocked', ativo);
+      }
+    }
+    function abrirModalAdmin(){
+      if(modoAdministradorAtivo()) return;
+      document.getElementById('adminModal').classList.add('open');
+      document.getElementById('senhaAdmin').value='';
+      document.getElementById('mensagemAdmin').textContent='';
+      setTimeout(()=>document.getElementById('senhaAdmin').focus(),80);
+    }
+    function fecharModalAdmin(){ document.getElementById('adminModal').classList.remove('open'); }
+    function confirmarLoginAdmin(){
+      const senha=document.getElementById('senhaAdmin').value;
+      if(senha !== ADMIN_PASSWORD){ document.getElementById('mensagemAdmin').textContent='❌ Senha incorreta.'; return; }
+      sessionStorage.setItem(ADMIN_SESSION_KEY,'1');
+      fecharModalAdmin(); atualizarModoAdministrador();
+    }
+    function exigirAdmin(acao){
+      if(!modoAdministradorAtivo()){ abrirModalAdmin(); return false; }
+      if(typeof acao==='function') acao();
+      return true;
+    }
+    document.addEventListener('DOMContentLoaded',()=>{
+      atualizarModoAdministrador();
+      document.getElementById('abrirAdmin')?.addEventListener('click',()=> modoAdministradorAtivo() ? null : abrirModalAdmin());
+      document.getElementById('confirmarAdmin')?.addEventListener('click',confirmarLoginAdmin);
+      document.getElementById('cancelarAdmin')?.addEventListener('click',fecharModalAdmin);
+      document.getElementById('senhaAdmin')?.addEventListener('keydown',e=>{if(e.key==='Enter')confirmarLoginAdmin()});
+      document.getElementById('adminModal')?.addEventListener('click',e=>{if(e.target.id==='adminModal')fecharModalAdmin()});
+      document.getElementById('sairAdmin')?.addEventListener('click',()=>{sessionStorage.removeItem(ADMIN_SESSION_KEY);atualizarModoAdministrador();window.scrollTo({top:0,behavior:'smooth'});});
+    });
+
+
+    function carregarInfoRifa(){
+      let info={}; try{info=JSON.parse(localStorage.getItem(RAFFLE_INFO_KEY)||'{}')}catch(e){}
+      const nome=document.getElementById('nomeRifa'), data=document.getElementById('dataRifa'), desc=document.getElementById('descricaoRifa');
+      if(nome) nome.value=info.nome||''; if(data) data.value=info.data||''; if(desc) desc.value=info.descricao||'';
+      const titulo=document.querySelector('.current-raffle-info h2'); if(titulo && info.nome) titulo.textContent='🎟️ '+info.nome;
+    }
+    function salvarInfoRifa(){
+      if(!exigirAdmin()) return;
+      const info={nome:document.getElementById('nomeRifa').value.trim(),data:document.getElementById('dataRifa').value,descricao:document.getElementById('descricaoRifa').value.trim()};
+      localStorage.setItem(RAFFLE_INFO_KEY,JSON.stringify(info)); carregarInfoRifa(); alert('Informações da rifa salvas.');
+    }
+    function montarBackup(){
+      const chaves=['pixels_rifa_v1','pixels_rifa_tamanho_v1','pixels_rifa_valor_numero_v1','pixels_rifa_sorteios_v1','pixels_rifa_ganhadores_manuais_v1','pixels_rifa_encerrada_v1','pixels_rifa_imagem_atual_v1',RAFFLE_INFO_KEY];
+      const dadosBackup={tipo:'PIXELS_RIFA_HTML_PRO',versao:2,exportadoEm:new Date().toISOString(),dados:{}};
+      chaves.forEach(k=>dadosBackup.dados[k]=localStorage.getItem(k)); return dadosBackup;
+    }
+    function exportarBackupJSON(){
+      if(!exigirAdmin()) return;
+      const blob=new Blob([JSON.stringify(montarBackup(),null,2)],{type:'application/json'}); const a=document.createElement('a');
+      a.href=URL.createObjectURL(blob); a.download=`pixels-rifa-backup-${new Date().toISOString().slice(0,10)}.json`; a.click(); setTimeout(()=>URL.revokeObjectURL(a.href),500);
+    }
+    async function restaurarBackupJSON(arquivo){
+      if(!exigirAdmin()) return;
+      try{
+        const obj=JSON.parse(await arquivo.text()); if(obj.tipo!=='PIXELS_RIFA_HTML_PRO'||!obj.dados) throw new Error('Arquivo incompatível');
+        if(!confirm('Restaurar este backup substituirá os dados atuais. Continuar?')) return;
+        Object.entries(obj.dados).forEach(([k,v])=>{if(v===null||v===undefined)localStorage.removeItem(k);else localStorage.setItem(k,v)});
+        alert('Backup restaurado. O APP será recarregado.'); location.reload();
+      }catch(e){alert('Não foi possível restaurar o backup: '+e.message)}
+    }
+
     const STORAGE_KEY = 'pixels_rifa_v1';
     const SIZE_KEY = 'pixels_rifa_tamanho_v1';
     const PRICE_KEY = 'pixels_rifa_valor_numero_v1';
@@ -457,6 +590,7 @@
     }
 
     function salvarGanhadoresManuais() {
+      if (!exigirAdmin()) return;
       try {
         const ganhadores = coletarGanhadoresManuais(false).filter(g => g.name || Number.isFinite(g.number) || g.prize);
         localStorage.setItem(MANUAL_WINNERS_KEY, JSON.stringify(ganhadores));
@@ -524,6 +658,7 @@
     }
 
     function encerrarRifa() {
+      if (!exigirAdmin()) return;
       if (obterRifaEncerrada()) {
         alert('Esta rifa já está encerrada. Para iniciar outra, use “Resetar rifa”.');
         return;
@@ -1280,6 +1415,7 @@
     });
 
     document.getElementById('limpar').addEventListener('click', () => {
+      if (!exigirAdmin()) return;
       const confirmar = confirm(
         'ATENCAO: isso apagará todos os nomes, telefones, valores, status e o histórico de sorteios. Deseja realmente resetar a rifa?'
       );
@@ -1330,6 +1466,7 @@
       if (arquivo) comprimirImagemRifa(arquivo);
     });
     document.getElementById('restaurarImagem').addEventListener('click', () => {
+      if (!exigirAdmin()) return;
       localStorage.removeItem(CURRENT_RAFFLE_IMAGE_KEY);
       document.getElementById('imagemRifaAtual').src = DEFAULT_RAFFLE_IMAGE;
       document.getElementById('arquivoImagemRifa').value = '';
@@ -1343,6 +1480,11 @@
     document.querySelectorAll('.winner-name,.winner-number,.winner-prize').forEach(campo => campo.addEventListener('change', salvarGanhadoresManuais));
     preencherGanhadoresManuais();
     document.getElementById('encerrarRifa').addEventListener('click', encerrarRifa);
+
+    document.getElementById('salvarInfoRifa')?.addEventListener('click', salvarInfoRifa);
+    document.getElementById('exportarBackup')?.addEventListener('click', exportarBackupJSON);
+    document.getElementById('arquivoBackup')?.addEventListener('change', e=>{const arq=e.target.files?.[0]; if(arq) restaurarBackupJSON(arq); e.target.value='';});
+    carregarInfoRifa();
 
     renderizar();
     renderizarHistorico();

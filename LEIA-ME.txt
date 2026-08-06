@@ -1,44 +1,27 @@
-PACOTE COMPLETO PARA ATUALIZAR O GITHUB
+PIXELS RIFA HTML PRO — VERSÃO DE TESTE
 
-Arquivos principais:
-- index.html: página principal da Pixels
-- central-rifas.html: Central de Rifas
-- app-rifa.html: aplicativo de controle das rifas
-- assets/: logos, fundo e imagens das rifas
+ARQUIVOS PRINCIPAIS
+- index.html: página da loja
+- central-rifas.html: central pública
+- app-rifa.html: APP RIFA
+- assets/: logos, fundos e cartazes
 
-ALTERAÇÃO DESTA VERSÃO
-A Central de Rifas ganhou um botão roxo "APP RIFA", diferente dos demais botões e dentro da paleta visual do projeto. O menu da Central também possui acesso ao aplicativo.
+NOVIDADES DO APP
+1. Modo Público: consulta, busca, lista e acompanhamento.
+2. Área Administrativa: senha 1807.
+3. Funções administrativas ocultas até o login.
+4. Troca/restauração do cartaz protegida.
+5. Cadastro manual de até 5 ganhadores protegido.
+6. Encerramento e reset protegidos.
+7. Informações da rifa: nome, data e descrição.
+8. Exportar backup JSON e restaurar backup.
+9. O login administrativo vale apenas durante a aba/sessão atual.
 
-COMO ATUALIZAR
-1. Extraia este ZIP.
-2. Envie todos os arquivos e a pasta assets para a raiz do repositório no GitHub.
-3. Substitua os arquivos antigos quando solicitado.
-4. Confirme o commit.
-5. Aguarde o Cloudflare Pages publicar a atualização.
+PUBLICAÇÃO NO GITHUB
+Envie todos os arquivos e a pasta assets, substituindo a versão anterior.
 
 IMPORTANTE
-O APP RIFA salva os dados no navegador usando localStorage. Os dados não são compartilhados automaticamente entre celulares ou computadores diferentes.
-
-
-ATUALIZAÇÃO DO APP RIFA:
-- Lista colada com o ícone 💰, 💵 ou 🤑 é reconhecida como paga.
-- Visual remodelado conforme a identidade Pixels: #1155C0, #0093E5, #F9A232 e #ED3237.
-- Fundo pixelado e logotipo oficial aplicados ao APP.
-
-ATUALIZAÇÃO DO POP-UP:
-- A página principal exibe um convite para participar da rifa ao abrir o site.
-- O botão verde abre o grupo oficial do WhatsApp.
-- O convite aparece uma vez por sessão do navegador e pode ser fechado no X, em "Agora não" ou pela tecla Esc.
-
-
-NOVO - ENCERRAMENTO DA RIFA
-- No APP RIFA, realize o sorteio e clique em Encerrar rifa.
-- Senha de encerramento: 1807.
-- O resultado aparece automaticamente na Central de Rifas no mesmo navegador e domínio.
-- Como o site é estático, essa atualização não é enviada sozinha ao GitHub nem aparece em outros aparelhos. Para sincronização pública será necessário um banco de dados ou publicar uma nova versão dos arquivos.
-
-
-ATUALIZAÇÃO — GANHADORES MANUAIS
-- O APP permite registrar de 1 a 5 ganhadores manualmente antes do encerramento.
-- Preencha nome e número; o prêmio é opcional.
-- O botão Encerrar rifa usa a senha 1807 e publica todos os ganhadores preenchidos na Central de Rifas do mesmo navegador.
+- Os dados são armazenados no navegador (localStorage).
+- O backup JSON deve ser baixado periodicamente.
+- A senha em um site HTML é uma proteção contra uso acidental e pessoas comuns; não equivale à segurança de um servidor com autenticação.
+- A atualização automática da Central ocorre somente no mesmo navegador/aparelho, conforme a limitação do site estático.
