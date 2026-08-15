@@ -494,7 +494,7 @@
       localStorage.setItem(RAFFLE_INFO_KEY,JSON.stringify(info)); carregarInfoRifa(); alert('Informações da rifa salvas.');
     }
     function montarBackup(){
-      const chaves=['pixels_rifa_v1','pixels_rifa_tamanho_v1','pixels_rifa_valor_numero_v1','pixels_rifa_sorteios_v1','pixels_rifa_ganhadores_manuais_v1','pixels_rifa_encerrada_v1','pixels_rifa_imagem_atual_v1',RAFFLE_INFO_KEY];
+      const chaves=['pixels_rifa_v1','pixels_rifa_tamanho_v1','pixels_rifa_valor_numero_v1','pixels_rifa_sorteios_v1','pixels_rifa_ganhadores_manuais_v1','pixels_rifa_encerrada_v1','pixels_rifa_historico_encerradas_v1','pixels_rifa_imagem_atual_v1',RAFFLE_INFO_KEY];
       const dadosBackup={tipo:'PIXELS_RIFA_HTML_PRO',versao:2,exportadoEm:new Date().toISOString(),dados:{}};
       chaves.forEach(k=>dadosBackup.dados[k]=localStorage.getItem(k)); return dadosBackup;
     }
@@ -518,6 +518,7 @@
     const PRICE_KEY = 'pixels_rifa_valor_numero_v1';
 
     const CLOSED_RAFFLE_KEY = 'pixels_rifa_encerrada_v1';
+    const RAFFLE_ARCHIVE_KEY = 'pixels_rifa_historico_encerradas_v1';
     const CURRENT_RAFFLE_IMAGE_KEY = 'pixels_rifa_imagem_atual_v1';
     const MANUAL_WINNERS_KEY = 'pixels_rifa_ganhadores_manuais_v1';
     const DEFAULT_RAFFLE_IMAGE = 'assets/rifas/rifa-03-gamer-premium.png';
@@ -657,42 +658,119 @@
       leitor.readAsDataURL(arquivo);
     }
 
+    function lerHistoricoEncerradas() {
+      try {
+        const lista = JSON.parse(localStorage.getItem(RAFFLE_ARCHIVE_KEY) || '[]');
+        return Array.isArray(lista) ? lista : [];
+      } catch (_) { return []; }
+    }
+
+    function arquivarFechamento(fechamento) {
+      const historico = lerHistoricoEncerradas();
+      const id = fechamento.closedAt || `${fechamento.raffle}-${fechamento.date}`;
+      const indice = historico.findIndex(item => (item.closedAt || `${item.raffle}-${item.date}`) === id);
+      if (indice >= 0) historico[indice] = fechamento;
+      else historico.push(fechamento);
+      try {
+        localStorage.setItem(RAFFLE_ARCHIVE_KEY, JSON.stringify(historico));
+      } catch (erro) {
+        // Se o navegador ficar sem espaço, preserva o histórico sem duplicar imagens antigas.
+        const leve = historico.map((item, i) => i === historico.length - 1 ? item : ({...item, image: item.image && item.image.startsWith('data:') ? '' : item.image}));
+        localStorage.setItem(RAFFLE_ARCHIVE_KEY, JSON.stringify(leve));
+      }
+    }
+
+    function limparCamposGanhadores() {
+      document.querySelectorAll('.winner-name,.winner-number,.winner-prize').forEach(campo => campo.value = '');
+      const msg = document.getElementById('mensagemGanhadores');
+      if (msg) msg.textContent = 'Nenhum ganhador registrado para a nova rifa.';
+    }
+
+    function prepararNovaRifaAposEncerramento() {
+      dados = Array.from({length: TOTAL}, (_, i) => ({
+        numero: i + 1, nome: '', telefone: '', valor: '', status: 'disponivel'
+      }));
+      historicoSorteios = [];
+      dadosImportacao = [];
+
+      localStorage.removeItem(STORAGE_KEY);
+      localStorage.removeItem('pixels_rifa_sorteios_v1');
+      localStorage.removeItem(MANUAL_WINNERS_KEY);
+      localStorage.removeItem(CLOSED_RAFFLE_KEY);
+      localStorage.removeItem(CURRENT_RAFFLE_IMAGE_KEY);
+      localStorage.removeItem(RAFFLE_INFO_KEY);
+
+      const listaTexto = document.getElementById('listaTexto');
+      const arquivoPlanilha = document.getElementById('arquivoPlanilha');
+      const preview = document.getElementById('previewImportacao');
+      const mensagem = document.getElementById('mensagemImportacao');
+      const resultado = document.getElementById('resultadoSorteio');
+      if (listaTexto) listaTexto.value = '';
+      if (arquivoPlanilha) arquivoPlanilha.value = '';
+      if (preview) preview.innerHTML = '';
+      if (mensagem) mensagem.textContent = 'Rifa anterior encerrada. APP pronto para cadastrar uma nova rifa.';
+      if (resultado) resultado.innerHTML = '';
+
+      limparCamposGanhadores();
+      const img = document.getElementById('imagemRifaAtual');
+      if (img) img.src = DEFAULT_RAFFLE_IMAGE;
+      const inputImg = document.getElementById('arquivoImagemRifa');
+      if (inputImg) inputImg.value = '';
+
+      salvar();
+      renderizar();
+      renderizarHistorico();
+      carregarInfoRifa();
+      atualizarEstadoFechamento();
+    }
+
     function encerrarRifa() {
       if (!exigirAdmin()) return;
-      if (obterRifaEncerrada()) {
-        alert('Esta rifa já está encerrada. Para iniciar outra, use “Resetar rifa”.');
-        return;
-      }
       let ganhadores;
-      try {
-        ganhadores = coletarGanhadoresManuais(true);
-      } catch (erro) {
-        alert(erro.message);
-        return;
-      }
+      try { ganhadores = coletarGanhadoresManuais(true); }
+      catch (erro) { alert(erro.message); return; }
+
       const senha = prompt('Digite a senha de 4 dígitos para encerrar a rifa:');
       if (senha === null) return;
       if (!/^\d{4}$/.test(senha) || senha !== CLOSE_PASSWORD) {
         alert('Senha incorreta. A rifa não foi encerrada.');
         return;
       }
+
+      let info = {};
+      try { info = JSON.parse(localStorage.getItem(RAFFLE_INFO_KEY) || '{}'); } catch (_) {}
       const agora = new Date();
+      const nomeRifa = (info.nome || document.getElementById('nomeRifa')?.value || 'Rifa Pixels').trim();
       const fechamento = {
-        raffle: 'Rifa Gamer Premium — 3 Prêmios',
+        raffle: nomeRifa,
+        description: info.descricao || '',
         winners: ganhadores,
         winner: ganhadores[0].name,
         number: ganhadores[0].number,
         date: agora.toLocaleDateString('pt-BR'),
         closedAt: agora.toISOString(),
-        image: localStorage.getItem(CURRENT_RAFFLE_IMAGE_KEY) || DEFAULT_RAFFLE_IMAGE
+        image: localStorage.getItem(CURRENT_RAFFLE_IMAGE_KEY) || DEFAULT_RAFFLE_IMAGE,
+        numbers: TOTAL,
+        price: VALOR_NUMERO
       };
+
       const resumo = ganhadores.map(g => `${g.position}º: Nº ${String(g.number).padStart(2,'0')} — ${g.name}`).join('\n');
-      const confirmar = confirm(`Encerrar a rifa e publicar ${ganhadores.length} ganhador(es)?\n\n${resumo}`);
-      if (!confirmar) return;
+      if (!confirm(`Encerrar a rifa e publicar ${ganhadores.length} ganhador(es)?\n\n${resumo}\n\nDepois do fechamento, o APP será limpo e preparado para uma nova rifa.`)) return;
+
+      // Primeiro publica e arquiva o resultado. Depois limpa somente a rifa ativa.
       localStorage.setItem(MANUAL_WINNERS_KEY, JSON.stringify(ganhadores));
       localStorage.setItem(CLOSED_RAFFLE_KEY, JSON.stringify(fechamento));
-      atualizarEstadoFechamento();
-      alert('Rifa encerrada. Os ganhadores foram enviados para a Central de Rifas neste mesmo navegador.');
+      arquivarFechamento(fechamento);
+      prepararNovaRifaAposEncerramento();
+      alert('✅ Rifa encerrada e arquivada na Central de Rifas. O APP foi limpo e já está pronto para cadastrar a próxima rifa.');
+    }
+
+    function recuperarFechamentoPendente() {
+      // Corrige versões anteriores que ficavam travadas como “Rifa encerrada”.
+      const fechamento = obterRifaEncerrada();
+      if (!fechamento) return;
+      arquivarFechamento(fechamento);
+      prepararNovaRifaAposEncerramento();
     }
 
     function moedaBR(valor) {
@@ -1473,6 +1551,7 @@
     });
     document.getElementById('salvarGanhadores').addEventListener('click', salvarGanhadoresManuais);
     document.getElementById('limparGanhadores').addEventListener('click', () => {
+      if (!exigirAdmin()) return;
       document.querySelectorAll('.winner-name,.winner-number,.winner-prize').forEach(campo => campo.value = '');
       localStorage.removeItem(MANUAL_WINNERS_KEY);
       document.getElementById('mensagemGanhadores').textContent = 'Campos de ganhadores limpos.';
@@ -1485,6 +1564,7 @@
     document.getElementById('exportarBackup')?.addEventListener('click', exportarBackupJSON);
     document.getElementById('arquivoBackup')?.addEventListener('change', e=>{const arq=e.target.files?.[0]; if(arq) restaurarBackupJSON(arq); e.target.value='';});
     carregarInfoRifa();
+    recuperarFechamentoPendente();
 
     renderizar();
     renderizarHistorico();

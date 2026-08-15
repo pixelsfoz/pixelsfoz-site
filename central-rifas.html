@@ -128,29 +128,47 @@ const results=[
 ];
 
 const CLOSED_RAFFLE_KEY='pixels_rifa_encerrada_v1';
+const RAFFLE_ARCHIVE_KEY='pixels_rifa_historico_encerradas_v1';
+function lerFechamentosDoApp(){
+  let lista=[];
+  try{const x=JSON.parse(localStorage.getItem(RAFFLE_ARCHIVE_KEY)||'[]');if(Array.isArray(x))lista=x}catch(_){}
+  // Compatibilidade com a versão anterior: se ainda existir um fechamento “travado”, também o exibe.
+  try{
+    const legado=JSON.parse(localStorage.getItem(CLOSED_RAFFLE_KEY)||'null');
+    if(legado){
+      const id=legado.closedAt||`${legado.raffle}-${legado.date}`;
+      if(!lista.some(x=>(x.closedAt||`${x.raffle}-${x.date}`)===id))lista.push(legado);
+    }
+  }catch(_){}
+  return lista;
+}
 function aplicarFechamentoDoApp(){
-  let fechamento=null;
-  try{fechamento=JSON.parse(localStorage.getItem(CLOSED_RAFFLE_KEY)||'null')}catch(_){fechamento=null}
-  if(!fechamento)return;
-  const rifaAtual=raffles.find(r=>r.id===3);
-  if(rifaAtual){
-    rifaAtual.status='finished';
-    rifaAtual.statusText='Encerrada';
-    rifaAtual.price='Resultado publicado';
-    if(fechamento.image)rifaAtual.image=fechamento.image;
+  const fechamentos=lerFechamentosDoApp();
+  if(!fechamentos.length)return;
+
+  // A antiga 3ª rifa estática deixa de aparecer como “em andamento” se já foi encerrada.
+  const terceira=raffles.find(r=>r.id===3);
+  if(terceira){
+    const fechamentoTerceira=fechamentos.find(f=>String(f.raffle||'').toLowerCase().includes('gamer premium')) || fechamentos[0];
+    if(fechamentoTerceira){
+      terceira.status='finished'; terceira.statusText='Encerrada'; terceira.price='Resultado publicado';
+      if(fechamentoTerceira.image)terceira.image=fechamentoTerceira.image;
+    }
   }
-  const ganhadoresFechamento=Array.isArray(fechamento.winners)&&fechamento.winners.length
-    ? fechamento.winners
-    : [{position:1,name:fechamento.winner,number:fechamento.number,prize:'1º prêmio'}];
-  const pendente=results.findIndex(r=>r.raffle==='Rifa Gamer Premium — 3 Prêmios');
+  const pendente=results.findIndex(r=>r.winner==='Sorteio em andamento' || r.date==='Em andamento');
   if(pendente>=0)results.splice(pendente,1);
-  ganhadoresFechamento.forEach(g=>{
-    const posicao=Number(g.position)||1;
-    const titulo=ganhadoresFechamento.length>1?`Rifa Gamer Premium — ${posicao}º prêmio`:'Rifa Gamer Premium — 3 Prêmios';
-    results.push({raffle:titulo,winner:g.name,number:String(g.number).padStart(2,'0'),date:fechamento.date,proof:'#'});
-    const premio=g.prize||`${posicao}º prêmio — Rifa Gamer Premium`;
-    const jaExiste=winners.some(w=>w.name===g.name&&String(w.number)===String(g.number)&&w.date.includes(fechamento.date));
-    if(!jaExiste)winners.push({number:String(g.number).padStart(2,'0'),name:g.name,prize:`${posicao}º lugar — ${premio}`,date:`Rifa encerrada em ${fechamento.date}`});
+
+  fechamentos.forEach(fechamento=>{
+    const nomeRifa=fechamento.raffle||'Rifa Pixels';
+    const gs=Array.isArray(fechamento.winners)&&fechamento.winners.length?fechamento.winners:[{position:1,name:fechamento.winner,number:fechamento.number,prize:'1º prêmio'}];
+    gs.forEach(g=>{
+      const pos=Number(g.position)||1;
+      const titulo=gs.length>1?`${nomeRifa} — ${pos}º prêmio`:nomeRifa;
+      const num=String(g.number).padStart(2,'0');
+      if(!results.some(r=>r.raffle===titulo&&r.number===num&&r.date===fechamento.date))results.push({raffle:titulo,winner:g.name,number:num,date:fechamento.date,proof:'#'});
+      const premio=g.prize||`${pos}º prêmio`;
+      if(!winners.some(w=>w.name===g.name&&String(w.number)===String(g.number)&&w.date.includes(fechamento.date)))winners.push({number:num,name:g.name,prize:`${pos}º lugar — ${premio}`,date:`Rifa encerrada em ${fechamento.date}`});
+    });
   });
 }
 
@@ -158,6 +176,6 @@ function renderRaffles(filter='all'){const list=filter==='all'?raffles:raffles.f
 function renderWinners(){document.getElementById('winners').innerHTML=winners.map(w=>`<article class="winner"><span class="number">${w.number}</span><h3>${w.name}</h3><p>🏆 ${w.prize}</p><small>${w.date}</small></article>`).join('')}
 function renderResults(){document.getElementById('results').innerHTML=`<div class="row head"><div>Rifa / ganhador</div><div>Número</div><div>Data</div><div>Comprovação</div></div>`+results.map((r,i)=>`<div class="row"><div class="result-name"><strong>${r.raffle}</strong><small>${r.winner}</small></div><div><span class="ball">${r.number}</span></div><div>${r.date}</div><div><button class="btn proofBtn" data-i="${i}">Ver resultado</button></div></div>`).join('');document.querySelectorAll('.proofBtn').forEach(b=>b.onclick=()=>openProof(+b.dataset.i))}
 function openProof(i){const r=results[i],m=document.getElementById('modal'),p=document.getElementById('proof');document.getElementById('modalText').textContent=r.proof==='#'?'A comprovação ainda não foi cadastrada. Substitua o símbolo # no código pelo link do vídeo ou da publicação do sorteio.':`Resultado da ${r.raffle}, realizado em ${r.date}.`;p.href=r.proof;p.style.display=r.proof==='#'?'none':'inline-block';m.classList.add('open')}
-document.querySelectorAll('.filter').forEach(b=>b.onclick=()=>{document.querySelectorAll('.filter').forEach(x=>x.classList.remove('active'));b.classList.add('active');renderRaffles(b.dataset.filter)});document.getElementById('menu').onclick=()=>document.getElementById('links').classList.toggle('open');document.querySelectorAll('#links a').forEach(a=>a.onclick=()=>document.getElementById('links').classList.remove('open'));document.getElementById('close').onclick=()=>document.getElementById('modal').classList.remove('open');document.getElementById('modal').onclick=e=>{if(e.target.id==='modal')e.currentTarget.classList.remove('open')};document.getElementById('year').textContent=new Date().getFullYear();aplicarFechamentoDoApp();renderRaffles();renderWinners();renderResults();window.addEventListener('storage',e=>{if(e.key===CLOSED_RAFFLE_KEY)location.reload()});
+document.querySelectorAll('.filter').forEach(b=>b.onclick=()=>{document.querySelectorAll('.filter').forEach(x=>x.classList.remove('active'));b.classList.add('active');renderRaffles(b.dataset.filter)});document.getElementById('menu').onclick=()=>document.getElementById('links').classList.toggle('open');document.querySelectorAll('#links a').forEach(a=>a.onclick=()=>document.getElementById('links').classList.remove('open'));document.getElementById('close').onclick=()=>document.getElementById('modal').classList.remove('open');document.getElementById('modal').onclick=e=>{if(e.target.id==='modal')e.currentTarget.classList.remove('open')};document.getElementById('year').textContent=new Date().getFullYear();aplicarFechamentoDoApp();renderRaffles();renderWinners();renderResults();window.addEventListener('storage',e=>{if(e.key===CLOSED_RAFFLE_KEY||e.key===RAFFLE_ARCHIVE_KEY)location.reload()});
 </script>
 </body></html>

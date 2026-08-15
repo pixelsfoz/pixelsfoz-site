@@ -25,3 +25,10 @@ IMPORTANTE
 - O backup JSON deve ser baixado periodicamente.
 - A senha em um site HTML é uma proteção contra uso acidental e pessoas comuns; não equivale à segurança de um servidor com autenticação.
 - A atualização automática da Central ocorre somente no mesmo navegador/aparelho, conforme a limitação do site estático.
+
+
+CORRECAO DE ENCERRAMENTO (15/08/2026):
+- Ao encerrar, o resultado e arquivado para a Central de Rifas.
+- O APP limpa participantes, ganhadores, cartaz e dados da rifa ativa e fica pronto para a proxima.
+- Fechamentos travados de versoes anteriores sao migrados automaticamente para o historico.
+- O historico encerrado permanece visivel na Central de Rifas.
