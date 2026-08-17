@@ -298,8 +298,10 @@
         <div class="import-help admin-only">A imagem escolhida é reduzida e salva neste navegador. Recomendamos cartaz vertical.</div>
         <div class="raffle-admin-actions admin-only">
           <button id="restaurarImagem" class="secondary">Restaurar imagem padrão</button>
+          <button id="sincronizarCentral" class="secondary" type="button">🔄 Sincronizar Central</button>
           <button id="encerrarRifa" type="button">🔒 Encerrar rifa</button>
         </div>
+        <div id="statusSincronizacao" class="import-help admin-only">Central: aguardando sincronização.</div>
         <div class="import-help">Antes de encerrar, registre manualmente de 1 a 5 ganhadores na área abaixo. O fechamento solicitará a senha de 4 dígitos.</div>
       </div>
     </section>
@@ -491,7 +493,7 @@
     function salvarInfoRifa(){
       if(!exigirAdmin()) return;
       const info={nome:document.getElementById('nomeRifa').value.trim(),data:document.getElementById('dataRifa').value,descricao:document.getElementById('descricaoRifa').value.trim()};
-      localStorage.setItem(RAFFLE_INFO_KEY,JSON.stringify(info)); carregarInfoRifa(); alert('Informações da rifa salvas.');
+      localStorage.setItem(RAFFLE_INFO_KEY,JSON.stringify(info)); carregarInfoRifa(); sincronizarCentralRemota(false); alert('Informações da rifa salvas e enviadas para a Central.');
     }
     function montarBackup(){
       const chaves=['pixels_rifa_v1','pixels_rifa_tamanho_v1','pixels_rifa_valor_numero_v1','pixels_rifa_sorteios_v1','pixels_rifa_ganhadores_manuais_v1','pixels_rifa_encerrada_v1','pixels_rifa_historico_encerradas_v1','pixels_rifa_imagem_atual_v1',RAFFLE_INFO_KEY];
@@ -523,6 +525,95 @@
     const MANUAL_WINNERS_KEY = 'pixels_rifa_ganhadores_manuais_v1';
     const DEFAULT_RAFFLE_IMAGE = 'assets/rifas/rifa-03-gamer-premium.png';
     const CLOSE_PASSWORD = '1807';
+
+    const CENTRAL_API = '/api/rifa';
+    const SYNC_PENDING_KEY = 'pixels_rifa_sync_pendente_v1';
+
+    function montarRifaPublicaAtual() {
+      let info = {};
+      try { info = JSON.parse(localStorage.getItem(RAFFLE_INFO_KEY) || '{}') || {}; } catch (_) {}
+      const nome = String(info.nome || document.getElementById('nomeRifa')?.value || '').trim();
+      const descricao = String(info.descricao || document.getElementById('descricaoRifa')?.value || '').trim();
+      const data = String(info.data || document.getElementById('dataRifa')?.value || '').trim();
+      const image = localStorage.getItem(CURRENT_RAFFLE_IMAGE_KEY) || '';
+      if (!nome && !descricao && !image) return null;
+      return {
+        id: 'current',
+        title: nome || 'Nova Rifa Pixels',
+        description: descricao || 'Nova rifa cadastrada no APP RIFA.',
+        date,
+        image: image || DEFAULT_RAFFLE_IMAGE,
+        numbers: TOTAL,
+        price: VALOR_NUMERO,
+        status: 'open',
+        statusText: 'Em andamento',
+        updatedAt: new Date().toISOString()
+      };
+    }
+
+    function setStatusSync(texto, ok = true) {
+      const el = document.getElementById('statusSincronizacao');
+      if (!el) return;
+      el.textContent = texto;
+      el.style.color = ok ? '#78f0b5' : '#ffd47e';
+    }
+
+    async function apiRifa(payload) {
+      const resposta = await fetch(CENTRAL_API, {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({...payload, password: CLOSE_PASSWORD})
+      });
+      let dadosApi = {};
+      try { dadosApi = await resposta.json(); } catch (_) {}
+      if (!resposta.ok) throw new Error(dadosApi.error || `Falha HTTP ${resposta.status}`);
+      return dadosApi;
+    }
+
+    async function sincronizarCentralRemota(mostrarAlerta = false) {
+      const rifa = montarRifaPublicaAtual();
+      if (!rifa) {
+        setStatusSync('Central: cadastre nome, dados ou cartaz antes de sincronizar.', false);
+        if (mostrarAlerta) alert('Cadastre os dados da rifa antes de sincronizar.');
+        return false;
+      }
+      setStatusSync('Central: sincronizando...');
+      try {
+        await apiRifa({action: 'sync-current', raffle: rifa});
+        localStorage.removeItem(SYNC_PENDING_KEY);
+        setStatusSync('✅ Central sincronizada. A rifa em andamento já está publicada.');
+        if (mostrarAlerta) alert('✅ Central de Rifas atualizada com a rifa em andamento.');
+        return true;
+      } catch (erro) {
+        localStorage.setItem(SYNC_PENDING_KEY, JSON.stringify({action:'sync-current', raffle:rifa}));
+        setStatusSync('⚠️ Não foi possível atualizar a Central online: ' + erro.message, false);
+        if (mostrarAlerta) alert('Não foi possível atualizar a Central online.\n\n' + erro.message + '\n\nConfira a configuração da integração Cloudflare.');
+        return false;
+      }
+    }
+
+    async function publicarFechamentoRemoto(fechamento) {
+      try {
+        await apiRifa({action: 'close', raffle: fechamento});
+        localStorage.removeItem(SYNC_PENDING_KEY);
+        return true;
+      } catch (erro) {
+        localStorage.setItem(SYNC_PENDING_KEY, JSON.stringify({action:'close', raffle:fechamento}));
+        setStatusSync('⚠️ Encerramento salvo localmente, mas pendente na Central: ' + erro.message, false);
+        return false;
+      }
+    }
+
+    async function tentarSincronizacaoPendente() {
+      let pendente = null;
+      try { pendente = JSON.parse(localStorage.getItem(SYNC_PENDING_KEY) || 'null'); } catch (_) {}
+      if (!pendente) return;
+      try {
+        await apiRifa(pendente);
+        localStorage.removeItem(SYNC_PENDING_KEY);
+        setStatusSync('✅ Sincronização pendente concluída.');
+      } catch (_) {}
+    }
 
     let TOTAL = Math.max(1, parseInt(localStorage.getItem(SIZE_KEY) || '100', 10));
     let VALOR_NUMERO = Math.max(0, parseFloat(localStorage.getItem(PRICE_KEY) || '0'));
@@ -633,6 +724,7 @@
       try {
         localStorage.setItem(CURRENT_RAFFLE_IMAGE_KEY, dataUrl);
         document.getElementById('imagemRifaAtual').src = dataUrl;
+        sincronizarCentralRemota(false);
       } catch (erro) {
         alert('A imagem ficou grande demais para salvar no navegador. Escolha uma imagem menor.');
       }
@@ -724,7 +816,7 @@
       atualizarEstadoFechamento();
     }
 
-    function encerrarRifa() {
+    async function encerrarRifa() {
       if (!exigirAdmin()) return;
       let ganhadores;
       try { ganhadores = coletarGanhadoresManuais(true); }
@@ -757,12 +849,17 @@
       const resumo = ganhadores.map(g => `${g.position}º: Nº ${String(g.number).padStart(2,'0')} — ${g.name}`).join('\n');
       if (!confirm(`Encerrar a rifa e publicar ${ganhadores.length} ganhador(es)?\n\n${resumo}\n\nDepois do fechamento, o APP será limpo e preparado para uma nova rifa.`)) return;
 
-      // Primeiro publica e arquiva o resultado. Depois limpa somente a rifa ativa.
+      // Publica primeiro na Central online e também mantém o histórico local como segurança.
+      const publicadoOnline = await publicarFechamentoRemoto(fechamento);
       localStorage.setItem(MANUAL_WINNERS_KEY, JSON.stringify(ganhadores));
       localStorage.setItem(CLOSED_RAFFLE_KEY, JSON.stringify(fechamento));
       arquivarFechamento(fechamento);
       prepararNovaRifaAposEncerramento();
-      alert('✅ Rifa encerrada e arquivada na Central de Rifas. O APP foi limpo e já está pronto para cadastrar a próxima rifa.');
+      if (publicadoOnline) {
+        alert('✅ Rifa encerrada e publicada na Central de Rifas. O APP foi limpo e já está pronto para cadastrar a próxima rifa.');
+      } else {
+        alert('⚠️ A rifa foi encerrada e salva localmente, mas a publicação online ficou pendente. Abra o APP novamente quando a integração estiver disponível; ele tentará sincronizar automaticamente.');
+      }
     }
 
     function recuperarFechamentoPendente() {
@@ -1292,6 +1389,7 @@
       localStorage.setItem(PRICE_KEY, String(VALOR_NUMERO));
       salvar();
       renderizar();
+      sincronizarCentralRemota(false);
 
       const mensagem = document.getElementById('mensagemImportacao');
       if (mensagem) mensagem.textContent = `Rifa ajustada para ${TOTAL} número(s), no valor de ${moedaBR(VALOR_NUMERO)} cada.`;
@@ -1548,6 +1646,7 @@
       localStorage.removeItem(CURRENT_RAFFLE_IMAGE_KEY);
       document.getElementById('imagemRifaAtual').src = DEFAULT_RAFFLE_IMAGE;
       document.getElementById('arquivoImagemRifa').value = '';
+      sincronizarCentralRemota(false);
     });
     document.getElementById('salvarGanhadores').addEventListener('click', salvarGanhadoresManuais);
     document.getElementById('limparGanhadores').addEventListener('click', () => {
@@ -1559,12 +1658,18 @@
     document.querySelectorAll('.winner-name,.winner-number,.winner-prize').forEach(campo => campo.addEventListener('change', salvarGanhadoresManuais));
     preencherGanhadoresManuais();
     document.getElementById('encerrarRifa').addEventListener('click', encerrarRifa);
+    document.getElementById('sincronizarCentral')?.addEventListener('click', () => sincronizarCentralRemota(true));
 
     document.getElementById('salvarInfoRifa')?.addEventListener('click', salvarInfoRifa);
     document.getElementById('exportarBackup')?.addEventListener('click', exportarBackupJSON);
     document.getElementById('arquivoBackup')?.addEventListener('change', e=>{const arq=e.target.files?.[0]; if(arq) restaurarBackupJSON(arq); e.target.value='';});
     carregarInfoRifa();
     recuperarFechamentoPendente();
+    tentarSincronizacaoPendente();
+    // Se já existe uma rifa criada nesta versão anterior, tenta publicá-la automaticamente.
+    setTimeout(() => {
+      if (montarRifaPublicaAtual()) sincronizarCentralRemota(false);
+    }, 700);
 
     renderizar();
     renderizarHistorico();

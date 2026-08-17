@@ -129,6 +129,48 @@ const results=[
 
 const CLOSED_RAFFLE_KEY='pixels_rifa_encerrada_v1';
 const RAFFLE_ARCHIVE_KEY='pixels_rifa_historico_encerradas_v1';
+const RAFFLE_INFO_KEY='pixels_rifa_info_v1';
+const CURRENT_RAFFLE_IMAGE_KEY='pixels_rifa_imagem_atual_v1';
+const SIZE_KEY='pixels_rifa_tamanho_v1';
+const PRICE_KEY='pixels_rifa_valor_numero_v1';
+
+function moedaCentral(valor){
+  const n=Number(valor||0);
+  return n>0?n.toLocaleString('pt-BR',{style:'currency',currency:'BRL'}):'A definir';
+}
+
+function aplicarRifaAtualDoApp(){
+  let info={};
+  try{info=JSON.parse(localStorage.getItem(RAFFLE_INFO_KEY)||'{}')||{}}catch(_){info={}}
+  const nome=String(info.nome||'').trim();
+  const descricao=String(info.descricao||'').trim();
+  const imagem=localStorage.getItem(CURRENT_RAFFLE_IMAGE_KEY)||'';
+  const quantidade=Math.max(1,parseInt(localStorage.getItem(SIZE_KEY)||'0',10)||0);
+  const valor=Math.max(0,parseFloat(localStorage.getItem(PRICE_KEY)||'0')||0);
+
+  // Só cria o cartão público quando realmente existe uma nova rifa cadastrada no APP.
+  if(!nome && !descricao && !imagem) return;
+
+  // Evita duplicar uma rifa que já esteja arquivada como encerrada.
+  const fechamentos=lerFechamentosDoApp();
+  const jaEncerrada=nome && fechamentos.some(f=>String(f.raffle||'').trim().toLowerCase()===nome.toLowerCase());
+  if(jaEncerrada) return;
+
+  // Remove qualquer cartão dinâmico anterior e adiciona a rifa atual como a mais recente.
+  for(let i=raffles.length-1;i>=0;i--){if(raffles[i].dynamicCurrent)raffles.splice(i,1)}
+  raffles.push({
+    id:'current',
+    dynamicCurrent:true,
+    title:nome||'Nova Rifa Pixels',
+    desc:descricao||'Nova rifa cadastrada no APP RIFA. Participe pelo grupo oficial da Pixels.',
+    image:imagem||'assets/rifas/rifa-03-gamer-premium.png',
+    status:'open',
+    statusText:'Em andamento',
+    numbers:quantidade?`${quantidade} números`:'A definir',
+    price:moedaCentral(valor)
+  });
+}
+
 function lerFechamentosDoApp(){
   let lista=[];
   try{const x=JSON.parse(localStorage.getItem(RAFFLE_ARCHIVE_KEY)||'[]');if(Array.isArray(x))lista=x}catch(_){}
@@ -172,10 +214,60 @@ function aplicarFechamentoDoApp(){
   });
 }
 
+
+async function carregarEstadoOnline(){
+  try{
+    const resposta=await fetch('/api/rifa',{cache:'no-store'});
+    if(!resposta.ok) throw new Error('API indisponível');
+    const estado=await resposta.json();
+
+    if(estado && Array.isArray(estado.archive)){
+      // Combina histórico online com o legado local sem repetir encerramentos.
+      const locais=lerFechamentosDoApp();
+      const combinados=[...locais];
+      estado.archive.forEach(f=>{
+        const id=f.closedAt||`${f.raffle||f.title}-${f.date||''}`;
+        if(!combinados.some(x=>(x.closedAt||`${x.raffle||x.title}-${x.date||''}`)===id)) combinados.push(f);
+      });
+      try{ localStorage.setItem(RAFFLE_ARCHIVE_KEY,JSON.stringify(combinados)); }catch(_){}
+    }
+
+    if(estado && estado.current){
+      const c=estado.current;
+      // Remove cartão dinâmico local anterior.
+      for(let i=raffles.length-1;i>=0;i--){if(raffles[i].dynamicCurrent)raffles.splice(i,1)}
+      raffles.push({
+        id:'current-online',
+        dynamicCurrent:true,
+        title:c.title||c.raffle||'Nova Rifa Pixels',
+        desc:c.description||'Nova rifa cadastrada no APP RIFA.',
+        image:c.image||'assets/rifas/rifa-03-gamer-premium.png',
+        status:'open',
+        statusText:'Em andamento',
+        numbers:Number(c.numbers)>0?`${c.numbers} números`:'A definir',
+        price:moedaCentral(c.price)
+      });
+    }
+    return true;
+  }catch(_){
+    return false;
+  }
+}
+
+async function iniciarCentralIntegrada(){
+  const online=await carregarEstadoOnline();
+  aplicarFechamentoDoApp();
+  // Quando a API não estiver configurada, mantém compatibilidade local.
+  if(!online || !raffles.some(r=>r.dynamicCurrent)) aplicarRifaAtualDoApp();
+  renderRaffles();
+  renderWinners();
+  renderResults();
+}
+
 function renderRaffles(filter='all'){const list=filter==='all'?raffles:raffles.filter(x=>x.status===filter);document.getElementById('raffles').innerHTML=list.map(r=>`<article class="card"><div class="poster"><img src="${r.image}" alt="${r.title}"></div><div class="card-body"><span class="status ${r.status}">${r.statusText}</span><h3>${r.title}</h3><p>${r.desc}</p><div class="meta"><div><small>Quantidade</small><strong>${r.numbers}</strong></div><div><small>Valor</small><strong>${r.price}</strong></div></div><a class="btn" href="${r.status==='open'?'https://chat.whatsapp.com/G2bYbJ6h5SN7rEwsr2hhng?s=cl&p=i&mlu=4&amv=1':'#resultados'}" ${r.status==='open'?'target="_blank" rel="noopener"':''}>${r.status==='open'?'Entrar no grupo da rifa':'Ver resultado'}</a></div></article>`).join('')}
 function renderWinners(){document.getElementById('winners').innerHTML=winners.map(w=>`<article class="winner"><span class="number">${w.number}</span><h3>${w.name}</h3><p>🏆 ${w.prize}</p><small>${w.date}</small></article>`).join('')}
 function renderResults(){document.getElementById('results').innerHTML=`<div class="row head"><div>Rifa / ganhador</div><div>Número</div><div>Data</div><div>Comprovação</div></div>`+results.map((r,i)=>`<div class="row"><div class="result-name"><strong>${r.raffle}</strong><small>${r.winner}</small></div><div><span class="ball">${r.number}</span></div><div>${r.date}</div><div><button class="btn proofBtn" data-i="${i}">Ver resultado</button></div></div>`).join('');document.querySelectorAll('.proofBtn').forEach(b=>b.onclick=()=>openProof(+b.dataset.i))}
 function openProof(i){const r=results[i],m=document.getElementById('modal'),p=document.getElementById('proof');document.getElementById('modalText').textContent=r.proof==='#'?'A comprovação ainda não foi cadastrada. Substitua o símbolo # no código pelo link do vídeo ou da publicação do sorteio.':`Resultado da ${r.raffle}, realizado em ${r.date}.`;p.href=r.proof;p.style.display=r.proof==='#'?'none':'inline-block';m.classList.add('open')}
-document.querySelectorAll('.filter').forEach(b=>b.onclick=()=>{document.querySelectorAll('.filter').forEach(x=>x.classList.remove('active'));b.classList.add('active');renderRaffles(b.dataset.filter)});document.getElementById('menu').onclick=()=>document.getElementById('links').classList.toggle('open');document.querySelectorAll('#links a').forEach(a=>a.onclick=()=>document.getElementById('links').classList.remove('open'));document.getElementById('close').onclick=()=>document.getElementById('modal').classList.remove('open');document.getElementById('modal').onclick=e=>{if(e.target.id==='modal')e.currentTarget.classList.remove('open')};document.getElementById('year').textContent=new Date().getFullYear();aplicarFechamentoDoApp();renderRaffles();renderWinners();renderResults();window.addEventListener('storage',e=>{if(e.key===CLOSED_RAFFLE_KEY||e.key===RAFFLE_ARCHIVE_KEY)location.reload()});
+document.querySelectorAll('.filter').forEach(b=>b.onclick=()=>{document.querySelectorAll('.filter').forEach(x=>x.classList.remove('active'));b.classList.add('active');renderRaffles(b.dataset.filter)});document.getElementById('menu').onclick=()=>document.getElementById('links').classList.toggle('open');document.querySelectorAll('#links a').forEach(a=>a.onclick=()=>document.getElementById('links').classList.remove('open'));document.getElementById('close').onclick=()=>document.getElementById('modal').classList.remove('open');document.getElementById('modal').onclick=e=>{if(e.target.id==='modal')e.currentTarget.classList.remove('open')};document.getElementById('year').textContent=new Date().getFullYear();iniciarCentralIntegrada();window.addEventListener('storage',e=>{if([CLOSED_RAFFLE_KEY,RAFFLE_ARCHIVE_KEY,RAFFLE_INFO_KEY,CURRENT_RAFFLE_IMAGE_KEY,SIZE_KEY,PRICE_KEY].includes(e.key))iniciarCentralIntegrada()});
 </script>
 </body></html>

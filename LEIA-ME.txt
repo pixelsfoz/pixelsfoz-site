@@ -32,3 +32,8 @@ CORRECAO DE ENCERRAMENTO (15/08/2026):
 - O APP limpa participantes, ganhadores, cartaz e dados da rifa ativa e fica pronto para a proxima.
 - Fechamentos travados de versoes anteriores sao migrados automaticamente para o historico.
 - O historico encerrado permanece visivel na Central de Rifas.
+
+CORREÇÃO 15/08/2026 - RIFA ATUAL NA CENTRAL
+A Central de Rifas agora lê automaticamente do APP a rifa em andamento.
+Ao cadastrar/salvar no APP o nome, descrição, quantidade, valor e cartaz, a Central passa a mostrar um novo cartão "Em andamento" com esses dados.
+As três rifas históricas permanecem preservadas.
