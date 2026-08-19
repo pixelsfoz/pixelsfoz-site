@@ -1,0 +1,16 @@
+PIXELS — ATUALIZAÇÃO DAS RIFAS ENCERRADAS
+
+Correções desta versão:
+- Adiciona os cartazes Rifa do Buu e Rifas das Opções 1, 2 e 3 aos arquivos do site.
+- A Central agora cria/atualiza um CARD para cada rifa encerrada recebida do APP/D1.
+- O histórico deixa de mostrar apenas texto: cada encerramento passa a resolver e exibir o cartaz correspondente.
+- Os quatro cartazes conhecidos têm caminhos fixos no site, evitando perder a imagem depois de limpar o APP/localStorage.
+- Novas imagens enviadas pelo APP são comprimidas em tamanho menor para facilitar sincronização e persistência.
+- A API também repara automaticamente o caminho dos quatro cartazes conhecidos quando lê registros antigos que vieram sem imagem.
+
+PUBLICAÇÃO:
+Substitua todo o conteúdo do repositório GitHub por este pacote, incluindo assets/rifas e functions/api/rifa.js.
+Depois aguarde o novo deploy do Cloudflare Pages.
+
+IMPORTANTE:
+Os nomes das rifas no APP devem conter “Buu”, “Opções 1”, “Opções 2” ou “Opções 3” para o vínculo automático com os cartazes enviados.

@@ -110,7 +110,11 @@ body:before{background:linear-gradient(rgba(1,7,20,.78),rgba(1,7,20,.92)),url('a
 const raffles=[
 {id:1,title:'1ª Rifa da Pixels — PlayStation 2 Slim',desc:'PlayStation 2 Slim, dois controles, OPL com 40 jogos, sistema MX4SIO e skin personalizada.',image:'assets/rifas/rifa-01-playstation-2.png',status:'finished',statusText:'Encerrada',numbers:'60 participantes',price:'Consulte o histórico'},
 {id:2,title:'Rifa Épica — 3 Prêmios',desc:'He-Man e Esqueleto impressos em 3D, copo 1200 ml e suporte de controle com chaveiro.',image:'assets/rifas/rifa-02-tres-premios.jpeg',status:'finished',statusText:'Encerrada',numbers:'50 números',price:'R$ 5,00'},
-{id:3,title:'Rifa Gamer Premium — 3 Prêmios',desc:'Teclado mecânico, mouse gamer e headset gamer em uma rifa temática da Pixels.',image:'assets/rifas/rifa-03-gamer-premium.png',status:'open',statusText:'Em andamento',numbers:'50 números',price:'R$ 10,00'}
+{id:3,title:'Rifa Gamer Premium — 3 Prêmios',desc:'Teclado mecânico, mouse gamer e headset gamer em uma rifa temática da Pixels.',image:'assets/rifas/rifa-03-gamer-premium.png',status:'finished',statusText:'Encerrada',numbers:'50 números',price:'R$ 10,00'},
+{id:101,title:'Rifa do Buu',desc:'50 números. Um ganhador escolhe uma das 3 opções: kit Natura, boneco Majin Buu ou copo Stanley 890 ml.',image:'assets/rifas/rifa-do-buu.png',status:'finished',statusText:'Encerrada',numbers:'50 números',price:'R$ 2,00',knownPoster:true},
+{id:102,title:'Rifa das Opções 1',desc:'50 números. Um ganhador escolhe uma das 4 opções de prêmio apresentadas no cartaz.',image:'assets/rifas/rifa-das-opcoes-1.jpeg',status:'finished',statusText:'Encerrada',numbers:'50 números',price:'R$ 2,00',knownPoster:true},
+{id:103,title:'Rifa das Opções 2',desc:'50 números. Um ganhador escolhe uma das 4 opções: Son Goku, Ash, controle analógico ou kit de cuidado pessoal.',image:'assets/rifas/rifa-das-opcoes-2.png',status:'finished',statusText:'Encerrada',numbers:'50 números',price:'R$ 2,00',knownPoster:true},
+{id:104,title:'Rifa das Opções 3',desc:'100 números. Um ganhador escolhe uma das 4 opções: kit OPL para PS2, smartwatch, boneco Ash ou kit de cuidado pessoal.',image:'assets/rifas/rifa-das-opcoes-3.jpeg',status:'finished',statusText:'Encerrada',numbers:'100 números',price:'R$ 2,00',knownPoster:true}
 ];
 // Resultados oficiais informados pela Pixels.
 const winners=[
@@ -139,6 +143,39 @@ function moedaCentral(valor){
   return n>0?n.toLocaleString('pt-BR',{style:'currency',currency:'BRL'}):'A definir';
 }
 
+function normalizarTituloRifa(texto){
+  return String(texto||'')
+    .normalize('NFD').replace(/[\u0300-\u036f]/g,'')
+    .toLowerCase().replace(/[^a-z0-9]+/g,' ').trim();
+}
+
+function resolverImagemRifa(registro){
+  const imagem=String(registro?.image||'').trim();
+  // Se o APP já guardou uma imagem real (data URL ou caminho do site), ela tem prioridade.
+  if(imagem && imagem!== 'assets/rifas/rifa-03-gamer-premium.png') return imagem;
+  const t=normalizarTituloRifa(registro?.raffle||registro?.title||'');
+  if(t.includes('buu')) return 'assets/rifas/rifa-do-buu.png';
+  if(t.includes('opcoes 1') || t.includes('opcao 1')) return 'assets/rifas/rifa-das-opcoes-1.jpeg';
+  if(t.includes('opcoes 2') || t.includes('opcao 2')) return 'assets/rifas/rifa-das-opcoes-2.png';
+  if(t.includes('opcoes 3') || t.includes('opcao 3')) return 'assets/rifas/rifa-das-opcoes-3.jpeg';
+  if(t.includes('playstation 2') || t.includes('ps2 slim')) return 'assets/rifas/rifa-01-playstation-2.png';
+  if(t.includes('epica') || t.includes('he man') || t.includes('esqueleto')) return 'assets/rifas/rifa-02-tres-premios.jpeg';
+  if(t.includes('gamer premium')) return 'assets/rifas/rifa-03-gamer-premium.png';
+  return imagem || 'assets/rifas/rifa-03-gamer-premium.png';
+}
+
+function chaveTituloRifa(texto){
+  const t=normalizarTituloRifa(texto);
+  if(t.includes('buu')) return 'buu';
+  if(t.includes('opcoes 1') || t.includes('opcao 1')) return 'opcoes1';
+  if(t.includes('opcoes 2') || t.includes('opcao 2')) return 'opcoes2';
+  if(t.includes('opcoes 3') || t.includes('opcao 3')) return 'opcoes3';
+  if(t.includes('playstation 2') || t.includes('ps2 slim')) return 'ps2';
+  if(t.includes('epica') || t.includes('he man') || t.includes('esqueleto')) return 'epica';
+  if(t.includes('gamer premium')) return 'gamerpremium';
+  return t;
+}
+
 function aplicarRifaAtualDoApp(){
   let info={};
   try{info=JSON.parse(localStorage.getItem(RAFFLE_INFO_KEY)||'{}')||{}}catch(_){info={}}
@@ -163,7 +200,7 @@ function aplicarRifaAtualDoApp(){
     dynamicCurrent:true,
     title:nome||'Nova Rifa Pixels',
     desc:descricao||'Nova rifa cadastrada no APP RIFA. Participe pelo grupo oficial da Pixels.',
-    image:imagem||'assets/rifas/rifa-03-gamer-premium.png',
+    image:resolverImagemRifa({title:nome,image:imagem}),
     status:'open',
     statusText:'Em andamento',
     numbers:quantidade?`${quantidade} números`:'A definir',
@@ -186,33 +223,64 @@ function lerFechamentosDoApp(){
 }
 function aplicarFechamentoDoApp(){
   const fechamentos=lerFechamentosDoApp();
+
+  // Remove somente cartões de histórico gerados dinamicamente em uma renderização anterior.
+  for(let i=raffles.length-1;i>=0;i--){if(raffles[i].dynamicArchive)raffles.splice(i,1)}
+
+  // Índice dos cartazes fixos que já fazem parte do site.
+  const fixosPorChave=new Map();
+  raffles.forEach(r=>{
+    if(!r.dynamicCurrent && !r.dynamicArchive) fixosPorChave.set(chaveTituloRifa(r.title),r);
+  });
+
   if(!fechamentos.length)return;
 
-  // A antiga 3ª rifa estática deixa de aparecer como “em andamento” se já foi encerrada.
-  const terceira=raffles.find(r=>r.id===3);
-  if(terceira){
-    const fechamentoTerceira=fechamentos.find(f=>String(f.raffle||'').toLowerCase().includes('gamer premium')) || fechamentos[0];
-    if(fechamentoTerceira){
-      terceira.status='finished'; terceira.statusText='Encerrada'; terceira.price='Resultado publicado';
-      if(fechamentoTerceira.image)terceira.image=fechamentoTerceira.image;
-    }
-  }
   const pendente=results.findIndex(r=>r.winner==='Sorteio em andamento' || r.date==='Em andamento');
   if(pendente>=0)results.splice(pendente,1);
 
-  fechamentos.forEach(fechamento=>{
-    const nomeRifa=fechamento.raffle||'Rifa Pixels';
+  fechamentos.forEach((fechamento,idx)=>{
+    const nomeRifa=fechamento.raffle||fechamento.title||'Rifa Pixels';
+    const chave=chaveTituloRifa(nomeRifa);
+    const imagem=resolverImagemRifa(fechamento);
+    const quantidade=Number(fechamento.numbers||0);
+    const valor=Number(fechamento.price||0);
+    const descricao=fechamento.description||'Rifa encerrada. Confira os ganhadores e números premiados no histórico abaixo.';
+
+    // Se existe um card fixo com esse nome, atualiza-o; senão cria um novo card encerrado.
+    const cardFixo=fixosPorChave.get(chave);
+    if(cardFixo){
+      cardFixo.status='finished';
+      cardFixo.statusText='Encerrada';
+      cardFixo.image=imagem||cardFixo.image;
+      if(descricao) cardFixo.desc=descricao;
+      if(quantidade>0) cardFixo.numbers=`${quantidade} números`;
+      if(valor>0) cardFixo.price=moedaCentral(valor);
+    }else{
+      raffles.push({
+        id:`archive-${idx}-${fechamento.closedAt||fechamento.date||Date.now()}`,
+        dynamicArchive:true,
+        title:nomeRifa,
+        desc:descricao,
+        image:imagem,
+        status:'finished',
+        statusText:'Encerrada',
+        numbers:quantidade>0?`${quantidade} números`:'Consulte o histórico',
+        price:valor>0?moedaCentral(valor):'Resultado publicado'
+      });
+    }
+
     const gs=Array.isArray(fechamento.winners)&&fechamento.winners.length?fechamento.winners:[{position:1,name:fechamento.winner,number:fechamento.number,prize:'1º prêmio'}];
-    gs.forEach(g=>{
+    gs.filter(g=>g && g.name && g.number!==undefined && g.number!==null).forEach(g=>{
       const pos=Number(g.position)||1;
       const titulo=gs.length>1?`${nomeRifa} — ${pos}º prêmio`:nomeRifa;
       const num=String(g.number).padStart(2,'0');
-      if(!results.some(r=>r.raffle===titulo&&r.number===num&&r.date===fechamento.date))results.push({raffle:titulo,winner:g.name,number:num,date:fechamento.date,proof:'#'});
+      if(!results.some(r=>r.raffle===titulo&&r.number===num&&r.date===fechamento.date))results.push({raffle:titulo,winner:g.name,number:num,date:fechamento.date||'Encerrada',proof:'#'});
       const premio=g.prize||`${pos}º prêmio`;
-      if(!winners.some(w=>w.name===g.name&&String(w.number)===String(g.number)&&w.date.includes(fechamento.date)))winners.push({number:num,name:g.name,prize:`${pos}º lugar — ${premio}`,date:`Rifa encerrada em ${fechamento.date}`});
+      if(!winners.some(w=>w.name===g.name&&String(w.number)===String(g.number)&&String(w.date).includes(fechamento.date||'')))winners.push({number:num,name:g.name,prize:`${pos}º lugar — ${premio}`,date:`Rifa encerrada em ${fechamento.date||'data não informada'}`});
     });
   });
 }
+
 
 
 async function carregarEstadoOnline(){
@@ -241,7 +309,7 @@ async function carregarEstadoOnline(){
         dynamicCurrent:true,
         title:c.title||c.raffle||'Nova Rifa Pixels',
         desc:c.description||'Nova rifa cadastrada no APP RIFA.',
-        image:c.image||'assets/rifas/rifa-03-gamer-premium.png',
+        image:resolverImagemRifa(c),
         status:'open',
         statusText:'Em andamento',
         numbers:Number(c.numbers)>0?`${c.numbers} números`:'A definir',
@@ -264,7 +332,7 @@ async function iniciarCentralIntegrada(){
   renderResults();
 }
 
-function renderRaffles(filter='all'){const list=filter==='all'?raffles:raffles.filter(x=>x.status===filter);document.getElementById('raffles').innerHTML=list.map(r=>`<article class="card"><div class="poster"><img src="${r.image}" alt="${r.title}"></div><div class="card-body"><span class="status ${r.status}">${r.statusText}</span><h3>${r.title}</h3><p>${r.desc}</p><div class="meta"><div><small>Quantidade</small><strong>${r.numbers}</strong></div><div><small>Valor</small><strong>${r.price}</strong></div></div><a class="btn" href="${r.status==='open'?'https://chat.whatsapp.com/G2bYbJ6h5SN7rEwsr2hhng?s=cl&p=i&mlu=4&amv=1':'#resultados'}" ${r.status==='open'?'target="_blank" rel="noopener"':''}>${r.status==='open'?'Entrar no grupo da rifa':'Ver resultado'}</a></div></article>`).join('')}
+function renderRaffles(filter='all'){const list=filter==='all'?raffles:raffles.filter(x=>x.status===filter);document.getElementById('raffles').innerHTML=list.map(r=>`<article class="card"><div class="poster"><img src="${r.image}" alt="${r.title}" onerror="this.onerror=null;this.src='assets/logos/logo-perfil.jpg'"></div><div class="card-body"><span class="status ${r.status}">${r.statusText}</span><h3>${r.title}</h3><p>${r.desc}</p><div class="meta"><div><small>Quantidade</small><strong>${r.numbers}</strong></div><div><small>Valor</small><strong>${r.price}</strong></div></div><a class="btn" href="${r.status==='open'?'https://chat.whatsapp.com/G2bYbJ6h5SN7rEwsr2hhng?s=cl&p=i&mlu=4&amv=1':'#resultados'}" ${r.status==='open'?'target="_blank" rel="noopener"':''}>${r.status==='open'?'Entrar no grupo da rifa':'Ver resultado'}</a></div></article>`).join('')}
 function renderWinners(){document.getElementById('winners').innerHTML=winners.map(w=>`<article class="winner"><span class="number">${w.number}</span><h3>${w.name}</h3><p>🏆 ${w.prize}</p><small>${w.date}</small></article>`).join('')}
 function renderResults(){document.getElementById('results').innerHTML=`<div class="row head"><div>Rifa / ganhador</div><div>Número</div><div>Data</div><div>Comprovação</div></div>`+results.map((r,i)=>`<div class="row"><div class="result-name"><strong>${r.raffle}</strong><small>${r.winner}</small></div><div><span class="ball">${r.number}</span></div><div>${r.date}</div><div><button class="btn proofBtn" data-i="${i}">Ver resultado</button></div></div>`).join('');document.querySelectorAll('.proofBtn').forEach(b=>b.onclick=()=>openProof(+b.dataset.i))}
 function openProof(i){const r=results[i],m=document.getElementById('modal'),p=document.getElementById('proof');document.getElementById('modalText').textContent=r.proof==='#'?'A comprovação ainda não foi cadastrada. Substitua o símbolo # no código pelo link do vídeo ou da publicação do sorteio.':`Resultado da ${r.raffle}, realizado em ${r.date}.`;p.href=r.proof;p.style.display=r.proof==='#'?'none':'inline-block';m.classList.add('open')}

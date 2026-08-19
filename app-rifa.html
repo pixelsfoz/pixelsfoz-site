@@ -542,7 +542,7 @@
         title: nome || 'Nova Rifa Pixels',
         description: descricao || 'Nova rifa cadastrada no APP RIFA.',
         date,
-        image: image || DEFAULT_RAFFLE_IMAGE,
+        image: caminhoCartazConhecido(nome) || image || DEFAULT_RAFFLE_IMAGE,
         numbers: TOTAL,
         price: VALOR_NUMERO,
         status: 'open',
@@ -590,6 +590,15 @@
         if (mostrarAlerta) alert('Não foi possível atualizar a Central online.\n\n' + erro.message + '\n\nConfira a configuração da integração Cloudflare.');
         return false;
       }
+    }
+
+    function caminhoCartazConhecido(nome){
+      const t=String(nome||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
+      if(t.includes('buu')) return 'assets/rifas/rifa-do-buu.png';
+      if(t.includes('opcoes 1') || t.includes('opcao 1')) return 'assets/rifas/rifa-das-opcoes-1.jpeg';
+      if(t.includes('opcoes 2') || t.includes('opcao 2')) return 'assets/rifas/rifa-das-opcoes-2.png';
+      if(t.includes('opcoes 3') || t.includes('opcao 3')) return 'assets/rifas/rifa-das-opcoes-3.jpeg';
+      return '';
     }
 
     async function publicarFechamentoRemoto(fechamento) {
@@ -735,14 +744,14 @@
       leitor.onload = () => {
         const img = new Image();
         img.onload = () => {
-          const maxW = 900, maxH = 1350;
+          const maxW = 640, maxH = 960;
           const escala = Math.min(1, maxW / img.width, maxH / img.height);
           const canvas = document.createElement('canvas');
           canvas.width = Math.max(1, Math.round(img.width * escala));
           canvas.height = Math.max(1, Math.round(img.height * escala));
           const ctx = canvas.getContext('2d');
           ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-          salvarImagemRifa(canvas.toDataURL('image/jpeg', .82));
+          salvarImagemRifa(canvas.toDataURL('image/jpeg', .72));
         };
         img.onerror = () => alert('Não foi possível abrir essa imagem.');
         img.src = leitor.result;
@@ -841,7 +850,7 @@
         number: ganhadores[0].number,
         date: agora.toLocaleDateString('pt-BR'),
         closedAt: agora.toISOString(),
-        image: localStorage.getItem(CURRENT_RAFFLE_IMAGE_KEY) || DEFAULT_RAFFLE_IMAGE,
+        image: caminhoCartazConhecido(nomeRifa) || localStorage.getItem(CURRENT_RAFFLE_IMAGE_KEY) || DEFAULT_RAFFLE_IMAGE,
         numbers: TOTAL,
         price: VALOR_NUMERO
       };
