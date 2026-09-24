@@ -1,0 +1,52 @@
+#pixels-ps4{--px-bg:#101416;--px-panel:#1a2023;--px-line:#42474a;--px-text:#f2eee4;--px-muted:#b5bec0;--px-red:#ca3639;--px-gold:#d3b780;--px-ice:#a4d2de;color:var(--px-text);background:var(--px-bg);font:16px/1.5 Rubik,"Segoe UI",Arial,sans-serif;isolation:isolate;overflow:hidden;text-align:left;color-scheme:dark}
+#pixels-ps4 *,#pixels-ps4 *::before,#pixels-ps4 *::after{box-sizing:border-box}
+#pixels-ps4 img{max-width:100%}#pixels-ps4 a{color:inherit}#pixels-ps4 button{font:inherit}#pixels-ps4 h1,#pixels-ps4 h2,#pixels-ps4 h3,#pixels-ps4 p{margin:0}#pixels-ps4 .px-wrap{width:min(1360px,calc(100% - 80px));margin-inline:auto}
+#pixels-ps4 .px-header{position:relative;z-index:3;background:#13171a;border-bottom:1px solid #6b6151}
+#pixels-ps4 .px-nav{display:flex;align-items:center;gap:28px;min-height:100px}
+#pixels-ps4 .px-brand{display:block;flex:0 0 210px;line-height:0}#pixels-ps4 .px-brand img{width:210px;height:auto;filter:drop-shadow(0 3px 3px #0007)}
+#pixels-ps4 .px-links{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));flex:1;gap:9px}
+#pixels-ps4 .px-links a{display:flex;align-items:center;justify-content:center;min-height:44px;text-decoration:none;font-size:12px;letter-spacing:.06em;font-weight:800;text-align:center;border:1px solid #595c5b;border-bottom:3px solid #77746a;background:#222a2e;box-shadow:3px 3px 0 #080c0d;transition:transform .15s,background .15s}
+#pixels-ps4 .px-links a:hover{background:#34434a;transform:translateY(-2px)}#pixels-ps4 .px-links a[aria-current]{background:#8f2229;border-color:#df6e61;border-bottom-color:#e39674}#pixels-ps4 .px-links .px-raffles{color:#171919;background:#dfae59;border-color:#efd3a0}
+#pixels-ps4 .px-menu{display:none;margin-left:auto;min-height:44px;align-items:center;gap:10px;background:#242d32;border:1px solid #7e8077;color:#fff;padding:10px 14px;cursor:pointer;font-size:14px;font-weight:700}
+#pixels-ps4 .px-hero{position:relative;min-height:360px;display:flex;align-items:center;isolation:isolate;border-bottom:4px solid var(--px-red);background:#1c282e}
+#pixels-ps4 .px-hero-art{position:absolute;inset:0 0 0 auto;width:78%;height:100%;object-fit:cover;object-position:center 43%;z-index:-3}
+#pixels-ps4 .px-hero::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#101416 0%,#101416f5 18%,#101416bc 39%,#10141616 75%),linear-gradient(0deg,#101416a6,transparent 40%);z-index:-2}
+#pixels-ps4 .px-hero::after{content:"";position:absolute;left:0;top:0;bottom:0;width:7px;background:#ac262e;box-shadow:12px 0 0 #ac262e30;z-index:-1}
+#pixels-ps4 .px-hero-content{padding-block:38px;position:relative}
+#pixels-ps4 .px-eyebrow{font-size:12px;letter-spacing:.22em;color:var(--px-gold);font-weight:750;text-transform:uppercase;display:flex;align-items:center;gap:12px;margin-bottom:18px}
+#pixels-ps4 .px-eyebrow::before{content:"";display:inline-block;width:32px;height:2px;background:var(--px-red)}
+#pixels-ps4 h1{font-family:Georgia,"Times New Roman",serif;font-size:clamp(34px,4.6vw,62px);line-height:1.07;font-weight:700;letter-spacing:-.02em;text-transform:uppercase;text-shadow:0 4px 14px #0007;max-width:630px}
+#pixels-ps4 h1 span{color:#d9d7cd;display:block;font-size:.73em;letter-spacing:.045em;margin-top:9px}
+#pixels-ps4 .px-hero-bottom{display:flex;gap:22px;align-items:center;margin-top:25px}
+#pixels-ps4 .px-omega{font:48px/1 Georgia,serif;color:#e44b4d;text-shadow:0 3px 0 #611d22;display:block}
+#pixels-ps4 .px-total{display:flex;align-items:center;gap:12px;padding-left:20px;border-left:1px solid #786a55}
+#pixels-ps4 .px-total strong{font-size:34px;line-height:1;font-weight:700;color:#f3dfb5}
+#pixels-ps4 .px-total span{color:#d2d6d4;font-size:14px;line-height:1.3;max-width:120px}
+#pixels-ps4 .px-rune-band{display:flex;align-items:center;justify-content:center;gap:24px;background:#172024;color:#9da99f;padding:11px 16px;border-bottom:1px solid #424a46;font-family:"Segoe UI Historic","Segoe UI Symbol",Georgia,serif;font-size:19px;letter-spacing:.35em}
+#pixels-ps4 .px-rune-band::before,#pixels-ps4 .px-rune-band::after{content:"";width:120px;height:1px;background:linear-gradient(90deg,transparent,#7f8e80)}#pixels-ps4 .px-rune-band::after{transform:rotate(180deg)}
+#pixels-ps4 .px-main{padding-block:35px 48px;background:radial-gradient(ellipse at 50% 0,#33404533,transparent 36%)}
+#pixels-ps4 .px-catalog-head{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:26px}
+#pixels-ps4 .px-catalog-head h2{font:700 22px/1.2 Georgia,serif;color:#e9e3d6;display:flex;gap:13px;align-items:center}
+#pixels-ps4 .px-catalog-head h2::before{content:"";display:block;background:var(--px-red);width:4px;height:24px;transform:skew(-14deg)}
+#pixels-ps4 .px-catalog-head>span{font-size:13px;color:var(--px-muted)}
+#pixels-ps4 .px-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:26px 22px}
+#pixels-ps4 .px-game{min-width:0;background:linear-gradient(135deg,#252e32,#192023);border:1px solid #4a504f;position:relative;box-shadow:0 5px 13px #0004;transition:transform .2s,border-color .2s}
+#pixels-ps4 .px-game::before,#pixels-ps4 .px-game::after{content:"";position:absolute;z-index:1;width:14px;height:14px;pointer-events:none;border-color:#b8a480;border-style:solid}#pixels-ps4 .px-game::before{left:-1px;top:-1px;border-width:2px 0 0 2px}#pixels-ps4 .px-game::after{right:-1px;bottom:-1px;border-width:0 2px 2px 0}
+#pixels-ps4 .px-game:hover{transform:translateY(-4px);border-color:#bb9a68}
+#pixels-ps4 .px-cover{position:relative;aspect-ratio:3/4;background:#0c1215;overflow:hidden;border-bottom:2px solid #672a2a}
+#pixels-ps4 .px-cover img{display:block;width:100%;height:100%;object-fit:contain}
+#pixels-ps4 .px-number{position:absolute;bottom:0;right:0;font-size:12px;color:#ddc9a7;background:#151c20ed;border-top:1px solid #827256;border-left:1px solid #827256;padding:5px 9px;font-variant-numeric:tabular-nums}
+#pixels-ps4 .px-body{padding:16px 14px 19px;min-height:105px}
+#pixels-ps4 .px-game h3{font-size:16px;line-height:1.4;font-weight:700;overflow-wrap:anywhere;color:#f3eee3}
+#pixels-ps4 .px-edition{font-size:13px;color:var(--px-ice);line-height:1.5;margin-top:7px}
+#pixels-ps4 .px-notes{border-top:1px solid #484b46;margin-top:44px;padding-top:20px;color:#b8c0c2;font-size:14px;line-height:1.7}
+#pixels-ps4 .px-notes summary{cursor:pointer;color:#d6c6a8;font-weight:700;padding-block:8px}#pixels-ps4 .px-notes p{margin:12px 0;max-width:1000px}#pixels-ps4 .px-notes a{color:#acd2db;text-underline-offset:3px}#pixels-ps4 .px-sources{columns:3;padding-left:20px}#pixels-ps4 .px-sources li{break-inside:avoid;margin-bottom:8px;font-size:13px}
+#pixels-ps4 .px-footer{border-top:1px solid #74664c;border-bottom:5px solid #8e252a;background:#171d21;padding:28px 0}
+#pixels-ps4 .px-footer-inner{display:flex;align-items:center;justify-content:space-between;gap:25px}#pixels-ps4 .px-footer-logo{width:185px;height:auto}#pixels-ps4 .px-footer-copy{font-size:12px;color:#b2bcbe;max-width:580px;text-align:right;line-height:1.7}
+#pixels-ps4 a:focus-visible,#pixels-ps4 button:focus-visible,#pixels-ps4 summary:focus-visible{outline:3px solid #a3d6e3;outline-offset:4px}
+#pixels-ps4[data-embedded="true"] .px-links,#pixels-ps4[data-embedded="true"] .px-menu{display:none!important}#pixels-ps4[data-embedded="true"] .px-nav{justify-content:center;min-height:84px}
+@media(max-width:1180px){#pixels-ps4 .px-nav{flex-wrap:wrap;gap:0;padding-block:17px;min-height:90px}#pixels-ps4 .px-links{flex:1 0 100%;padding-top:20px}#pixels-ps4.px-ready .px-menu{display:flex}#pixels-ps4.px-ready .px-links:not(.px-open){display:none}#pixels-ps4 .px-grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media(max-width:850px){#pixels-ps4 .px-wrap{width:calc(100% - 40px)}#pixels-ps4 .px-hero{min-height:350px}#pixels-ps4 .px-hero-art{width:100%;object-position:58% center}#pixels-ps4 .px-hero::before{background:linear-gradient(90deg,#101416ed,#10141691 65%,#10141644)}#pixels-ps4 .px-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:22px 18px}#pixels-ps4 .px-links{grid-template-columns:repeat(3,minmax(0,1fr))}#pixels-ps4 .px-sources{columns:2}}
+@media(max-width:560px){#pixels-ps4 .px-wrap{width:calc(100% - 32px)}#pixels-ps4 .px-brand{flex-basis:184px}#pixels-ps4 .px-brand img{width:184px}#pixels-ps4 .px-nav{min-height:84px;padding-block:14px}#pixels-ps4 .px-menu{font-size:12px;padding:8px 11px}#pixels-ps4 .px-links{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}#pixels-ps4 .px-hero{min-height:365px;align-items:flex-end}#pixels-ps4 .px-hero-art{object-position:61% center;opacity:.82}#pixels-ps4 .px-hero::before{background:linear-gradient(0deg,#101416 0%,#101416aa 65%,#1014164d)}#pixels-ps4 .px-hero-content{padding-top:96px;padding-bottom:28px}#pixels-ps4 h1{font-size:38px;max-width:350px}#pixels-ps4 .px-eyebrow{font-size:11px;letter-spacing:.15em;margin-bottom:15px}#pixels-ps4 .px-total strong{font-size:30px}#pixels-ps4 .px-omega{font-size:42px}#pixels-ps4 .px-hero-bottom{margin-top:19px}#pixels-ps4 .px-rune-band{font-size:16px;gap:14px;letter-spacing:.26em;padding:10px 12px}#pixels-ps4 .px-rune-band::before,#pixels-ps4 .px-rune-band::after{width:40px}#pixels-ps4 .px-main{padding-top:27px}#pixels-ps4 .px-catalog-head{align-items:flex-start;margin-bottom:22px}#pixels-ps4 .px-catalog-head h2{font-size:20px}#pixels-ps4 .px-catalog-head>span{font-size:12px;padding-top:3px}#pixels-ps4 .px-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 14px}#pixels-ps4 .px-body{padding:12px 10px 15px;min-height:100px}#pixels-ps4 .px-game h3{font-size:15px}#pixels-ps4 .px-edition{font-size:12px}#pixels-ps4 .px-footer-inner{flex-direction:column;gap:18px}#pixels-ps4 .px-footer-copy{text-align:center}#pixels-ps4 .px-sources{columns:1}}
+@media(prefers-reduced-motion:reduce){#pixels-ps4 *{transition:none!important;scroll-behavior:auto!important}}
+@media print{#pixels-ps4{background:#fff;color:#111}#pixels-ps4 .px-links,#pixels-ps4 .px-menu,#pixels-ps4 .px-notes,#pixels-ps4 .px-rune-band{display:none!important}#pixels-ps4 .px-wrap{width:100%}#pixels-ps4 .px-hero{min-height:200px}#pixels-ps4 h1{font-size:36px}#pixels-ps4 .px-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}#pixels-ps4 .px-game{break-inside:avoid;box-shadow:none}#pixels-ps4 .px-game h3{font-size:12px}#pixels-ps4 .px-body{min-height:70px;padding:10px}#pixels-ps4 .px-edition{font-size:10px}}
