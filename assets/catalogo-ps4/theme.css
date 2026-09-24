@@ -4,7 +4,7 @@
 #pixels-ps4 .px-header{position:relative;z-index:3;background:#13171a;border-bottom:1px solid #6b6151}
 #pixels-ps4 .px-nav{display:flex;align-items:center;gap:28px;min-height:100px}
 #pixels-ps4 .px-brand{display:block;flex:0 0 210px;line-height:0}#pixels-ps4 .px-brand img{width:210px;height:auto;filter:drop-shadow(0 3px 3px #0007)}
-#pixels-ps4 .px-links{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));flex:1;gap:9px}
+#pixels-ps4 .px-links{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));flex:1;gap:9px}
 #pixels-ps4 .px-links a{display:flex;align-items:center;justify-content:center;min-height:44px;text-decoration:none;font-size:12px;letter-spacing:.06em;font-weight:800;text-align:center;border:1px solid #595c5b;border-bottom:3px solid #77746a;background:#222a2e;box-shadow:3px 3px 0 #080c0d;transition:transform .15s,background .15s}
 #pixels-ps4 .px-links a:hover{background:#34434a;transform:translateY(-2px)}#pixels-ps4 .px-links a[aria-current]{background:#8f2229;border-color:#df6e61;border-bottom-color:#e39674}#pixels-ps4 .px-links .px-raffles{color:#171919;background:#dfae59;border-color:#efd3a0}
 #pixels-ps4 .px-menu{display:none;margin-left:auto;min-height:44px;align-items:center;gap:10px;background:#242d32;border:1px solid #7e8077;color:#fff;padding:10px 14px;cursor:pointer;font-size:14px;font-weight:700}
