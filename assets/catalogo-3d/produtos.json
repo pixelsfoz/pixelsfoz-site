@@ -1,0 +1,582 @@
+[
+  {
+    "id": "PX3D-001",
+    "name": "Homem-Aranha em tamanho real",
+    "category": "Tamanho real",
+    "photos": [
+      "homem-aranha-170cm.jpg"
+    ],
+    "thumb": "homem-aranha-170cm.webp",
+    "description": "Produzido em impressão 3D pela Pixels. Peça de 1,70 m de altura, com os detalhes do traje em relevo.",
+    "keywords": "Homem-Aranha Marvel heroi grande 170 cm",
+    "measure": "1,70 m de altura"
+  },
+  {
+    "id": "PX3D-002",
+    "name": "Blastoise",
+    "category": "Games",
+    "photos": [
+      "foto-34.jpg",
+      "foto-39.jpg",
+      "foto-40.jpg"
+    ],
+    "thumb": "mini-34.webp",
+    "description": "Figura com os canhões e as cores do personagem. Veja os diferentes ângulos da peça.",
+    "keywords": "Pokemon Pokémon Nintendo",
+    "measure": ""
+  },
+  {
+    "id": "PX3D-003",
+    "name": "Mario e Rosalina",
+    "category": "Games",
+    "photos": [
+      "foto-31.jpg"
+    ],
+    "thumb": "mini-31.webp",
+    "description": "Dupla de personagens do universo Super Mario em versão para exposição.",
+    "keywords": "Nintendo princesa Super Mario",
+    "measure": ""
+  },
+  {
+    "id": "PX3D-004",
+    "name": "Kratos · busto",
+    "category": "Games",
+    "photos": [
+      "foto-56.jpg",
+      "foto-52.jpg"
+    ],
+    "thumb": "mini-56.webp",
+    "description": "Busto com barba, marcas do rosto e a faixa vermelha do personagem.",
+    "keywords": "God of War Playstation",
+    "measure": ""
+  },
+  {
+    "id": "PX3D-005",
+    "name": "Hornet",
+    "category": "Games",
+    "photos": [
+      "foto-07.jpg"
+    ],
+    "thumb": "mini-07.webp",
+    "description": "Personagem com capa vermelha e base temática de Hollow Knight.",
+    "keywords": "Hollow Knight Silksong",
+    "measure": ""
+  },
+  {
+    "id": "PX3D-006",
+    "name": "Donkey Kong · diorama",
+    "category": "Games",
+    "photos": [
+      "foto-03.jpg"
+    ],
+    "thumb": "mini-03.webp",
+    "description": "Cena com personagens, vegetação e base temática Donkey Kong.",
+    "keywords": "Nintendo Diddy",
+    "measure": ""
+  },
+  {
+    "id": "PX3D-007",
+    "name": "Majin Buu",
+    "category": "Filmes e séries",
+    "photos": [
+      "foto-09.jpg"
+    ],
+    "thumb": "mini-09.webp",
+    "description": "Figura de Dragon Ball com pose de combate e base de exposição.",
+    "keywords": "Dragon Ball anime Boo Buu",
+    "measure": ""
+  },
+  {
+    "id": "PX3D-008",
+    "name": "Dragão vermelho",
+    "category": "Decoração",
+    "photos": [
+      "foto-24.jpg",
+      "foto-26.jpg",
+      "foto-20.jpg"
+    ],
+    "thumb": "mini-24.webp",
+    "description": "Dragão com asas abertas e base detalhada. Explore as fotos para ver a escultura por outros ângulos.",
+    "keywords": "fantasia RPG escultura",
+    "measure": ""
+  },
+  {
+    "id": "PX3D-009",
+    "name": "Suporte de controle · PlayStation",
+    "category": "Suportes e utilidades",
+    "photos": [
+      "foto-46.jpg"
+    ],
+    "thumb": "mini-46.webp",
+    "description": "Base temática para apoiar e expor o controle. Consulte a compatibilidade com o seu modelo.",
+    "keywords": "PS4 PS5 Playstation setup",
+    "measure": ""
+  },
+  {
+    "id": "PX3D-010",
+    "name": "Mewtwo",
+    "category": "Games",
+    "photos": [
+      "foto-27.jpg"
+    ],
+    "thumb": "mini-27.webp",
+    "description": "Figura do Pokémon Mewtwo, com cauda e detalhes em roxo.",
+    "keywords": "Pokémon Pokemon Nintendo",
+    "measure": ""
+  },
+  {
+    "id": "PX3D-011",
+    "name": "He-Man e Esqueleto",
+    "category": "Filmes e séries",
+    "photos": [
+      "foto-38.jpg",
+      "foto-18.jpg",
+      "foto-17.jpg"
+    ],
+    "thumb": "mini-38.webp",
+    "description": "Os dois personagens reunidos, com fotos individuais para conferir os detalhes.",
+    "keywords": "Mestres do Universo Skeletor desenho",
+    "measure": ""
+  },
+  {
+    "id": "PX3D-012",
+    "name": "Venusaur",
+    "category": "Games",
+    "photos": [
+      "foto-30.jpg"
+    ],
+    "thumb": "mini-30.webp",
+    "description": "Figura com a flor e as folhas características do Pokémon.",
+    "keywords": "Pokémon Pokemon Nintendo",
+    "measure": ""
+  },
+  {
+    "id": "PX3D-013",
+    "name": "Mario em blocos",
+    "category": "Games",
+    "photos": [
+      "foto-04.jpg"
+    ],
+    "thumb": "mini-04.webp",
+    "description": "Versão do Mario com formas geométricas e visual de blocos.",
+    "keywords": "Super Mario Nintendo",
+    "measure": ""
+  },
+  {
+    "id": "PX3D-014",
+    "name": "Vault Boy",
+    "category": "Games",
+    "photos": [
+      "foto-06.jpg"
+    ],
+    "thumb": "mini-06.webp",
+    "description": "Personagem de Fallout com macacão azul e o clássico sinal positivo.",
+    "keywords": "Fallout videogame Bethesda",
+    "measure": ""
+  },
+  {
+    "id": "PX3D-015",
+    "name": "Medalhão do lobo",
+    "category": "Games",
+    "photos": [
+      "foto-02.jpg"
+    ],
+    "thumb": "mini-02.webp",
+    "description": "Símbolo de lobo com olhos vermelhos e acabamento em tom metálico.",
+    "keywords": "The Witcher Geralt",
+    "measure": ""
+  },
+  {
+    "id": "PX3D-016",
+    "name": "Busto steampunk",
+    "category": "Decoração",
+    "photos": [
+      "foto-01.jpg"
+    ],
+    "thumb": "mini-01.webp",
+    "description": "Personagem com óculos, máscara e acessórios em uma composição cheia de detalhes.",
+    "keywords": "escultura fantasia",
+    "measure": ""
+  },
+  {
+    "id": "PX3D-017",
+    "name": "Coelhinho azul texturizado",
+    "category": "Decoração",
+    "photos": [
+      "foto-05.jpg"
+    ],
+    "thumb": "mini-05.webp",
+    "description": "Peça azul com orelhas alongadas e textura aparente.",
+    "keywords": "personagem coelho",
+    "measure": ""
+  },
+  {
+    "id": "PX3D-018",
+    "name": "Guerreiro dourado",
+    "category": "Decoração",
+    "photos": [
+      "foto-08.jpg"
+    ],
+    "thumb": "mini-08.webp",
+    "description": "Escultura de guerreiro com armadura, capa e base ornamentada.",
+    "keywords": "fantasia escultura cavaleiro",
+    "measure": ""
+  },
+  {
+    "id": "PX3D-019",
+    "name": "Caveira com árvore",
+    "category": "Decoração",
+    "photos": [
+      "foto-10.jpg"
+    ],
+    "thumb": "mini-10.webp",
+    "description": "Composição vermelha que combina caveira, galhos e copa de árvore.",
+    "keywords": "cranio árvore escultura",
+    "measure": ""
+  },
+  {
+    "id": "PX3D-020",
+    "name": "Jesus em arco",
+    "category": "Decoração",
+    "photos": [
+      "foto-32.jpg",
+      "foto-11.jpg"
+    ],
+    "thumb": "mini-32.webp",
+    "description": "Imagem em branco emoldurada por um arco.",
+    "keywords": "religioso fé cristão",
+    "measure": ""
+  },
+  {
+    "id": "PX3D-021",
+    "name": "Halloween",
+    "category": "Decoração",
+    "photos": [
+      "foto-12.jpg"
+    ],
+    "thumb": "mini-12.webp",
+    "description": "Peça temática com abóbora, caveira e letreiro em verde.",
+    "keywords": "dia das bruxas",
+    "measure": ""
+  },
+  {
+    "id": "PX3D-022",
+    "name": "Super Mario · cenário retrô",
+    "category": "Games",
+    "photos": [
+      "foto-13.jpg"
+    ],
+    "thumb": "mini-13.webp",
+    "description": "Cenário do universo Mario apresentado em uma moldura com visual de tela.",
+    "keywords": "Nintendo diorama SNES",
+    "measure": ""
+  },
+  {
+    "id": "PX3D-023",
+    "name": "Castelo de fantasia",
+    "category": "Decoração",
+    "photos": [
+      "foto-14.jpg"
+    ],
+    "thumb": "mini-14.webp",
+    "description": "Castelo em tom cinza com torres e base rochosa.",
+    "keywords": "RPG arquitetura miniatura",
+    "measure": ""
+  },
+  {
+    "id": "PX3D-024",
+    "name": "Máscara de palhaço",
+    "category": "Filmes e séries",
+    "photos": [
+      "foto-15.jpg"
+    ],
+    "thumb": "mini-15.webp",
+    "description": "Máscara branca com detalhes vermelhos e azuis.",
+    "keywords": "cosplay decoracao",
+    "measure": ""
+  },
+  {
+    "id": "PX3D-025",
+    "name": "GTA VI · placa decorativa",
+    "category": "Games",
+    "photos": [
+      "foto-16.jpg"
+    ],
+    "thumb": "mini-16.webp",
+    "description": "Letreiro de Grand Theft Auto em uma composição rosa e roxa.",
+    "keywords": "Grand Theft Auto 6 Rockstar",
+    "measure": ""
+  },
+  {
+    "id": "PX3D-026",
+    "name": "Manopla do Infinito",
+    "category": "Filmes e séries",
+    "photos": [
+      "foto-19.jpg"
+    ],
+    "thumb": "mini-19.webp",
+    "description": "Réplica decorativa dourada inspirada no universo dos Vingadores.",
+    "keywords": "Marvel Thanos Avengers",
+    "measure": ""
+  },
+  {
+    "id": "PX3D-027",
+    "name": "Fortaleza de cristais",
+    "category": "Decoração",
+    "photos": [
+      "foto-60.jpg",
+      "foto-21.jpg"
+    ],
+    "thumb": "mini-60.webp",
+    "description": "Construção com torres pontiagudas, apresentada em versões branca e azul.",
+    "keywords": "castelo gelo fantasia",
+    "measure": ""
+  },
+  {
+    "id": "PX3D-028",
+    "name": "Guerreiro com espada",
+    "category": "Decoração",
+    "photos": [
+      "foto-22.jpg"
+    ],
+    "thumb": "mini-22.webp",
+    "description": "Figura branca com espada e base detalhada.",
+    "keywords": "fantasia RPG escultura",
+    "measure": ""
+  },
+  {
+    "id": "PX3D-029",
+    "name": "Creeper",
+    "category": "Games",
+    "photos": [
+      "foto-23.jpg"
+    ],
+    "thumb": "mini-23.webp",
+    "description": "Cabeça em formato de bloco com a expressão característica do Minecraft.",
+    "keywords": "Minecraft cubo",
+    "measure": ""
+  },
+  {
+    "id": "PX3D-030",
+    "name": "Asa Noturna",
+    "category": "Filmes e séries",
+    "photos": [
+      "foto-25.jpg"
+    ],
+    "thumb": "mini-25.webp",
+    "description": "Figura com traje azul e preto em uma base de exposição.",
+    "keywords": "DC Nightwing super heroi",
+    "measure": ""
+  },
+  {
+    "id": "PX3D-031",
+    "name": "Cristo Redentor",
+    "category": "Decoração",
+    "photos": [
+      "foto-28.jpg"
+    ],
+    "thumb": "mini-28.webp",
+    "description": "Miniatura do monumento com base circular.",
+    "keywords": "Rio de Janeiro religioso",
+    "measure": ""
+  },
+  {
+    "id": "PX3D-032",
+    "name": "Mega Man",
+    "category": "Games",
+    "photos": [
+      "foto-29.jpg"
+    ],
+    "thumb": "mini-29.webp",
+    "description": "Personagem azul em pose de ação, com o braço canhão em destaque.",
+    "keywords": "Capcom Megaman",
+    "measure": ""
+  },
+  {
+    "id": "PX3D-033",
+    "name": "Plaquinha personalizada",
+    "category": "Suportes e utilidades",
+    "photos": [
+      "foto-33.jpg"
+    ],
+    "thumb": "mini-33.webp",
+    "description": "Exemplo de placa com texto em relevo. Consulte a Pixels sobre a sua ideia.",
+    "keywords": "nome texto brinde personalizado",
+    "measure": ""
+  },
+  {
+    "id": "PX3D-034",
+    "name": "Pinky e Cérebro",
+    "category": "Filmes e séries",
+    "photos": [
+      "foto-35.jpg"
+    ],
+    "thumb": "mini-35.webp",
+    "description": "Dupla de personagens em uma composição para colecionar e decorar.",
+    "keywords": "Pinky Brain desenho",
+    "measure": ""
+  },
+  {
+    "id": "PX3D-035",
+    "name": "Bulldog francês",
+    "category": "Decoração",
+    "photos": [
+      "foto-36.jpg",
+      "foto-37.jpg"
+    ],
+    "thumb": "mini-36.webp",
+    "description": "Escultura de cachorro preto com orelhas em pé.",
+    "keywords": "cachorro cão animal pet",
+    "measure": ""
+  },
+  {
+    "id": "PX3D-036",
+    "name": "Chaveiros Pokébola",
+    "category": "Suportes e utilidades",
+    "photos": [
+      "foto-41.jpg"
+    ],
+    "thumb": "mini-41.webp",
+    "description": "Chaveiros com o formato e as cores da Pokébola.",
+    "keywords": "Pokemon Pokémon presente",
+    "measure": ""
+  },
+  {
+    "id": "PX3D-037",
+    "name": "Busto de criatura",
+    "category": "Filmes e séries",
+    "photos": [
+      "foto-42.jpg",
+      "foto-43.jpg",
+      "foto-47.jpg"
+    ],
+    "thumb": "mini-42.webp",
+    "description": "Busto texturizado com base, apresentado nas cores preta e roxa.",
+    "keywords": "terror monstro criatura",
+    "measure": ""
+  },
+  {
+    "id": "PX3D-038",
+    "name": "Stranger Things · cenário",
+    "category": "Filmes e séries",
+    "photos": [
+      "foto-44.jpg"
+    ],
+    "thumb": "mini-44.webp",
+    "description": "Peça decorativa com o letreiro e elementos do universo da série.",
+    "keywords": "Netflix cenário",
+    "measure": ""
+  },
+  {
+    "id": "PX3D-039",
+    "name": "Personagem de terno",
+    "category": "Filmes e séries",
+    "photos": [
+      "foto-45.jpg"
+    ],
+    "thumb": "mini-45.webp",
+    "description": "Figura branca em pose de exposição sobre base circular.",
+    "keywords": "escultura colecionavel",
+    "measure": ""
+  },
+  {
+    "id": "PX3D-040",
+    "name": "Suporte de controle · máscara",
+    "category": "Suportes e utilidades",
+    "photos": [
+      "foto-48.jpg"
+    ],
+    "thumb": "mini-48.webp",
+    "description": "Suporte temático em formato de máscara. Consulte o encaixe para o seu controle.",
+    "keywords": "Playstation PS4 PS5 Homem Aranha Spider Man",
+    "measure": ""
+  },
+  {
+    "id": "PX3D-041",
+    "name": "Suporte para Nintendo Switch",
+    "category": "Suportes e utilidades",
+    "photos": [
+      "foto-49.jpg"
+    ],
+    "thumb": "mini-49.webp",
+    "description": "Base temática para compor o espaço do Nintendo Switch. Consulte a compatibilidade.",
+    "keywords": "Nintendo Mario setup console",
+    "measure": ""
+  },
+  {
+    "id": "PX3D-042",
+    "name": "Pica-Pau",
+    "category": "Filmes e séries",
+    "photos": [
+      "foto-51.jpg",
+      "foto-50.jpg",
+      "foto-53.jpg"
+    ],
+    "thumb": "mini-51.webp",
+    "description": "Personagem com topete vermelho, roupa preta e base de exposição.",
+    "keywords": "Woody Woodpecker desenho",
+    "measure": ""
+  },
+  {
+    "id": "PX3D-043",
+    "name": "Touro decorativo",
+    "category": "Decoração",
+    "photos": [
+      "foto-55.jpg",
+      "foto-54.jpg"
+    ],
+    "thumb": "mini-55.webp",
+    "description": "Escultura de touro em tom dourado, com base oval.",
+    "keywords": "animal escultura presente",
+    "measure": ""
+  },
+  {
+    "id": "PX3D-044",
+    "name": "Plataforma 9¾",
+    "category": "Filmes e séries",
+    "photos": [
+      "foto-57.jpg"
+    ],
+    "thumb": "mini-57.webp",
+    "description": "Placa decorativa com suporte inspirada no universo Harry Potter.",
+    "keywords": "Harry Potter Hogwarts plataforma 9 3/4",
+    "measure": ""
+  },
+  {
+    "id": "PX3D-045",
+    "name": "Cabana do Mistério",
+    "category": "Filmes e séries",
+    "photos": [
+      "foto-58.jpg",
+      "foto-59.jpg"
+    ],
+    "thumb": "mini-58.webp",
+    "description": "Miniatura da Mystery Shack, com telhado, fachada e letreiro.",
+    "keywords": "Gravity Falls Mystery Shack",
+    "measure": ""
+  },
+  {
+    "id": "PX3D-046",
+    "name": "Suporte de controle · personagem",
+    "category": "Suportes e utilidades",
+    "photos": [
+      "foto-61.jpg"
+    ],
+    "thumb": "mini-61.webp",
+    "description": "Personagem colorido em formato de suporte para controle. Consulte a compatibilidade.",
+    "keywords": "Among Us setup PS4 Playstation",
+    "measure": ""
+  },
+  {
+    "id": "PX3D-047",
+    "name": "Suporte de controle · Fortnite",
+    "category": "Suportes e utilidades",
+    "photos": [
+      "foto-62.jpg"
+    ],
+    "thumb": "mini-62.webp",
+    "description": "Base amarela com o nome Fortnite em relevo. Consulte a compatibilidade.",
+    "keywords": "Fortnite Epic PS4 Playstation setup",
+    "measure": ""
+  }
+]
