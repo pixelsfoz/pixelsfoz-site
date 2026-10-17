@@ -1,0 +1,18 @@
+/* Shared navigation layout. Product content and page themes remain in their own styles. */
+header [data-pixels-nav][data-pixels-nav]{display:grid!important;grid-template-columns:repeat(var(--pixels-nav-columns,6),minmax(0,1fr))!important;align-items:stretch!important;gap:8px!important;min-width:0!important;flex:1 1 0!important;margin:0!important;padding:0!important}
+header [data-pixels-nav]>li{display:flex!important;min-width:0!important;list-style:none}
+header [data-pixels-nav] a{box-sizing:border-box;display:flex!important;align-items:center;justify-content:center;text-align:center;min-width:0;min-height:48px!important;width:100%;padding:9px 8px!important;font-size:11px!important;letter-spacing:0!important;line-height:1.5;overflow-wrap:anywhere;text-decoration:none}
+header .px-nav:has([data-pixels-nav]){padding-block:12px}
+header [data-pixels-toggle][data-pixels-toggle]{display:none!important}
+header [data-pixels-nav] a:focus-visible,header [data-pixels-toggle]:focus-visible{outline:3px solid #f9a232!important;outline-offset:3px}
+.pixels-catalog-shortcuts{display:flex;flex-wrap:wrap;justify-content:center;gap:16px;align-items:center}
+.pixels-catalog-shortcuts .botao{margin:0}
+@media(max-width:1180px){
+ header:has([data-pixels-nav]) .nav,header:has([data-pixels-nav]) .px-nav,header:has([data-pixels-nav]) .header-inner{position:relative;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px}
+ header.pixels-nav-ready [data-pixels-toggle][data-pixels-toggle]{display:flex!important;align-items:center;justify-content:center;margin-left:auto;min-width:48px;min-height:44px}
+ header [data-pixels-nav][data-pixels-nav]{position:static!important;flex-basis:100%!important;width:100%!important;grid-template-columns:repeat(3,minmax(0,1fr))!important}
+ header.pixels-nav-ready [data-pixels-nav][data-pixels-nav]{display:none!important;position:absolute!important;top:calc(100% + 6px)!important;left:12px!important;right:12px!important;width:auto!important;max-height:calc(100dvh - 110px)!important;overflow-y:auto!important;overscroll-behavior:contain;padding:12px!important;background:#091632;border:2px solid #2c5992;box-shadow:0 12px 24px #0008;z-index:100}
+ header.pixels-nav-ready [data-pixels-toggle][aria-expanded="true"]~[data-pixels-nav][data-pixels-nav]{display:grid!important}
+}
+@media(max-width:620px){header [data-pixels-nav][data-pixels-nav]{grid-template-columns:repeat(2,minmax(0,1fr))!important}header [data-pixels-nav] a{font-size:11px!important;letter-spacing:0!important}.pixels-catalog-shortcuts{flex-direction:column}}
+@media print{header [data-pixels-nav][data-pixels-nav],header [data-pixels-toggle][data-pixels-toggle]{display:none!important}}
