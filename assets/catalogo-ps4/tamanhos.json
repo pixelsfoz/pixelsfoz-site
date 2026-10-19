@@ -1,0 +1,477 @@
+{
+  "note": "Estimativas de referência; não representam medição dos arquivos da loja.",
+  "games": [
+    {
+      "title": "Aladdin",
+      "edition": "Nasira's Revenge · Clássico PS1",
+      "approx_gb": 0.6,
+      "basis": "Disco PS1",
+      "source_url": "https://data.spludlow.co.uk/redump/redump/Sony%20-%20PlayStation",
+      "checked_on": "2026-10-19"
+    },
+    {
+      "title": "Atomfall",
+      "edition": "Deluxe Edition",
+      "approx_gb": 23,
+      "basis": "Jogo base",
+      "source_url": "https://psprices.com/region-us/game/7745121/atomfall",
+      "checked_on": "2026-10-19"
+    },
+    {
+      "title": "Bloodborne",
+      "edition": "Game of the Year",
+      "approx_gb": 37,
+      "basis": "Referência de instalação PS4",
+      "source_url": "https://www.reddit.com/r/PS4/comments/1iipubd/a_list_of_complete_install_sizes_on_ps4_starting/",
+      "checked_on": "2026-10-19"
+    },
+    {
+      "title": "Crash Bandicoot N. Sane Trilogy",
+      "edition": "",
+      "approx_gb": 24,
+      "basis": "Referência de instalação PS4",
+      "source_url": "https://www.reddit.com/r/PS4/comments/1iipubd/a_list_of_complete_install_sizes_on_ps4_starting/",
+      "checked_on": "2026-10-19"
+    },
+    {
+      "title": "Cuphead",
+      "edition": "",
+      "approx_gb": 4,
+      "basis": "Jogo base",
+      "source_url": "https://psprices.com/region-us/game/4123610/cuphead",
+      "checked_on": "2026-10-19"
+    },
+    {
+      "title": "Days Gone",
+      "edition": "",
+      "approx_gb": 39,
+      "basis": "Referência de instalação PS4",
+      "source_url": "https://www.reddit.com/r/PS4/comments/1iipubd/a_list_of_complete_install_sizes_on_ps4_starting/",
+      "checked_on": "2026-10-19"
+    },
+    {
+      "title": "Devil May Cry 5",
+      "edition": "Deluxe Edition",
+      "approx_gb": 42,
+      "basis": "Inclui referência dos extras Deluxe",
+      "source_url": "https://psprices.com/region-gb/game/4805165/devil-may-cry-5-deluxe-vergil",
+      "checked_on": "2026-10-19"
+    },
+    {
+      "title": "EA Sports FC 27",
+      "edition": "",
+      "approx_gb": "50–65",
+      "basis": "Faixa estimada; varia por versão",
+      "source_url": "https://www.idealo.co.uk/compare/212415989/ea-sports-fc-27-ps4.html",
+      "checked_on": "2026-10-19"
+    },
+    {
+      "title": "Earth Defense Force: Iron Rain",
+      "edition": "",
+      "approx_gb": 14,
+      "basis": "Jogo base",
+      "source_url": "https://psprices.com/region-gb/game/2812217/earth-defense-force-iron-rain",
+      "checked_on": "2026-10-19"
+    },
+    {
+      "title": "eFootball PES 2021",
+      "edition": "Season Update",
+      "approx_gb": 31,
+      "basis": "Jogo base; sem modificações",
+      "source_url": "https://conorconsole.com/ps4/efootball-pes-2021-season-update/",
+      "checked_on": "2026-10-19"
+    },
+    {
+      "title": "Elden Ring",
+      "edition": "Deluxe Edition",
+      "approx_gb": 45,
+      "basis": "Jogo base; expansão à parte",
+      "source_url": "https://www.gamespot.com/articles/elden-ring-release-time-preload-and-file-size-on-ps4-ps5-xbox-pc/1100-6500787/",
+      "checked_on": "2026-10-19"
+    },
+    {
+      "title": "Fatal Fury: City of the Wolves",
+      "edition": "",
+      "approx_gb": 35,
+      "basis": "Referência PS4",
+      "source_url": "https://psprices.com/region-us/game/11864613/fatal-fury-city-of-the-wolves-legend-edition",
+      "checked_on": "2026-10-19"
+    },
+    {
+      "title": "Ghost of Tsushima",
+      "edition": "Director's Cut",
+      "approx_gb": 41,
+      "basis": "Referência de instalação PS4",
+      "source_url": "https://www.reddit.com/r/PS4/comments/1iipubd/a_list_of_complete_install_sizes_on_ps4_starting/",
+      "checked_on": "2026-10-19"
+    },
+    {
+      "title": "God of War",
+      "edition": "2018",
+      "approx_gb": 47,
+      "basis": "Versão de 2018",
+      "source_url": "https://www.reddit.com/r/PS4/comments/1iipubd/a_list_of_complete_install_sizes_on_ps4_starting/",
+      "checked_on": "2026-10-19"
+    },
+    {
+      "title": "God of War",
+      "edition": "Clássico · identificação provável",
+      "approx_gb": 8.5,
+      "basis": "Disco PS2; edição a confirmar",
+      "source_url": "https://data.spludlow.co.uk/redump/redump/Sony%20-%20PlayStation%202",
+      "checked_on": "2026-10-19"
+    },
+    {
+      "title": "God of War II",
+      "edition": "Clássico · identificação provável",
+      "approx_gb": 8.5,
+      "basis": "Disco PS2; edição a confirmar",
+      "source_url": "https://data.spludlow.co.uk/redump/redump/Sony%20-%20PlayStation%202",
+      "checked_on": "2026-10-19"
+    },
+    {
+      "title": "God of War III",
+      "edition": "Remastered",
+      "approx_gb": 40,
+      "basis": "Referência de instalação PS4",
+      "source_url": "https://www.reddit.com/r/PS4/comments/1iipubd/a_list_of_complete_install_sizes_on_ps4_starting/",
+      "checked_on": "2026-10-19"
+    },
+    {
+      "title": "God of War Ragnarök",
+      "edition": "",
+      "approx_gb": 123,
+      "basis": "Referência de instalação PS4",
+      "source_url": "https://www.reddit.com/r/PS4/comments/1iipubd/a_list_of_complete_install_sizes_on_ps4_starting/",
+      "checked_on": "2026-10-19"
+    },
+    {
+      "title": "Grand Theft Auto V",
+      "edition": "",
+      "approx_gb": 92,
+      "basis": "Referência com atualizações",
+      "source_url": "https://www.technopat.net/sosyal/konu/ps4-gta-v-icin-87-gb-normal-midir.2164679/page-2",
+      "checked_on": "2026-10-19"
+    },
+    {
+      "title": "Grand Theft Auto: The Trilogy – The Definitive Edition",
+      "edition": "",
+      "approx_gb": 40,
+      "basis": "Soma dos três jogos",
+      "source_url": "https://www.gamespot.com/articles/grand-theft-auto-the-trilogy-the-definitive-edition-playstation-file-sizes-are-are-way-bigger-than-originals/1100-6497768/",
+      "checked_on": "2026-10-19"
+    },
+    {
+      "title": "Hogwarts Legacy",
+      "edition": "Deluxe Edition",
+      "approx_gb": 55,
+      "basis": "Referência PS4",
+      "source_url": "https://www.reddit.com/r/PlayStationPlus/comments/1jvvrez/",
+      "checked_on": "2026-10-19"
+    },
+    {
+      "title": "Hollow Knight",
+      "edition": "",
+      "approx_gb": 10,
+      "basis": "Referência de instalação PS4",
+      "source_url": "https://www.reddit.com/r/PS4/comments/1iipubd/a_list_of_complete_install_sizes_on_ps4_starting/",
+      "checked_on": "2026-10-19"
+    },
+    {
+      "title": "Hollow Knight: Silksong",
+      "edition": "",
+      "approx_gb": 3,
+      "basis": "Referência PS4",
+      "source_url": "https://psprices.com/region-gb/game/8976681/hollow-knight-silksong",
+      "checked_on": "2026-10-19"
+    },
+    {
+      "title": "Horizon Forbidden West",
+      "edition": "Identificação provável",
+      "approx_gb": 81,
+      "basis": "Referência de instalação PS4",
+      "source_url": "https://www.reddit.com/r/PS4/comments/1iipubd/a_list_of_complete_install_sizes_on_ps4_starting/",
+      "checked_on": "2026-10-19"
+    },
+    {
+      "title": "Horizon Zero Dawn",
+      "edition": "Complete Edition",
+      "approx_gb": 49,
+      "basis": "Referência de instalação PS4",
+      "source_url": "https://www.reddit.com/r/PS4/comments/1iipubd/a_list_of_complete_install_sizes_on_ps4_starting/",
+      "checked_on": "2026-10-19"
+    },
+    {
+      "title": "Injustice 2",
+      "edition": "Legendary Edition",
+      "approx_gb": 35,
+      "basis": "Referência de instalação PS4",
+      "source_url": "https://www.reddit.com/r/PS4/comments/1iipubd/a_list_of_complete_install_sizes_on_ps4_starting/",
+      "checked_on": "2026-10-19"
+    },
+    {
+      "title": "It Takes Two",
+      "edition": "",
+      "approx_gb": 36,
+      "basis": "Referência PS4",
+      "source_url": "https://twinfinite.net/guides/it-takes-two-download-install-size/",
+      "checked_on": "2026-10-19"
+    },
+    {
+      "title": "Knack 2",
+      "edition": "",
+      "approx_gb": 37,
+      "basis": "Referência de instalação PS4",
+      "source_url": "https://www.reddit.com/r/PS4/comments/1iipubd/a_list_of_complete_install_sizes_on_ps4_starting/",
+      "checked_on": "2026-10-19"
+    },
+    {
+      "title": "LEGO Marvel Super Heroes",
+      "edition": "",
+      "approx_gb": 7,
+      "basis": "Referência de instalação PS4",
+      "source_url": "https://www.reddit.com/r/PS4/comments/1iipubd/a_list_of_complete_install_sizes_on_ps4_starting/",
+      "checked_on": "2026-10-19"
+    },
+    {
+      "title": "Little Nightmares III",
+      "edition": "Deluxe Edition",
+      "approx_gb": 12,
+      "basis": "Jogo base; extras à parte",
+      "source_url": "https://psprices.com/region-nl/game/8775719/little-nightmares-iii",
+      "checked_on": "2026-10-19"
+    },
+    {
+      "title": "Marvel vs. Capcom: Infinite",
+      "edition": "",
+      "approx_gb": 54,
+      "basis": "Referência de instalação PS4",
+      "source_url": "https://www.reddit.com/r/PS4/comments/1iipubd/a_list_of_complete_install_sizes_on_ps4_starting/",
+      "checked_on": "2026-10-19"
+    },
+    {
+      "title": "Marvel's Spider-Man",
+      "edition": "",
+      "approx_gb": 48,
+      "basis": "Jogo base; extras à parte",
+      "source_url": "https://storegamesguatemala.com/productos/marvel-spider-man-ps4",
+      "checked_on": "2026-10-19"
+    },
+    {
+      "title": "MediEvil II",
+      "edition": "Clássico",
+      "approx_gb": 0.5,
+      "basis": "Disco PS1",
+      "source_url": "https://data.spludlow.co.uk/redump/redump/Sony%20-%20PlayStation",
+      "checked_on": "2026-10-19"
+    },
+    {
+      "title": "Minecraft",
+      "edition": "PlayStation 4 Edition",
+      "approx_gb": 2.3,
+      "basis": "PlayStation 4 Edition clássica",
+      "source_url": "https://minecraft.fandom.com/wiki/PlayStation_4_Edition",
+      "checked_on": "2026-10-19"
+    },
+    {
+      "title": "Mortal Kombat 11",
+      "edition": "Ultimate",
+      "approx_gb": 76,
+      "basis": "Referência de instalação PS4",
+      "source_url": "https://www.reddit.com/r/PS4/comments/1iipubd/a_list_of_complete_install_sizes_on_ps4_starting/",
+      "checked_on": "2026-10-19"
+    },
+    {
+      "title": "NBA 2K26",
+      "edition": "",
+      "approx_gb": 46,
+      "basis": "Download base PS4; atualizações à parte",
+      "source_url": "https://psprices.com/region-gb/game/8854653/nba-2k26-for-ps5r",
+      "checked_on": "2026-10-19"
+    },
+    {
+      "title": "Need for Speed Heat",
+      "edition": "Deluxe Edition",
+      "approx_gb": 36,
+      "basis": "Referência de instalação PS4",
+      "source_url": "https://www.reddit.com/r/PS4/comments/1iipubd/a_list_of_complete_install_sizes_on_ps4_starting/",
+      "checked_on": "2026-10-19"
+    },
+    {
+      "title": "Need for Speed: Carbon",
+      "edition": "Collector's Edition · Clássico",
+      "approx_gb": 3.7,
+      "basis": "Disco PS2",
+      "source_url": "https://data.spludlow.co.uk/redump/redump/Sony%20-%20PlayStation%202",
+      "checked_on": "2026-10-19"
+    },
+    {
+      "title": "Need for Speed: Most Wanted",
+      "edition": "Black Edition · Clássico (2005)",
+      "approx_gb": 3.7,
+      "basis": "Disco PS2",
+      "source_url": "https://data.spludlow.co.uk/redump/redump/Sony%20-%20PlayStation%202",
+      "checked_on": "2026-10-19"
+    },
+    {
+      "title": "O Rei Leão",
+      "edition": "Simba's Mighty Adventure · Clássico PS1",
+      "approx_gb": 0.7,
+      "basis": "Disco PS1",
+      "source_url": "https://data.spludlow.co.uk/redump/redump/Sony%20-%20PlayStation",
+      "checked_on": "2026-10-19"
+    },
+    {
+      "title": "Ratchet & Clank",
+      "edition": "2016",
+      "approx_gb": 27,
+      "basis": "Referência de instalação PS4",
+      "source_url": "https://www.reddit.com/r/PS4/comments/1iipubd/a_list_of_complete_install_sizes_on_ps4_starting/",
+      "checked_on": "2026-10-19"
+    },
+    {
+      "title": "Red Dead Redemption 2",
+      "edition": "",
+      "approx_gb": 111,
+      "basis": "Referência de instalação PS4",
+      "source_url": "https://www.reddit.com/r/PS4/comments/1iipubd/a_list_of_complete_install_sizes_on_ps4_starting/",
+      "checked_on": "2026-10-19"
+    },
+    {
+      "title": "Resident Evil 2",
+      "edition": "Remake",
+      "approx_gb": 25,
+      "basis": "Referência de instalação PS4",
+      "source_url": "https://www.reddit.com/r/PS4/comments/1iipubd/a_list_of_complete_install_sizes_on_ps4_starting/",
+      "checked_on": "2026-10-19"
+    },
+    {
+      "title": "Resident Evil 3",
+      "edition": "Remake",
+      "approx_gb": 24,
+      "basis": "Referência de instalação PS4",
+      "source_url": "https://www.reddit.com/r/PS4/comments/1iipubd/a_list_of_complete_install_sizes_on_ps4_starting/",
+      "checked_on": "2026-10-19"
+    },
+    {
+      "title": "Resident Evil 4",
+      "edition": "Remake · Deluxe Edition",
+      "approx_gb": 42,
+      "basis": "Remake PS4",
+      "source_url": "https://www.reddit.com/r/PS4/comments/1iipubd/a_list_of_complete_install_sizes_on_ps4_starting/",
+      "checked_on": "2026-10-19"
+    },
+    {
+      "title": "Resident Evil Village",
+      "edition": "",
+      "approx_gb": 38,
+      "basis": "Referência de instalação PS4",
+      "source_url": "https://www.reddit.com/r/PS4/comments/1iipubd/a_list_of_complete_install_sizes_on_ps4_starting/",
+      "checked_on": "2026-10-19"
+    },
+    {
+      "title": "Shadow of the Colossus",
+      "edition": "",
+      "approx_gb": 14,
+      "basis": "Referência de instalação PS4",
+      "source_url": "https://www.reddit.com/r/PS4/comments/1iipubd/a_list_of_complete_install_sizes_on_ps4_starting/",
+      "checked_on": "2026-10-19"
+    },
+    {
+      "title": "SNK vs. Capcom: SVC Chaos",
+      "edition": "",
+      "approx_gb": 0.3,
+      "basis": "Jogo base",
+      "source_url": "https://psprices.com/region-gb/game/7313349/snk-vs-capcom-svc-chaos",
+      "checked_on": "2026-10-19"
+    },
+    {
+      "title": "Sonic X Shadow Generations",
+      "edition": "Digital Deluxe Edition",
+      "approx_gb": 20,
+      "basis": "Base e extras Deluxe estimados",
+      "source_url": "https://psprices.com/region-us/game/7188051/sonic-x-shadow-generations-ps4-ps5",
+      "checked_on": "2026-10-19"
+    },
+    {
+      "title": "Street Fighter 6",
+      "edition": "",
+      "approx_gb": 68,
+      "basis": "Referência com os modos instalados",
+      "source_url": "https://www.reddit.com/r/PS4/comments/1iipubd/a_list_of_complete_install_sizes_on_ps4_starting/",
+      "checked_on": "2026-10-19"
+    },
+    {
+      "title": "Tarzan",
+      "edition": "Clássico Disney · PS1",
+      "approx_gb": 0.6,
+      "basis": "Disco PS1",
+      "source_url": "https://data.spludlow.co.uk/redump/redump/Sony%20-%20PlayStation",
+      "checked_on": "2026-10-19"
+    },
+    {
+      "title": "Team Sonic Racing",
+      "edition": "",
+      "approx_gb": 14,
+      "basis": "Jogo base",
+      "source_url": "https://platprices.com/gb/game/3973-team-sonic-racing",
+      "checked_on": "2026-10-19"
+    },
+    {
+      "title": "Tekken 7",
+      "edition": "",
+      "approx_gb": 39,
+      "basis": "Download base; atualizações à parte",
+      "source_url": "https://psprices.com/region-gb/game/1370320/tekken-7",
+      "checked_on": "2026-10-19"
+    },
+    {
+      "title": "The Last of Us Part II",
+      "edition": "",
+      "approx_gb": 87,
+      "basis": "Referência PS4",
+      "source_url": "https://platprices.com/gb/game/7610-the-last-of-us-part-ii",
+      "checked_on": "2026-10-19"
+    },
+    {
+      "title": "The Last of Us Remastered",
+      "edition": "Edição a confirmar",
+      "approx_gb": 44,
+      "basis": "Referência de instalação PS4",
+      "source_url": "https://www.reddit.com/r/PS4/comments/1iipubd/a_list_of_complete_install_sizes_on_ps4_starting/",
+      "checked_on": "2026-10-19"
+    },
+    {
+      "title": "Toy Story 2: Buzz Lightyear to the Rescue",
+      "edition": "Clássico Disney · PS1",
+      "approx_gb": 0.6,
+      "basis": "Disco PS1",
+      "source_url": "https://data.spludlow.co.uk/redump/redump/Sony%20-%20PlayStation",
+      "checked_on": "2026-10-19"
+    },
+    {
+      "title": "Uncharted 3: Drake’s Deception",
+      "edition": "Remastered",
+      "approx_gb": 19,
+      "basis": "Remastered PS4",
+      "source_url": "https://platprices.com/gb/game/3525-uncharted-3-drakes-deception-remastered",
+      "checked_on": "2026-10-19"
+    },
+    {
+      "title": "Uncharted 4 A Thief's End",
+      "edition": "",
+      "approx_gb": 63,
+      "basis": "Referência de instalação PS4",
+      "source_url": "https://www.reddit.com/r/PS4/comments/1iipubd/a_list_of_complete_install_sizes_on_ps4_starting/",
+      "checked_on": "2026-10-19"
+    },
+    {
+      "title": "Uncharted The Nathan Drake Collection",
+      "edition": "",
+      "approx_gb": 45,
+      "basis": "Referência de instalação PS4",
+      "source_url": "https://www.reddit.com/r/PS4/comments/1iipubd/a_list_of_complete_install_sizes_on_ps4_starting/",
+      "checked_on": "2026-10-19"
+    }
+  ]
+}
