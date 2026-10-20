@@ -1,0 +1,930 @@
+{
+  "sources": [
+    {
+      "platform": "wii",
+      "index": 0,
+      "title": "Alvin and the Chipmunks: The Squeakquel",
+      "url": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Wii/master/Named_Boxarts/Alvin%20and%20the%20Chipmunks%20-%20The%20Squeakquel%20(USA).png"
+    },
+    {
+      "platform": "wii",
+      "index": 1,
+      "title": "Angry Birds Star Wars",
+      "url": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Wii/master/Named_Boxarts/Angry%20Birds%20Star%20Wars%20(USA)%20(En%2CFr%2CEs%2CPt).png"
+    },
+    {
+      "platform": "wii",
+      "index": 6,
+      "title": "Brothers in Arms: Earned in Blood",
+      "url": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Wii/master/Named_Boxarts/Brothers%20in%20Arms%20-%20Earned%20in%20Blood%20(Europe)%20(En%2CFr%2CDe%2CEs%2CIt).png"
+    },
+    {
+      "platform": "wii",
+      "index": 7,
+      "title": "Brunswick Pro Bowling",
+      "url": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Wii/master/Named_Boxarts/Brunswick%20Pro%20Bowling%20(USA).png"
+    },
+    {
+      "platform": "wii",
+      "index": 9,
+      "title": "Call of Duty: Modern Warfare: Reflex Edition",
+      "url": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Wii/master/Named_Boxarts/Call%20of%20Duty_%20Modern%20Warfare%20-%20Reflex%20Edition%20(USA).png"
+    },
+    {
+      "platform": "wii",
+      "index": 3,
+      "title": "Battalion Wars 2",
+      "url": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Wii/master/Named_Boxarts/Battalion%20Wars%202%20(USA).png"
+    },
+    {
+      "platform": "wii",
+      "index": 12,
+      "title": "DiRT 2",
+      "url": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Wii/master/Named_Boxarts/DiRT%202%20(USA)%20(En%2CFr%2CEs).png"
+    },
+    {
+      "platform": "wii",
+      "index": 13,
+      "title": "Disaster: Day of Crisis",
+      "url": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Wii/master/Named_Boxarts/Disaster%20-%20Day%20of%20Crisis%20(Europe)%20(En%2CFr%2CDe%2CEs%2CIt).png"
+    },
+    {
+      "platform": "wii",
+      "index": 5,
+      "title": "Big League Sports: Summer",
+      "url": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Wii/master/Named_Boxarts/Big%20League%20Sports%20-%20Summer%20(USA)%20(En%2CFr).png"
+    },
+    {
+      "platform": "wii",
+      "index": 8,
+      "title": "Call of Duty: World at War",
+      "url": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Wii/master/Named_Boxarts/Call%20of%20Duty%20-%20World%20at%20War%20(USA).png"
+    },
+    {
+      "platform": "wii",
+      "index": 10,
+      "title": "Counter Force",
+      "url": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Wii/master/Named_Boxarts/Counter%20Force%20(USA).png"
+    },
+    {
+      "platform": "wii",
+      "index": 14,
+      "title": "Donkey Kong Country Returns",
+      "url": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Wii/master/Named_Boxarts/Donkey%20Kong%20Country%20Returns%20(USA)%20(En%2CFr%2CEs)%20(Rev%201).png"
+    },
+    {
+      "platform": "wii",
+      "index": 15,
+      "title": "Dragon Ball: Revenge of King Piccolo",
+      "url": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Wii/master/Named_Boxarts/Dragon%20Ball%20-%20Revenge%20of%20King%20Piccolo%20(USA).png"
+    },
+    {
+      "platform": "wii",
+      "index": 17,
+      "title": "EA SPORTS Active: More Workouts",
+      "url": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Wii/master/Named_Boxarts/EA%20Sports%20Active_%20More%20Workouts%20(USA).png"
+    },
+    {
+      "platform": "wii",
+      "index": 16,
+      "title": "Dragon Ball Z: Budokai Tenkaichi 3",
+      "url": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Wii/master/Named_Boxarts/Dragon%20Ball%20Z%20-%20Budokai%20Tenkaichi%203%20(USA)%20(Rev%201).png"
+    },
+    {
+      "platform": "wii",
+      "index": 19,
+      "title": "Excite Truck",
+      "url": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Wii/master/Named_Boxarts/Excite%20Truck%20(USA).png"
+    },
+    {
+      "platform": "wii",
+      "index": 20,
+      "title": "F1 2009",
+      "url": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Wii/master/Named_Boxarts/F1%202009%20(USA)%20(En%2CFr%2CEs).png"
+    },
+    {
+      "platform": "wii",
+      "index": 23,
+      "title": "FIFA 15",
+      "url": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Wii/master/Named_Boxarts/FIFA%2015%20(USA)%20(En%2CFr%2CEs).png"
+    },
+    {
+      "platform": "wii",
+      "index": 24,
+      "title": "Fit & Fun",
+      "url": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Wii/master/Named_Boxarts/Fit%20_%20Fun%20-%20Your%20Virtual%20Personal%20Coach%20(Europe).png"
+    },
+    {
+      "platform": "wii",
+      "index": 25,
+      "title": "Fragile Dreams: Farewell Ruins of the Moon",
+      "url": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Wii/master/Named_Boxarts/Fragile%20Dreams%20-%20Farewell%20Ruins%20of%20the%20Moon%20(USA)%20(En%2CJa%2CFr).png"
+    },
+    {
+      "platform": "wii",
+      "index": 22,
+      "title": "Final Fantasy Crystal Chronicles: The Crystal Bearers",
+      "url": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Wii/master/Named_Boxarts/Final%20Fantasy%20Crystal%20Chronicles%20-%20The%20Crystal%20Bearers%20(USA)%20(En%2CFr%2CEs).png"
+    },
+    {
+      "platform": "wii",
+      "index": 26,
+      "title": "Geometry Wars: Galaxies",
+      "url": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Wii/master/Named_Boxarts/Geometry%20Wars%20-%20Galaxies%20(USA).png"
+    },
+    {
+      "platform": "wii",
+      "index": 27,
+      "title": "Ghostbusters: The Video Game",
+      "url": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Wii/master/Named_Boxarts/Ghostbusters%20-%20The%20Video%20Game%20(USA)%20(En%2CFr%2CEs)%20(Rev%201).png"
+    },
+    {
+      "platform": "wii",
+      "index": 31,
+      "title": "Guitar Hero III: Legends of Rock",
+      "url": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Wii/master/Named_Boxarts/Guitar%20Hero%20III%20-%20Legends%20of%20Rock%20(USA)%20(Rev%201).png"
+    },
+    {
+      "platform": "wii",
+      "index": 28,
+      "title": "G.I. Joe: The Rise of Cobra",
+      "url": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Wii/master/Named_Boxarts/G.I.%20JOE_%20The%20Rise%20of%20Cobra%20(USA).png"
+    },
+    {
+      "platform": "wii",
+      "index": 30,
+      "title": "Guitar Hero 5",
+      "url": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Wii/master/Named_Boxarts/Guitar%20Hero%205%20(USA)%20(En%2CFr).png"
+    },
+    {
+      "platform": "wii",
+      "index": 34,
+      "title": "Ju-On: The Grudge",
+      "url": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Wii/master/Named_Boxarts/Ju-on_%20The%20Grudge%20(USA).png"
+    },
+    {
+      "platform": "wii",
+      "index": 29,
+      "title": "Guilty Gear XX Accent Core Plus",
+      "url": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Wii/master/Named_Boxarts/Guilty%20Gear%20XX%20Accent%20Core%20Plus%20(USA).png"
+    },
+    {
+      "platform": "wii",
+      "index": 32,
+      "title": "Hot Wheels: Track Attack",
+      "url": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Wii/master/Named_Boxarts/Hot%20Wheels%20-%20Track%20Attack%20(USA)%20(En%2CFr%2CEs)%20(Rev%201).png"
+    },
+    {
+      "platform": "wii",
+      "index": 36,
+      "title": "Let's Tap",
+      "url": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Wii/master/Named_Boxarts/Let's%20Tap%20(USA)%20(En%2CFr%2CEs).png"
+    },
+    {
+      "platform": "wii",
+      "index": 35,
+      "title": "Just Dance 2015",
+      "url": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Wii/master/Named_Boxarts/Just%20Dance%202015%20(USA)%20(En%2CFr%2CEs).png"
+    },
+    {
+      "platform": "wii",
+      "index": 40,
+      "title": "Manhunt 2",
+      "url": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Wii/master/Named_Boxarts/Manhunt%202%20(USA)%20(En%2CFr%2CEs).png"
+    },
+    {
+      "platform": "wii",
+      "index": 39,
+      "title": "Madden NFL 12",
+      "url": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Wii/master/Named_Boxarts/Madden%20NFL%2012%20(USA).png"
+    },
+    {
+      "platform": "wii",
+      "index": 38,
+      "title": "Little King's Story",
+      "url": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Wii/master/Named_Boxarts/Little%20King's%20Story%20(USA)%20(En%2CFr%2CEs).png"
+    },
+    {
+      "platform": "wii",
+      "index": 37,
+      "title": "Link's Crossbow Training",
+      "url": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Wii/master/Named_Boxarts/Link's%20Crossbow%20Training%20(USA)%20(En%2CFr%2CEs)%20(Rev%201).png"
+    },
+    {
+      "platform": "wii",
+      "index": 41,
+      "title": "Mario Party 8",
+      "url": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Wii/master/Named_Boxarts/Mario%20Party%208%20(USA)%20(Rev%201).png"
+    },
+    {
+      "platform": "wii",
+      "index": 42,
+      "title": "Mario Power Tennis",
+      "url": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Wii/master/Named_Boxarts/Mario%20Power%20Tennis%20(USA)%20(En%2CFr%2CEs).png"
+    },
+    {
+      "platform": "wii",
+      "index": 43,
+      "title": "Mario Kart Wii",
+      "url": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Wii/master/Named_Boxarts/Mario%20Kart%20Wii%20(USA)%20(En%2CFr%2CEs).png"
+    },
+    {
+      "platform": "wii",
+      "index": 44,
+      "title": "Marvel: Ultimate Alliance 2",
+      "url": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Wii/master/Named_Boxarts/Marvel%20-%20Ultimate%20Alliance%202%20(USA).png"
+    },
+    {
+      "platform": "wii",
+      "index": 46,
+      "title": "Michael Jackson: The Experience",
+      "url": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Wii/master/Named_Boxarts/Michael%20Jackson%20-%20The%20Experience%20(USA)%20(En%2CFr%2CEs)%20(Walmart).png"
+    },
+    {
+      "platform": "wii",
+      "index": 45,
+      "title": "Metal Slug Anthology",
+      "url": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Wii/master/Named_Boxarts/Metal%20Slug%20Anthology%20(USA).png"
+    },
+    {
+      "platform": "wii",
+      "index": 47,
+      "title": "Call of Duty: Modern Warfare 3 (US EN)",
+      "url": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Wii/master/Named_Boxarts/Call%20of%20Duty%20-%20Modern%20Warfare%203%20(USA)%20(Update).png"
+    },
+    {
+      "platform": "wii",
+      "index": 54,
+      "title": "No More Heroes",
+      "url": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Wii/master/Named_Boxarts/No%20More%20Heroes%20(USA)%20(En%2CFr%2CEs).png"
+    },
+    {
+      "platform": "wii",
+      "index": 49,
+      "title": "My Fitness Coach: Club",
+      "url": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Wii/master/Named_Boxarts/My%20Fitness%20Coach%20-%20Club%20(Europe)%20(En%2CFr%2CDe%2CEs%2CIt).png"
+    },
+    {
+      "platform": "wii",
+      "index": 48,
+      "title": "Monster Hunter Tri",
+      "url": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Wii/master/Named_Boxarts/Monster%20Hunter%20Tri%20(USA)%20(En%2CFr%2CEs).png"
+    },
+    {
+      "platform": "wii",
+      "index": 53,
+      "title": "New Super Mario Bros. Wii",
+      "url": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Wii/master/Named_Boxarts/New%20Super%20Mario%20Bros.%20Wii%20(USA)%20(En%2CFr%2CEs)%20(Rev%201).png"
+    },
+    {
+      "platform": "wii",
+      "index": 51,
+      "title": "Need for Speed: Carbon",
+      "url": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Wii/master/Named_Boxarts/Need%20for%20Speed%20-%20Carbon%20(USA).png"
+    },
+    {
+      "platform": "wii",
+      "index": 21,
+      "title": "Fatal Frame IV",
+      "url": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Wii/master/Named_Boxarts/Fatal%20Frame%204%20-%20Mask%20of%20the%20Lunar%20Eclipse%20(USA).png"
+    },
+    {
+      "platform": "wii",
+      "index": 52,
+      "title": "Need for Speed: Nitro",
+      "url": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Wii/master/Named_Boxarts/Need%20for%20Speed%20-%20Nitro%20(USA)%20(En%2CFr%2CEs).png"
+    },
+    {
+      "platform": "wii",
+      "index": 55,
+      "title": "Ōkami",
+      "url": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Wii/master/Named_Boxarts/Okami%20(USA).png"
+    },
+    {
+      "platform": "wii",
+      "index": 57,
+      "title": "Pokémon Battle Revolution",
+      "url": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Wii/master/Named_Boxarts/Pokemon%20Battle%20Revolution%20(USA).png"
+    },
+    {
+      "platform": "wii",
+      "index": 58,
+      "title": "Pool Party",
+      "url": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Wii/master/Named_Boxarts/Pool%20Party%20(USA).png"
+    },
+    {
+      "platform": "wii",
+      "index": 56,
+      "title": "Wii Play (PARTY PACK for REVOLUTION)",
+      "url": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Wii/master/Named_Boxarts/Wii%20Play%20(USA)%20(Rev%201).png"
+    },
+    {
+      "platform": "wii",
+      "index": 60,
+      "title": "Punch-Out!!",
+      "url": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Wii/master/Named_Boxarts/Punch-Out!!%20(USA)%20(En%2CFr%2CEs)%20(Rev%201).png"
+    },
+    {
+      "platform": "wii",
+      "index": 59,
+      "title": "Prince of Persia: The Forgotten Sands",
+      "url": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Wii/master/Named_Boxarts/Prince%20of%20Persia%20-%20The%20Forgotten%20Sands%20(USA)%20(En%2CFr%2CEs)%20(Rev%201).png"
+    },
+    {
+      "platform": "wii",
+      "index": 61,
+      "title": "Quantum of Solace",
+      "url": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Wii/master/Named_Boxarts/007%20-%20Quantum%20of%20Solace%20(USA)%20(En%2CFr).png"
+    },
+    {
+      "platform": "wii",
+      "index": 63,
+      "title": "Red Steel 2",
+      "url": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Wii/master/Named_Boxarts/Red%20Steel%202%20(USA)%20(En%2CFr%2CEs).png"
+    },
+    {
+      "platform": "wii",
+      "index": 62,
+      "title": "Rayman Origins",
+      "url": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Wii/master/Named_Boxarts/Rayman%20Origins%20(USA)%20(En%2CFr%2CEs).png"
+    },
+    {
+      "platform": "wii",
+      "index": 64,
+      "title": "Resident Evil 4",
+      "url": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Wii/master/Named_Boxarts/Resident%20Evil%204%20-%20Wii%20Edition%20(USA).png"
+    },
+    {
+      "platform": "wii",
+      "index": 67,
+      "title": "Resident Evil Zero",
+      "url": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Wii/master/Named_Boxarts/Resident%20Evil%20Archives%20-%20Resident%20Evil%20Zero%20(USA).png"
+    },
+    {
+      "platform": "wii",
+      "index": 65,
+      "title": "Resident Evil: The Darkside Chronicles",
+      "url": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Wii/master/Named_Boxarts/Resident%20Evil%20-%20The%20Darkside%20Chronicles%20(USA).png"
+    },
+    {
+      "platform": "wii",
+      "index": 71,
+      "title": "Rogue Trooper",
+      "url": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Wii/master/Named_Boxarts/Rogue%20Trooper%20-%20Quartz%20Zone%20Massacre%20(USA)%20(En%2CFr%2CEs).png"
+    },
+    {
+      "platform": "wii",
+      "index": 66,
+      "title": "Resident Evil: The Umbrella Chronicles",
+      "url": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Wii/master/Named_Boxarts/Resident%20Evil%20-%20The%20Umbrella%20Chronicles%20(USA).png"
+    },
+    {
+      "platform": "wii",
+      "index": 68,
+      "title": "Resident Evil",
+      "url": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Wii/master/Named_Boxarts/Resident%20Evil%20Archives%20-%20Resident%20Evil%20(USA).png"
+    },
+    {
+      "platform": "wii",
+      "index": 73,
+      "title": "Sam & Max: Season One",
+      "url": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Wii/master/Named_Boxarts/Sam%20_%20Max%20-%20Season%20One%20(USA)%20(En%2CFr%2CEs).png"
+    },
+    {
+      "platform": "wii",
+      "index": 70,
+      "title": "Rockstar Games presents Table Tennis",
+      "url": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Wii/master/Named_Boxarts/Rockstar%20Games%20Presents%20Table%20Tennis%20(USA).png"
+    },
+    {
+      "platform": "wii",
+      "index": 69,
+      "title": "Rock Band 3",
+      "url": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Wii/master/Named_Boxarts/Rock%20Band%203%20(USA).png"
+    },
+    {
+      "platform": "wii",
+      "index": 74,
+      "title": "Samurai Shodown Anthology",
+      "url": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Wii/master/Named_Boxarts/Samurai%20Shodown%20Anthology%20(USA).png"
+    },
+    {
+      "platform": "wii",
+      "index": 75,
+      "title": "Shiren the Wanderer",
+      "url": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Wii/master/Named_Boxarts/Shiren%20the%20Wanderer%20(USA).png"
+    },
+    {
+      "platform": "wii",
+      "index": 76,
+      "title": "Showtime Championship Boxing",
+      "url": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Wii/master/Named_Boxarts/Showtime%20Championship%20Boxing%20(USA).png"
+    },
+    {
+      "platform": "wii",
+      "index": 77,
+      "title": "Silent Hill: Shattered Memories",
+      "url": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Wii/master/Named_Boxarts/Silent%20Hill%20-%20Shattered%20Memories%20(USA)%20(En%2CFr%2CEs).png"
+    },
+    {
+      "platform": "wii",
+      "index": 79,
+      "title": "SNK Arcade Classics Vol. 1",
+      "url": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Wii/master/Named_Boxarts/SNK%20Arcade%20Classics%20Vol.%201%20(USA).png"
+    },
+    {
+      "platform": "wii",
+      "index": 80,
+      "title": "Sonic Colors",
+      "url": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Wii/master/Named_Boxarts/Sonic%20Colors%20(USA)%20(En%2CJa%2CFr%2CDe%2CEs%2CIt).png"
+    },
+    {
+      "platform": "wii",
+      "index": 78,
+      "title": "Skate It",
+      "url": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Wii/master/Named_Boxarts/Skate%20It%20(USA)%20(En%2CFr%2CEs).png"
+    },
+    {
+      "platform": "wii",
+      "index": 81,
+      "title": "Spyborgs",
+      "url": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Wii/master/Named_Boxarts/Spyborgs%20(USA)%20(En%2CFr%2CEs).png"
+    },
+    {
+      "platform": "wii",
+      "index": 82,
+      "title": "Star Wars: The Force Unleashed",
+      "url": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Wii/master/Named_Boxarts/Star%20Wars%20-%20The%20Force%20Unleashed%20(USA)%20(En%2CFr).png"
+    },
+    {
+      "platform": "wii",
+      "index": 83,
+      "title": "Super Mario Collection (All-Stars)",
+      "url": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Wii/master/Named_Boxarts/Super%20Mario%20Collection%20(Japan).png"
+    },
+    {
+      "platform": "wii",
+      "index": 84,
+      "title": "Super Mario Galaxy",
+      "url": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Wii/master/Named_Boxarts/Super%20Mario%20Galaxy%20(USA)%20(En%2CFr%2CEs).png"
+    },
+    {
+      "platform": "wii",
+      "index": 88,
+      "title": "The Last Story",
+      "url": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Wii/master/Named_Boxarts/The%20Last%20Story%20(USA).png"
+    },
+    {
+      "platform": "wii",
+      "index": 86,
+      "title": "The Amazing Spider-Man",
+      "url": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Wii/master/Named_Boxarts/The%20Amazing%20Spider-Man%20(USA).png"
+    },
+    {
+      "platform": "wii",
+      "index": 85,
+      "title": "Super Paper Mario",
+      "url": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Wii/master/Named_Boxarts/Super%20Paper%20Mario%20(USA)%20(Rev%201).png"
+    },
+    {
+      "platform": "wii",
+      "index": 90,
+      "title": "The Smurfs: Dance Party",
+      "url": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Wii/master/Named_Boxarts/The%20Smurfs%20Dance%20Party%20(USA).png"
+    },
+    {
+      "platform": "wii",
+      "index": 89,
+      "title": "The Legend of Zelda: Twilight Princess",
+      "url": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Wii/master/Named_Boxarts/The%20Legend%20of%20Zelda_%20Twilight%20Princess%20(USA).png"
+    },
+    {
+      "platform": "wii",
+      "index": 87,
+      "title": "The House of the Dead: Overkill",
+      "url": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Wii/master/Named_Boxarts/The%20House%20of%20the%20Dead_%20Overkill%20(USA).png"
+    },
+    {
+      "platform": "wii",
+      "index": 91,
+      "title": "The Spiderwick Chronicles",
+      "url": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Wii/master/Named_Boxarts/The%20Spiderwick%20Chronicles%20(USA).png"
+    },
+    {
+      "platform": "wii",
+      "index": 92,
+      "title": "Tiger Woods PGA Tour 11",
+      "url": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Wii/master/Named_Boxarts/Tiger%20Woods%20PGA%20Tour%2011%20(USA).png"
+    },
+    {
+      "platform": "three",
+      "index": 18,
+      "title": "Amazing Spider-Man 2",
+      "url": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Nintendo_3DS/master/Named_Boxarts/Amazing%20Spider-Man%202%2C%20The%20(USA).png"
+    },
+    {
+      "platform": "wii",
+      "index": 95,
+      "title": "Teenage Mutant Ninja Turtles",
+      "url": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Wii/master/Named_Boxarts/Teenage%20Mutant%20Ninja%20Turtles%20(USA)%20(NES)%20(Virtual%20Console).png"
+    },
+    {
+      "platform": "three",
+      "index": 29,
+      "title": "Bravely Second",
+      "url": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Nintendo_3DS/master/Named_Boxarts/Bravely%20Second%20-%20End%20Layer%20(USA)%20(En%2CFr%2CEs).png"
+    },
+    {
+      "platform": "three",
+      "index": 44,
+      "title": "Devil Survivor 2: Record Breaker (Shin Megami Tensei)",
+      "url": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Nintendo_3DS/master/Named_Boxarts/Shin%20Megami%20Tensei%20-%20Devil%20Survivor%202%20-%20Record%20Breaker%20(USA).png"
+    },
+    {
+      "platform": "wii",
+      "index": 93,
+      "title": "The Adventures of Tintin: The Game",
+      "url": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Wii/master/Named_Boxarts/The%20Adventures%20of%20Tintin_%20The%20Game%20(USA).png"
+    },
+    {
+      "platform": "three",
+      "index": 67,
+      "title": "Legend of Legacy",
+      "url": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Nintendo_3DS/master/Named_Boxarts/The%20Legend%20of%20Legacy%20(USA).png"
+    },
+    {
+      "platform": "three",
+      "index": 19,
+      "title": "Animal Crossing: New Leaf",
+      "url": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Nintendo_3DS/master/Named_Boxarts/Animal%20Crossing%20-%20New%20Leaf%20(USA).png"
+    },
+    {
+      "platform": "three",
+      "index": 47,
+      "title": "Epic Mickey: Power of Illusion",
+      "url": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Nintendo_3DS/master/Named_Boxarts/Disney%20Epic%20Mickey%20-%20Power%20of%20Illusion%20(USA)%20(En%2CFr%2CEs%2CPt).png"
+    },
+    {
+      "platform": "three",
+      "index": 71,
+      "title": "LEGO Harry Potter: Years 5 to 7",
+      "url": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Nintendo_3DS/master/Named_Boxarts/LEGO%20Harry%20Potter%20-%20Years%205-7%20(USA)%20(En%2CFr%2CEs%2CPt).png"
+    },
+    {
+      "platform": "three",
+      "index": 89,
+      "title": "New Style Boutique",
+      "url": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Nintendo_3DS/master/Named_Boxarts/Nintendo%20presents%20-%20New%20Style%20Boutique%20(Europe)%20(En%2CFr%2CDe%2CEs%2CIt)%20(Rev%201).png"
+    },
+    {
+      "platform": "three",
+      "index": 111,
+      "title": "Professor Layton vs. Phoenix Wright",
+      "url": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Nintendo_3DS/master/Named_Boxarts/Professor%20Layton%20vs.%20Phoenix%20Wright%20-%20Ace%20Attorney%20(USA)%20(En%2CFr%2CEs).png"
+    },
+    {
+      "platform": "three",
+      "index": 104,
+      "title": "Pokémon Omega Ruby",
+      "url": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Nintendo_3DS/master/Named_Boxarts/Pokemon%20Omega%20Ruby%20(USA)%20(En%2CJa%2CFr%2CDe%2CEs%2CIt%2CKo).png"
+    },
+    {
+      "platform": "three",
+      "index": 101,
+      "title": "Pokémon Alpha Sapphire",
+      "url": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Nintendo_3DS/master/Named_Boxarts/Pokemon%20Alpha%20Sapphire%20(USA)%20(En%2CJa%2CFr%2CDe%2CEs%2CIt%2CKo).png"
+    },
+    {
+      "platform": "three",
+      "index": 136,
+      "title": "Super Smash Bros.",
+      "url": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Nintendo_3DS/master/Named_Boxarts/Super%20Smash%20Bros.%20for%20Nintendo%203DS%20(USA)%20(En%2CFr%2CEs)%20(Rev%201).png"
+    },
+    {
+      "platform": "three",
+      "index": 134,
+      "title": "Super Mario 3D Land",
+      "url": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Nintendo_3DS/master/Named_Boxarts/Super%20Mario%203D%20Land%20(USA)%20(En%2CFr%2CEs).png"
+    },
+    {
+      "platform": "three",
+      "index": 57,
+      "title": "Fire Emblem Fates - Revelation",
+      "url": "https://cdn.thegamesdb.net/images/original/boxart/front/46096-1.jpg"
+    },
+    {
+      "platform": "three",
+      "index": 133,
+      "title": "Super Little Acorns 3D Turbo",
+      "url": "https://cdn-image-f3580964b8e711e5b95f2ff191a1c838.baas.nintendo.com/1/bfe2de9c0e11e357"
+    },
+    {
+      "platform": "wii",
+      "index": 18,
+      "title": "Endless Ocean 2: Blue World",
+      "url": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Wii/master/Named_Boxarts/Endless%20Ocean%20-%20Blue%20World%20(USA).png"
+    },
+    {
+      "platform": "three",
+      "index": 145,
+      "title": "The Legend of Zelda - Majora's Mask 3D",
+      "url": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Nintendo_3DS/master/Named_Boxarts/Legend%20of%20Zelda%2C%20The%20-%20Majora's%20Mask%203D%20(USA)%20(En%2CFr%2CEs).png"
+    },
+    {
+      "platform": "wii",
+      "index": 94,
+      "title": "TMNT: Smash-Up",
+      "url": "https://art.gametdb.com/wii/cover/US/R2TE41.png"
+    },
+    {
+      "platform": "three",
+      "index": 2,
+      "title": "3D Classics Streets of Rage",
+      "url": "https://art.gametdb.com/3ds/coverM/US/JRAE.jpg"
+    },
+    {
+      "platform": "three",
+      "index": 3,
+      "title": "3D Classics Altered Beast",
+      "url": "https://art.gametdb.com/3ds/coverM/US/JA7E.jpg"
+    },
+    {
+      "platform": "three",
+      "index": 7,
+      "title": "3D Classics Space Harrier",
+      "url": "https://art.gametdb.com/3ds/coverM/US/JSHE.jpg"
+    },
+    {
+      "platform": "three",
+      "index": 4,
+      "title": "3D Classics Ecco The Dolphin",
+      "url": "https://art.gametdb.com/3ds/coverM/US/JDLE.jpg"
+    },
+    {
+      "platform": "three",
+      "index": 5,
+      "title": "3D Classics Excitebike",
+      "url": "https://art.gametdb.com/3ds/coverM/US/SAEE.jpg"
+    },
+    {
+      "platform": "three",
+      "index": 0,
+      "title": "1001 Spikes",
+      "url": "https://art.gametdb.com/3ds/coverM/US/JSKE.jpg"
+    },
+    {
+      "platform": "three",
+      "index": 9,
+      "title": "3D Classics TwinBee",
+      "url": "https://art.gametdb.com/3ds/coverM/US/SACE.jpg"
+    },
+    {
+      "platform": "three",
+      "index": 17,
+      "title": "AiRace Xeno",
+      "url": "https://art.gametdb.com/3ds/coverM/US/JYSE.jpg"
+    },
+    {
+      "platform": "three",
+      "index": 8,
+      "title": "3D Classics Super Hang-On",
+      "url": "https://art.gametdb.com/3ds/coverM/US/JHAE.jpg"
+    },
+    {
+      "platform": "three",
+      "index": 10,
+      "title": "3D Classics Urban Champion",
+      "url": "https://art.gametdb.com/3ds/coverM/US/SADE.jpg"
+    },
+    {
+      "platform": "three",
+      "index": 22,
+      "title": "Art of Balance TOUCH",
+      "url": "https://art.gametdb.com/3ds/coverM/US/JABE.jpg"
+    },
+    {
+      "platform": "three",
+      "index": 24,
+      "title": "Azure Striker Gunvolt",
+      "url": "https://art.gametdb.com/3ds/coverM/US/JV7E.jpg"
+    },
+    {
+      "platform": "three",
+      "index": 11,
+      "title": "3D Classics Xevious",
+      "url": "https://art.gametdb.com/3ds/coverM/US/SABE.jpg"
+    },
+    {
+      "platform": "three",
+      "index": 20,
+      "title": "Another World 20th Anniversary Edition",
+      "url": "https://art.gametdb.com/3ds/coverM/US/JWTE.jpg"
+    },
+    {
+      "platform": "three",
+      "index": 27,
+      "title": "Bloodstained - Curse of the Moon",
+      "url": "https://art.gametdb.com/3ds/coverM/US/BLME.jpg"
+    },
+    {
+      "platform": "three",
+      "index": 37,
+      "title": "Colors! 3D",
+      "url": "https://art.gametdb.com/3ds/coverM/US/JCRE.jpg"
+    },
+    {
+      "platform": "three",
+      "index": 12,
+      "title": "3D Galaxy Force II",
+      "url": "https://art.gametdb.com/3ds/coverM/US/JGFE.jpg"
+    },
+    {
+      "platform": "three",
+      "index": 41,
+      "title": "Crashmo",
+      "url": "https://art.gametdb.com/3ds/coverM/US/JAUE.jpg"
+    },
+    {
+      "platform": "three",
+      "index": 38,
+      "title": "Comic Workshop",
+      "url": "https://art.gametdb.com/3ds/coverM/US/KWSE.jpg"
+    },
+    {
+      "platform": "three",
+      "index": 63,
+      "title": "Kersploosh!",
+      "url": "https://art.gametdb.com/3ds/coverM/US/JHSE.jpg"
+    },
+    {
+      "platform": "three",
+      "index": 75,
+      "title": "Mad Dog McCree",
+      "url": "https://art.gametdb.com/3ds/coverM/US/JMAE.jpg"
+    },
+    {
+      "platform": "three",
+      "index": 116,
+      "title": "Retro City Rampage",
+      "url": "https://art.gametdb.com/3ds/coverM/US/JRXE.jpg"
+    },
+    {
+      "platform": "three",
+      "index": 103,
+      "title": "Pokémon Dream Radar",
+      "url": "https://art.gametdb.com/3ds/coverM/EN/NCGA.jpg"
+    },
+    {
+      "platform": "three",
+      "index": 92,
+      "title": "Nintendo Pocket Football Club",
+      "url": "https://art.gametdb.com/3ds/coverM/EN/AHBP.jpg"
+    },
+    {
+      "platform": "three",
+      "index": 100,
+      "title": "PokéBank",
+      "url": "https://art.gametdb.com/3ds/coverM/EN/JTTA.jpg"
+    },
+    {
+      "platform": "three",
+      "index": 13,
+      "title": "3D Shinobi III",
+      "url": "https://art.gametdb.com/3ds/coverM/US/JSNE.jpg"
+    },
+    {
+      "platform": "three",
+      "index": 88,
+      "title": "Nano Assault EX",
+      "url": "https://art.gametdb.com/3ds/coverM/US/JNAE.jpg"
+    },
+    {
+      "platform": "three",
+      "index": 1,
+      "title": "2048",
+      "url": "https://art.gametdb.com/3ds/coverM/US/JFEE.jpg"
+    },
+    {
+      "platform": "three",
+      "index": 139,
+      "title": "Tappingo 2",
+      "url": "https://art.gametdb.com/3ds/coverM/EN/KTPP.jpg"
+    }
+  ],
+  "preservedEmbeddedImages": [
+    1,
+    6,
+    14,
+    15,
+    16,
+    21,
+    23,
+    25,
+    26,
+    28,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    39,
+    40,
+    42,
+    43,
+    45,
+    46,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    58,
+    59,
+    60,
+    61,
+    62,
+    64,
+    65,
+    66,
+    68,
+    69,
+    70,
+    72,
+    73,
+    74,
+    76,
+    77,
+    78,
+    79,
+    80,
+    82,
+    83,
+    85,
+    86,
+    87,
+    90,
+    91,
+    93,
+    94,
+    95,
+    96,
+    97,
+    98,
+    99,
+    102,
+    105,
+    106,
+    107,
+    108,
+    109,
+    110,
+    112,
+    113,
+    114,
+    115,
+    117,
+    118,
+    119,
+    120,
+    121,
+    122,
+    123,
+    124,
+    125,
+    126,
+    127,
+    128,
+    129,
+    130,
+    131,
+    132,
+    135,
+    137,
+    138,
+    140,
+    141,
+    143,
+    144,
+    146
+  ],
+  "unconfirmed": {
+    "wii": [
+      "Armageddon",
+      "Beyblade",
+      "Dead Space (versão a confirmar)",
+      "HPOOTP_WII_US_Final_164780 (identificação pendente)",
+      "RVL-RWCE (identificação pendente)"
+    ],
+    "three": [
+      "Mario Photo",
+      "Mii Plaza (All 4 Titles)",
+      "Temas 3DS"
+    ]
+  }
+}
