@@ -404,48 +404,6 @@
     "number": 37
   },
   {
-    "id": 133,
-    "title": "Crash Nitro Kart",
-    "original": "Crash Nitro Kart (ENG)",
-    "note": "Inglês · clássico Xbox original",
-    "page": "Crash Nitro Kart",
-    "cover": "assets/catalogo-xbox360/game-133.jpg",
-    "source": "https://github.com/pixelsfoz/pixelsfoz-site/blob/main/catalogo-ps2.html",
-    "number": 38
-  },
-  {
-    "id": 121,
-    "title": "Crash Twinsanity",
-    "original": "[XBOX360E] Crash Twinsanity [тапок.нет]",
-    "note": "Clássico · Xbox original",
-    "page": "Crash Twinsanity",
-    "cover": "assets/catalogo-xbox360/game-121.jpg",
-    "source": "https://github.com/pixelsfoz/pixelsfoz-site/blob/main/catalogo-ps2.html",
-    "number": 39
-  },
-  {
-    "id": 32,
-    "title": "Crash: Mind over Mutant",
-    "original": "Crash Mind Over Mutan",
-    "note": "",
-    "page": "Crash: Mind over Mutant",
-    "cover": "assets/catalogo-xbox360/game-032.jpg",
-    "source": "https://github.com/xenia-manager/x360db/tree/main/titles/565507FA",
-    "artwork_source": "https://raw.githubusercontent.com/xenia-manager/x360db/main/titles/565507FA/artwork/boxart.jpg",
-    "number": 40
-  },
-  {
-    "id": 132,
-    "title": "Crash: The Wrath of Cortex",
-    "original": "crash cortex",
-    "note": "Clássico · Xbox original",
-    "page": "Crash Bandicoot: The Wrath of Cortex",
-    "cover": "assets/catalogo-xbox360/game-132.jpg",
-    "source": "https://github.com/pixelsfoz/pixelsfoz-site/blob/main/catalogo-ps2.html",
-    "artwork_source": "https://raw.githubusercontent.com/xenia-manager/x360db/main/titles/565507F2/artwork/boxart.jpg",
-    "number": 41
-  },
-  {
     "id": 33,
     "title": "Crysis 3",
     "original": "CRYSIS 3",
@@ -454,7 +412,7 @@
     "cover": "assets/catalogo-xbox360/game-033.jpg",
     "source": "https://github.com/xenia-manager/x360db/tree/main/titles/4541098E",
     "artwork_source": "https://raw.githubusercontent.com/xenia-manager/x360db/main/titles/4541098E/artwork/boxart.jpg",
-    "number": 42
+    "number": 38
   },
   {
     "id": 34,
@@ -465,7 +423,7 @@
     "cover": "assets/catalogo-xbox360/game-034.jpg",
     "source": "https://github.com/xenia-manager/x360db/tree/main/titles/454108CF",
     "artwork_source": "https://raw.githubusercontent.com/xenia-manager/x360db/main/titles/454108CF/artwork/boxart.jpg",
-    "number": 43
+    "number": 39
   },
   {
     "id": 35,
@@ -476,7 +434,7 @@
     "cover": "assets/catalogo-xbox360/game-035.jpg",
     "source": "https://github.com/xenia-manager/x360db/tree/main/titles/4E4D083A",
     "artwork_source": "https://raw.githubusercontent.com/xenia-manager/x360db/main/titles/4E4D083A/artwork/boxart.jpg",
-    "number": 44
+    "number": 40
   },
   {
     "id": 36,
@@ -487,7 +445,7 @@
     "cover": "assets/catalogo-xbox360/game-036.jpg",
     "source": "https://github.com/xenia-manager/x360db/tree/main/titles/465307E4",
     "artwork_source": "https://raw.githubusercontent.com/xenia-manager/x360db/main/titles/465307E4/artwork/boxart.jpg",
-    "number": 45
+    "number": 41
   },
   {
     "id": 37,
@@ -498,7 +456,7 @@
     "cover": "assets/catalogo-xbox360/game-037.jpg",
     "source": "https://github.com/xenia-manager/x360db/tree/main/titles/545107E6",
     "artwork_source": "https://raw.githubusercontent.com/xenia-manager/x360db/main/titles/545107E6/artwork/boxart.jpg",
-    "number": 46
+    "number": 42
   },
   {
     "id": 38,
@@ -509,7 +467,7 @@
     "cover": "assets/catalogo-xbox360/game-038.jpg",
     "source": "https://github.com/xenia-manager/x360db/tree/main/titles/54510896",
     "artwork_source": "https://raw.githubusercontent.com/xenia-manager/x360db/main/titles/54510896/artwork/boxart.jpg",
-    "number": 47
+    "number": 43
   },
   {
     "id": 39,
@@ -520,7 +478,7 @@
     "cover": "assets/catalogo-xbox360/game-039.jpg",
     "source": "https://github.com/xenia-manager/x360db/tree/main/titles/4B4D07DF",
     "artwork_source": "https://raw.githubusercontent.com/xenia-manager/x360db/main/titles/4B4D07DF/artwork/boxart.jpg",
-    "number": 48
+    "number": 44
   },
   {
     "id": 40,
@@ -531,7 +489,7 @@
     "cover": "assets/catalogo-xbox360/game-040.jpg",
     "source": "https://github.com/xenia-manager/x360db/tree/main/titles/434307EC",
     "artwork_source": "https://raw.githubusercontent.com/xenia-manager/x360db/main/titles/434307EC/artwork/boxart.jpg",
-    "number": 49
+    "number": 45
   },
   {
     "id": 41,
@@ -542,7 +500,7 @@
     "cover": "assets/catalogo-xbox360/game-041.jpg",
     "source": "https://github.com/xenia-manager/x360db/tree/main/titles/45410857",
     "artwork_source": "https://raw.githubusercontent.com/xenia-manager/x360db/main/titles/45410857/artwork/boxart.jpg",
-    "number": 50
+    "number": 46
   },
   {
     "id": 42,
@@ -553,7 +511,7 @@
     "cover": "assets/catalogo-xbox360/game-042.jpg",
     "source": "https://github.com/xenia-manager/x360db/tree/main/titles/454108DF",
     "artwork_source": "https://raw.githubusercontent.com/xenia-manager/x360db/main/titles/454108DF/artwork/boxart.jpg",
-    "number": 51
+    "number": 47
   },
   {
     "id": 134,
@@ -564,7 +522,7 @@
     "cover": "assets/catalogo-xbox360/game-134.jpg",
     "source": "https://github.com/xenia-manager/x360db/tree/main/titles/415608F8",
     "artwork_source": "https://raw.githubusercontent.com/xenia-manager/x360db/main/titles/415608F8/artwork/boxart.jpg",
-    "number": 52
+    "number": 48
   },
   {
     "id": 43,
@@ -575,7 +533,7 @@
     "cover": "assets/catalogo-xbox360/game-043.jpg",
     "source": "https://github.com/xenia-manager/x360db/tree/main/titles/394F07D1",
     "artwork_source": "https://raw.githubusercontent.com/xenia-manager/x360db/main/titles/394F07D1/artwork/boxart.jpg",
-    "number": 53
+    "number": 49
   },
   {
     "id": 135,
@@ -585,7 +543,7 @@
     "page": "Diablo III: Reaper of Souls",
     "cover": null,
     "source": null,
-    "number": 54
+    "number": 50
   },
   {
     "id": 44,
@@ -596,7 +554,7 @@
     "cover": "assets/catalogo-xbox360/game-044.jpg",
     "source": "https://github.com/xenia-manager/x360db/tree/main/titles/43430824",
     "artwork_source": "https://raw.githubusercontent.com/xenia-manager/x360db/main/titles/43430824/artwork/boxart.jpg",
-    "number": 55
+    "number": 51
   },
   {
     "id": 136,
@@ -607,7 +565,7 @@
     "cover": "assets/catalogo-xbox360/game-136.jpg",
     "source": "https://github.com/xenia-manager/x360db/tree/main/titles/4E4D0826",
     "artwork_source": "https://raw.githubusercontent.com/xenia-manager/x360db/main/titles/4E4D0826/artwork/boxart.jpg",
-    "number": 56
+    "number": 52
   },
   {
     "id": 137,
@@ -617,7 +575,7 @@
     "page": "",
     "cover": null,
     "source": null,
-    "number": 57
+    "number": 53
   },
   {
     "id": 45,
@@ -628,7 +586,7 @@
     "cover": "assets/catalogo-xbox360/game-045.jpg",
     "source": "https://github.com/xenia-manager/x360db/tree/main/titles/445007F9",
     "artwork_source": "https://raw.githubusercontent.com/xenia-manager/x360db/main/titles/445007F9/artwork/boxart.jpg",
-    "number": 58
+    "number": 54
   },
   {
     "id": 138,
@@ -639,7 +597,7 @@
     "cover": "assets/catalogo-xbox360/game-138.jpg",
     "source": "https://github.com/xenia-manager/x360db/tree/main/titles/475807D7",
     "artwork_source": "https://raw.githubusercontent.com/xenia-manager/x360db/main/titles/475807D7/artwork/boxart.jpg",
-    "number": 59
+    "number": 55
   },
   {
     "id": 46,
@@ -650,7 +608,7 @@
     "cover": "assets/catalogo-xbox360/game-046.jpg",
     "source": "https://github.com/xenia-manager/x360db/tree/main/titles/42560816",
     "artwork_source": "https://raw.githubusercontent.com/xenia-manager/x360db/main/titles/42560816/artwork/boxart.jpg",
-    "number": 60
+    "number": 56
   },
   {
     "id": 139,
@@ -661,7 +619,7 @@
     "cover": "assets/catalogo-xbox360/game-139.jpg",
     "source": "https://github.com/xenia-manager/x360db/tree/main/titles/57520800",
     "artwork_source": "https://raw.githubusercontent.com/xenia-manager/x360db/main/titles/57520800/artwork/boxart.jpg",
-    "number": 61
+    "number": 57
   },
   {
     "id": 53,
@@ -672,7 +630,7 @@
     "cover": "assets/catalogo-xbox360/game-053.jpg",
     "source": "https://github.com/xenia-manager/x360db/tree/main/titles/434D0842",
     "artwork_source": "https://raw.githubusercontent.com/xenia-manager/x360db/main/titles/434D0842/artwork/boxart.jpg",
-    "number": 62
+    "number": 58
   },
   {
     "id": 47,
@@ -683,7 +641,7 @@
     "cover": "assets/catalogo-xbox360/game-047.jpg",
     "source": "https://github.com/xenia-manager/x360db/tree/main/titles/55530810",
     "artwork_source": "https://raw.githubusercontent.com/xenia-manager/x360db/main/titles/55530810/artwork/boxart.jpg",
-    "number": 63
+    "number": 59
   },
   {
     "id": 48,
@@ -694,7 +652,7 @@
     "cover": "assets/catalogo-xbox360/game-048.jpg",
     "source": "https://github.com/xenia-manager/x360db/tree/main/titles/5553088C",
     "artwork_source": "https://raw.githubusercontent.com/xenia-manager/x360db/main/titles/5553088C/artwork/boxart.jpg",
-    "number": 64
+    "number": 60
   },
   {
     "id": 49,
@@ -705,7 +663,7 @@
     "cover": "assets/catalogo-xbox360/game-049.jpg",
     "source": "https://github.com/xenia-manager/x360db/tree/main/titles/555308CA",
     "artwork_source": "https://raw.githubusercontent.com/xenia-manager/x360db/main/titles/555308CA/artwork/boxart.jpg",
-    "number": 65
+    "number": 61
   },
   {
     "id": 50,
@@ -716,7 +674,7 @@
     "cover": "assets/catalogo-xbox360/game-050.jpg",
     "source": "https://github.com/xenia-manager/x360db/tree/main/titles/415608ED",
     "artwork_source": "https://raw.githubusercontent.com/xenia-manager/x360db/main/titles/415608ED/artwork/boxart.jpg",
-    "number": 66
+    "number": 62
   },
   {
     "id": 140,
@@ -727,7 +685,7 @@
     "cover": "assets/catalogo-xbox360/game-140.jpg",
     "source": "https://github.com/xenia-manager/x360db/tree/main/titles/454109EE",
     "artwork_source": "https://raw.githubusercontent.com/xenia-manager/x360db/main/titles/454109EE/artwork/boxart.jpg",
-    "number": 67
+    "number": 63
   },
   {
     "id": 51,
@@ -738,7 +696,7 @@
     "cover": "assets/catalogo-xbox360/game-051.jpg",
     "source": "https://github.com/xenia-manager/x360db/tree/main/titles/454109F9",
     "artwork_source": "https://raw.githubusercontent.com/xenia-manager/x360db/main/titles/454109F9/artwork/boxart.jpg",
-    "number": 68
+    "number": 64
   },
   {
     "id": 52,
@@ -748,7 +706,7 @@
     "page": "",
     "cover": null,
     "source": null,
-    "number": 69
+    "number": 65
   },
   {
     "id": 54,
@@ -758,7 +716,7 @@
     "page": "",
     "cover": null,
     "source": null,
-    "number": 70
+    "number": 66
   },
   {
     "id": 141,
@@ -769,7 +727,7 @@
     "cover": "assets/catalogo-xbox360/game-141.jpg",
     "source": "https://github.com/xenia-manager/x360db/tree/main/titles/535107E9",
     "artwork_source": "https://raw.githubusercontent.com/xenia-manager/x360db/main/titles/535107E9/artwork/boxart.jpg",
-    "number": 71
+    "number": 67
   },
   {
     "id": 55,
@@ -780,7 +738,7 @@
     "cover": "assets/catalogo-xbox360/game-055.jpg",
     "source": "https://github.com/xenia-manager/x360db/tree/main/titles/4D5307D5",
     "artwork_source": "https://raw.githubusercontent.com/xenia-manager/x360db/main/titles/4D5307D5/artwork/boxart.jpg",
-    "number": 72
+    "number": 68
   },
   {
     "id": 56,
@@ -791,7 +749,7 @@
     "cover": "assets/catalogo-xbox360/game-056.jpg",
     "source": "https://github.com/xenia-manager/x360db/tree/main/titles/4D53082D",
     "artwork_source": "https://raw.githubusercontent.com/xenia-manager/x360db/main/titles/4D53082D/artwork/boxart.jpg",
-    "number": 73
+    "number": 69
   },
   {
     "id": 57,
@@ -802,7 +760,7 @@
     "cover": "assets/catalogo-xbox360/game-057.jpg",
     "source": "https://github.com/xenia-manager/x360db/tree/main/titles/4D5308AB",
     "artwork_source": "https://raw.githubusercontent.com/xenia-manager/x360db/main/titles/4D5308AB/artwork/boxart.jpg",
-    "number": 74
+    "number": 70
   },
   {
     "id": 58,
@@ -813,7 +771,7 @@
     "cover": "assets/catalogo-xbox360/game-058.jpg",
     "source": "https://github.com/xenia-manager/x360db/tree/main/titles/4D530A26",
     "artwork_source": "https://raw.githubusercontent.com/xenia-manager/x360db/main/titles/4D530A26/artwork/boxart.jpg",
-    "number": 75
+    "number": 71
   },
   {
     "id": 59,
@@ -824,7 +782,7 @@
     "cover": "assets/catalogo-xbox360/game-059.jpg",
     "source": "https://github.com/xenia-manager/x360db/tree/main/titles/545407F2",
     "artwork_source": "https://raw.githubusercontent.com/xenia-manager/x360db/main/titles/545407F2/artwork/boxart.jpg",
-    "number": 76
+    "number": 72
   },
   {
     "id": 60,
@@ -835,7 +793,7 @@
     "cover": "assets/catalogo-xbox360/game-060.jpg",
     "source": "https://github.com/xenia-manager/x360db/tree/main/titles/545408A7",
     "artwork_source": "https://raw.githubusercontent.com/xenia-manager/x360db/main/titles/545408A7/artwork/boxart.jpg",
-    "number": 77
+    "number": 73
   },
   {
     "id": 142,
@@ -846,7 +804,7 @@
     "cover": "assets/catalogo-xbox360/game-142.jpg",
     "source": "https://github.com/xenia-manager/x360db/tree/main/titles/41560819",
     "artwork_source": "https://raw.githubusercontent.com/xenia-manager/x360db/main/titles/41560819/artwork/boxart.jpg",
-    "number": 78
+    "number": 74
   },
   {
     "id": 61,
@@ -857,7 +815,7 @@
     "cover": "assets/catalogo-xbox360/game-061.jpg",
     "source": "https://github.com/xenia-manager/x360db/tree/main/titles/4D530919",
     "artwork_source": "https://raw.githubusercontent.com/xenia-manager/x360db/main/titles/4D530919/artwork/boxart.jpg",
-    "number": 79
+    "number": 75
   },
   {
     "id": 143,
@@ -868,7 +826,7 @@
     "cover": "assets/catalogo-xbox360/game-143.jpg",
     "source": "https://github.com/xenia-manager/x360db/tree/main/titles/5752080D",
     "artwork_source": "https://raw.githubusercontent.com/xenia-manager/x360db/main/titles/5752080D/artwork/boxart.jpg",
-    "number": 80
+    "number": 76
   },
   {
     "id": 62,
@@ -879,7 +837,7 @@
     "cover": "assets/catalogo-xbox360/game-062.jpg",
     "source": "https://github.com/xenia-manager/x360db/tree/main/titles/454107FA",
     "artwork_source": "https://raw.githubusercontent.com/xenia-manager/x360db/main/titles/454107FA/artwork/boxart.jpg",
-    "number": 81
+    "number": 77
   },
   {
     "id": 63,
@@ -890,7 +848,7 @@
     "cover": "assets/catalogo-xbox360/game-063.jpg",
     "source": "https://github.com/xenia-manager/x360db/tree/main/titles/45410819",
     "artwork_source": "https://raw.githubusercontent.com/xenia-manager/x360db/main/titles/45410819/artwork/boxart.jpg",
-    "number": 82
+    "number": 78
   },
   {
     "id": 144,
@@ -900,7 +858,7 @@
     "page": "",
     "cover": null,
     "source": null,
-    "number": 83
+    "number": 79
   },
   {
     "id": 64,
@@ -911,7 +869,7 @@
     "cover": "assets/catalogo-xbox360/game-064.jpg",
     "source": "https://github.com/xenia-manager/x360db/tree/main/titles/57520838",
     "artwork_source": "https://raw.githubusercontent.com/xenia-manager/x360db/main/titles/57520838/artwork/boxart.jpg",
-    "number": 84
+    "number": 80
   },
   {
     "id": 65,
@@ -922,7 +880,7 @@
     "cover": "assets/catalogo-xbox360/game-065.jpg",
     "source": "https://github.com/xenia-manager/x360db/tree/main/titles/57520829",
     "artwork_source": "https://raw.githubusercontent.com/xenia-manager/x360db/main/titles/57520829/artwork/boxart.jpg",
-    "number": 85
+    "number": 81
   },
   {
     "id": 66,
@@ -933,7 +891,7 @@
     "cover": "assets/catalogo-xbox360/game-066.jpg",
     "source": "https://github.com/xenia-manager/x360db/tree/main/titles/534507F2",
     "artwork_source": "https://raw.githubusercontent.com/xenia-manager/x360db/main/titles/534507F2/artwork/boxart.jpg",
-    "number": 86
+    "number": 82
   },
   {
     "id": 145,
@@ -944,7 +902,7 @@
     "cover": "assets/catalogo-xbox360/game-145.jpg",
     "source": "https://github.com/xenia-manager/x360db/tree/main/titles/4156081F",
     "artwork_source": "https://raw.githubusercontent.com/xenia-manager/x360db/main/titles/4156081F/artwork/boxart.jpg",
-    "number": 87
+    "number": 83
   },
   {
     "id": 69,
@@ -955,7 +913,7 @@
     "cover": "assets/catalogo-xbox360/game-069.jpg",
     "source": "https://github.com/xenia-manager/x360db/tree/main/titles/555308CD",
     "artwork_source": "https://raw.githubusercontent.com/xenia-manager/x360db/main/titles/555308CD/artwork/boxart.jpg",
-    "number": 88
+    "number": 84
   },
   {
     "id": 70,
@@ -966,7 +924,7 @@
     "cover": "assets/catalogo-xbox360/game-070.jpg",
     "source": "https://github.com/xenia-manager/x360db/tree/main/titles/555308D3",
     "artwork_source": "https://raw.githubusercontent.com/xenia-manager/x360db/main/titles/555308D3/artwork/boxart.jpg",
-    "number": 89
+    "number": 85
   },
   {
     "id": 68,
@@ -977,7 +935,7 @@
     "cover": "assets/catalogo-xbox360/game-068.jpg",
     "source": "https://github.com/xenia-manager/x360db/tree/main/titles/555308D5",
     "artwork_source": "https://raw.githubusercontent.com/xenia-manager/x360db/main/titles/555308D5/artwork/boxart.jpg",
-    "number": 90
+    "number": 86
   },
   {
     "id": 67,
@@ -988,7 +946,7 @@
     "cover": "assets/catalogo-xbox360/game-067.jpg",
     "source": "https://github.com/xenia-manager/x360db/tree/main/titles/555308B5",
     "artwork_source": "https://raw.githubusercontent.com/xenia-manager/x360db/main/titles/555308B5/artwork/boxart.jpg",
-    "number": 91
+    "number": 87
   },
   {
     "id": 120,
@@ -999,7 +957,7 @@
     "cover": "assets/catalogo-xbox360/game-120.jpg",
     "source": "https://github.com/xenia-manager/x360db/tree/main/titles/4D5308ED",
     "artwork_source": "https://raw.githubusercontent.com/xenia-manager/x360db/main/titles/4D5308ED/artwork/boxart.jpg",
-    "number": 92
+    "number": 88
   },
   {
     "id": 71,
@@ -1009,7 +967,7 @@
     "page": "",
     "cover": null,
     "source": null,
-    "number": 93
+    "number": 89
   },
   {
     "id": 146,
@@ -1020,7 +978,7 @@
     "cover": "assets/catalogo-xbox360/game-146.jpg",
     "source": "https://github.com/xenia-manager/x360db/tree/main/titles/415607F2",
     "artwork_source": "https://raw.githubusercontent.com/xenia-manager/x360db/main/titles/415607F2/artwork/boxart.jpg",
-    "number": 94
+    "number": 90
   },
   {
     "id": 147,
@@ -1031,7 +989,7 @@
     "cover": "assets/catalogo-xbox360/game-147.jpg",
     "source": "https://github.com/xenia-manager/x360db/tree/main/titles/454108D4",
     "artwork_source": "https://raw.githubusercontent.com/xenia-manager/x360db/main/titles/454108D4/artwork/boxart.jpg",
-    "number": 95
+    "number": 91
   },
   {
     "id": 148,
@@ -1042,7 +1000,7 @@
     "cover": "assets/catalogo-xbox360/game-148.jpg",
     "source": "https://github.com/xenia-manager/x360db/tree/main/titles/475007D3",
     "artwork_source": "https://raw.githubusercontent.com/xenia-manager/x360db/main/titles/475007D3/artwork/boxart.jpg",
-    "number": 96
+    "number": 92
   },
   {
     "id": 73,
@@ -1053,7 +1011,7 @@
     "cover": "assets/catalogo-xbox360/game-073.jpg",
     "source": "https://github.com/xenia-manager/x360db/tree/main/titles/57520817",
     "artwork_source": "https://raw.githubusercontent.com/xenia-manager/x360db/main/titles/57520817/artwork/boxart.jpg",
-    "number": 97
+    "number": 93
   },
   {
     "id": 74,
@@ -1064,7 +1022,7 @@
     "cover": "assets/catalogo-xbox360/game-074.jpg",
     "source": "https://github.com/xenia-manager/x360db/tree/main/titles/57520845",
     "artwork_source": "https://raw.githubusercontent.com/xenia-manager/x360db/main/titles/57520845/artwork/boxart.jpg",
-    "number": 98
+    "number": 94
   },
   {
     "id": 72,
@@ -1075,7 +1033,7 @@
     "cover": "assets/catalogo-xbox360/game-072.jpg",
     "source": "https://github.com/xenia-manager/x360db/tree/main/titles/575207D7",
     "artwork_source": "https://raw.githubusercontent.com/xenia-manager/x360db/main/titles/575207D7/artwork/boxart.jpg",
-    "number": 99
+    "number": 95
   },
   {
     "id": 75,
@@ -1086,7 +1044,7 @@
     "cover": "assets/catalogo-xbox360/game-075.jpg",
     "source": "https://github.com/xenia-manager/x360db/tree/main/titles/575207E6",
     "artwork_source": "https://raw.githubusercontent.com/xenia-manager/x360db/main/titles/575207E6/artwork/boxart.jpg",
-    "number": 100
+    "number": 96
   },
   {
     "id": 76,
@@ -1097,7 +1055,7 @@
     "cover": "assets/catalogo-xbox360/game-076.jpg",
     "source": "https://github.com/xenia-manager/x360db/tree/main/titles/57520812",
     "artwork_source": "https://raw.githubusercontent.com/xenia-manager/x360db/main/titles/57520812/artwork/boxart.jpg",
-    "number": 101
+    "number": 97
   },
   {
     "id": 79,
@@ -1108,7 +1066,7 @@
     "cover": "assets/catalogo-xbox360/game-079.jpg",
     "source": "https://github.com/xenia-manager/x360db/tree/main/titles/4C4107ED",
     "artwork_source": "https://raw.githubusercontent.com/xenia-manager/x360db/main/titles/4C4107ED/artwork/boxart.jpg",
-    "number": 102
+    "number": 98
   },
   {
     "id": 78,
@@ -1119,7 +1077,7 @@
     "cover": "assets/catalogo-xbox360/game-078.jpg",
     "source": "https://github.com/xenia-manager/x360db/tree/main/titles/4C4107DF",
     "artwork_source": "https://raw.githubusercontent.com/xenia-manager/x360db/main/titles/4C4107DF/artwork/boxart.jpg",
-    "number": 103
+    "number": 99
   },
   {
     "id": 80,
@@ -1130,7 +1088,7 @@
     "cover": "assets/catalogo-xbox360/game-080.jpg",
     "source": "https://github.com/xenia-manager/x360db/tree/main/titles/5752084D",
     "artwork_source": "https://raw.githubusercontent.com/xenia-manager/x360db/main/titles/5752084D/artwork/boxart.jpg",
-    "number": 104
+    "number": 100
   },
   {
     "id": 81,
@@ -1141,7 +1099,7 @@
     "cover": "assets/catalogo-xbox360/game-081.jpg",
     "source": "https://github.com/xenia-manager/x360db/tree/main/titles/57520835",
     "artwork_source": "https://raw.githubusercontent.com/xenia-manager/x360db/main/titles/57520835/artwork/boxart.jpg",
-    "number": 105
+    "number": 101
   },
   {
     "id": 82,
@@ -1152,7 +1110,7 @@
     "cover": "assets/catalogo-xbox360/game-082.jpg",
     "source": "https://github.com/xenia-manager/x360db/tree/main/titles/5752084F",
     "artwork_source": "https://raw.githubusercontent.com/xenia-manager/x360db/main/titles/5752084F/artwork/boxart.jpg",
-    "number": 106
+    "number": 102
   },
   {
     "id": 84,
@@ -1163,7 +1121,7 @@
     "cover": "assets/catalogo-xbox360/game-084.jpg",
     "source": "https://github.com/xenia-manager/x360db/tree/main/titles/42560802",
     "artwork_source": "https://raw.githubusercontent.com/xenia-manager/x360db/main/titles/42560802/artwork/boxart.jpg",
-    "number": 107
+    "number": 103
   },
   {
     "id": 85,
@@ -1174,7 +1132,7 @@
     "cover": "assets/catalogo-xbox360/game-085.jpg",
     "source": "https://github.com/xenia-manager/x360db/tree/main/titles/4C4107D7",
     "artwork_source": "https://raw.githubusercontent.com/xenia-manager/x360db/main/titles/4C4107D7/artwork/boxart.jpg",
-    "number": 108
+    "number": 104
   },
   {
     "id": 77,
@@ -1185,7 +1143,7 @@
     "cover": "assets/catalogo-xbox360/game-077.jpg",
     "source": "https://github.com/xenia-manager/x360db/tree/main/titles/57520844",
     "artwork_source": "https://raw.githubusercontent.com/xenia-manager/x360db/main/titles/57520844/artwork/boxart.jpg",
-    "number": 109
+    "number": 105
   },
   {
     "id": 86,
@@ -1196,7 +1154,7 @@
     "cover": "assets/catalogo-xbox360/game-086.jpg",
     "source": "https://github.com/xenia-manager/x360db/tree/main/titles/5752081D",
     "artwork_source": "https://raw.githubusercontent.com/xenia-manager/x360db/main/titles/5752081D/artwork/boxart.jpg",
-    "number": 110
+    "number": 106
   },
   {
     "id": 149,
@@ -1207,7 +1165,7 @@
     "cover": "assets/catalogo-xbox360/game-149.jpg",
     "source": "https://github.com/xenia-manager/x360db/tree/main/titles/575207D2",
     "artwork_source": "https://raw.githubusercontent.com/xenia-manager/x360db/main/titles/575207D2/artwork/boxart.jpg",
-    "number": 111
+    "number": 107
   },
   {
     "id": 150,
@@ -1217,7 +1175,7 @@
     "page": "",
     "cover": null,
     "source": null,
-    "number": 112
+    "number": 108
   },
   {
     "id": 87,
@@ -1228,7 +1186,7 @@
     "cover": "assets/catalogo-xbox360/game-087.jpg",
     "source": "https://github.com/xenia-manager/x360db/tree/main/titles/545407E6",
     "artwork_source": "https://raw.githubusercontent.com/xenia-manager/x360db/main/titles/545407E6/artwork/boxart.jpg",
-    "number": 113
+    "number": 109
   },
   {
     "id": 88,
@@ -1239,7 +1197,7 @@
     "cover": "assets/catalogo-xbox360/game-088.jpg",
     "source": "https://github.com/xenia-manager/x360db/tree/main/titles/454108F7",
     "artwork_source": "https://raw.githubusercontent.com/xenia-manager/x360db/main/titles/454108F7/artwork/boxart.jpg",
-    "number": 114
+    "number": 110
   },
   {
     "id": 90,
@@ -1250,7 +1208,7 @@
     "cover": "assets/catalogo-xbox360/game-090.jpg",
     "source": "https://github.com/xenia-manager/x360db/tree/main/titles/4B4E080A",
     "artwork_source": "https://raw.githubusercontent.com/xenia-manager/x360db/main/titles/4B4E080A/artwork/boxart.jpg",
-    "number": 115
+    "number": 111
   },
   {
     "id": 89,
@@ -1261,7 +1219,7 @@
     "cover": "assets/catalogo-xbox360/game-089.jpg",
     "source": "https://github.com/xenia-manager/x360db/tree/main/titles/4B4E085E",
     "artwork_source": "https://raw.githubusercontent.com/xenia-manager/x360db/main/titles/4B4E085E/artwork/boxart.jpg",
-    "number": 116
+    "number": 112
   },
   {
     "id": 91,
@@ -1272,7 +1230,7 @@
     "cover": "assets/catalogo-xbox360/game-091.jpg",
     "source": "https://github.com/xenia-manager/x360db/tree/main/titles/545407F8",
     "artwork_source": "https://raw.githubusercontent.com/xenia-manager/x360db/main/titles/545407F8/artwork/boxart.jpg",
-    "number": 117
+    "number": 113
   },
   {
     "id": 93,
@@ -1283,7 +1241,7 @@
     "cover": "assets/catalogo-xbox360/game-093.jpg",
     "source": "https://github.com/xenia-manager/x360db/tree/main/titles/575207FD",
     "artwork_source": "https://raw.githubusercontent.com/xenia-manager/x360db/main/titles/575207FD/artwork/boxart.jpg",
-    "number": 118
+    "number": 114
   },
   {
     "id": 92,
@@ -1294,7 +1252,7 @@
     "cover": "assets/catalogo-xbox360/game-092.jpg",
     "source": "https://github.com/xenia-manager/x360db/tree/main/titles/4D5707E9",
     "artwork_source": "https://raw.githubusercontent.com/xenia-manager/x360db/main/titles/4D5707E9/artwork/boxart.jpg",
-    "number": 119
+    "number": 115
   },
   {
     "id": 151,
@@ -1305,7 +1263,7 @@
     "cover": "assets/catalogo-xbox360/game-151.jpg",
     "source": "https://github.com/xenia-manager/x360db/tree/main/titles/54510829",
     "artwork_source": "https://raw.githubusercontent.com/xenia-manager/x360db/main/titles/54510829/artwork/boxart.jpg",
-    "number": 120
+    "number": 116
   },
   {
     "id": 152,
@@ -1315,7 +1273,7 @@
     "page": "",
     "cover": null,
     "source": null,
-    "number": 121
+    "number": 117
   },
   {
     "id": 94,
@@ -1326,7 +1284,7 @@
     "cover": "assets/catalogo-xbox360/game-094.jpg",
     "source": "https://github.com/xenia-manager/x360db/tree/main/titles/4E4D085C",
     "artwork_source": "https://raw.githubusercontent.com/xenia-manager/x360db/main/titles/4E4D085C/artwork/boxart.jpg",
-    "number": 122
+    "number": 118
   },
   {
     "id": 153,
@@ -1336,7 +1294,7 @@
     "page": "",
     "cover": null,
     "source": null,
-    "number": 123
+    "number": 119
   },
   {
     "id": 95,
@@ -1347,7 +1305,7 @@
     "cover": "assets/catalogo-xbox360/game-095.jpg",
     "source": "https://github.com/xenia-manager/x360db/tree/main/titles/454109C6",
     "artwork_source": "https://raw.githubusercontent.com/xenia-manager/x360db/main/titles/454109C6/artwork/boxart.jpg",
-    "number": 124
+    "number": 120
   },
   {
     "id": 122,
@@ -1358,7 +1316,7 @@
     "cover": "assets/catalogo-xbox360/game-122.jpg",
     "source": "https://github.com/pixelsfoz/pixelsfoz-site/blob/main/catalogo-ps4.html",
     "artwork_source": "https://raw.githubusercontent.com/xenia-manager/x360db/main/titles/454107D9/artwork/boxart.jpg",
-    "number": 125
+    "number": 121
   },
   {
     "id": 154,
@@ -1368,7 +1326,7 @@
     "page": "Need for Speed: Underground 2",
     "cover": "assets/catalogo-xbox360/game-154.jpg",
     "source": "https://github.com/pixelsfoz/pixelsfoz-site/blob/main/catalogo-ps2.html",
-    "number": 126
+    "number": 122
   },
   {
     "id": 155,
@@ -1379,7 +1337,7 @@
     "cover": "assets/catalogo-xbox360/game-155.jpg",
     "source": "https://github.com/xenia-manager/x360db/tree/main/titles/4E4D0865",
     "artwork_source": "https://raw.githubusercontent.com/xenia-manager/x360db/main/titles/4E4D0865/artwork/boxart.jpg",
-    "number": 127
+    "number": 123
   },
   {
     "id": 156,
@@ -1390,7 +1348,7 @@
     "cover": "assets/catalogo-xbox360/game-156.jpg",
     "source": "https://github.com/xenia-manager/x360db/tree/main/titles/4E4D086A",
     "artwork_source": "https://raw.githubusercontent.com/xenia-manager/x360db/main/titles/4E4D086A/artwork/boxart.jpg",
-    "number": 128
+    "number": 124
   },
   {
     "id": 157,
@@ -1401,7 +1359,7 @@
     "cover": "assets/catalogo-xbox360/game-157.jpg",
     "source": "https://github.com/xenia-manager/x360db/tree/main/titles/464F0800",
     "artwork_source": "https://raw.githubusercontent.com/xenia-manager/x360db/main/titles/464F0800/artwork/boxart.jpg",
-    "number": 129
+    "number": 125
   },
   {
     "id": 158,
@@ -1412,7 +1370,7 @@
     "cover": "assets/catalogo-xbox360/game-158.jpg",
     "source": "https://github.com/xenia-manager/x360db/tree/main/titles/415407E2",
     "artwork_source": "https://raw.githubusercontent.com/xenia-manager/x360db/main/titles/415407E2/artwork/boxart.jpg",
-    "number": 130
+    "number": 126
   },
   {
     "id": 96,
@@ -1422,7 +1380,7 @@
     "page": "",
     "cover": null,
     "source": null,
-    "number": 131
+    "number": 127
   },
   {
     "id": 159,
@@ -1433,7 +1391,7 @@
     "cover": "assets/catalogo-xbox360/game-159.jpg",
     "source": "https://github.com/xenia-manager/x360db/tree/main/titles/5553083E",
     "artwork_source": "https://raw.githubusercontent.com/xenia-manager/x360db/main/titles/5553083E/artwork/boxart.jpg",
-    "number": 132
+    "number": 128
   },
   {
     "id": 160,
@@ -1444,7 +1402,7 @@
     "cover": "assets/catalogo-xbox360/game-160.jpg",
     "source": "https://github.com/xenia-manager/x360db/tree/main/titles/41560889",
     "artwork_source": "https://raw.githubusercontent.com/xenia-manager/x360db/main/titles/41560889/artwork/boxart.jpg",
-    "number": 133
+    "number": 129
   },
   {
     "id": 161,
@@ -1455,7 +1413,7 @@
     "cover": "assets/catalogo-xbox360/game-161.jpg",
     "source": "https://github.com/xenia-manager/x360db/tree/main/titles/545107F1",
     "artwork_source": "https://raw.githubusercontent.com/xenia-manager/x360db/main/titles/545107F1/artwork/boxart.jpg",
-    "number": 134
+    "number": 130
   },
   {
     "id": 98,
@@ -1466,7 +1424,7 @@
     "cover": "assets/catalogo-xbox360/game-098.jpg",
     "source": "https://github.com/xenia-manager/x360db/tree/main/titles/55530884",
     "artwork_source": "https://raw.githubusercontent.com/xenia-manager/x360db/main/titles/55530884/artwork/boxart.jpg",
-    "number": 135
+    "number": 131
   },
   {
     "id": 97,
@@ -1477,7 +1435,7 @@
     "cover": "assets/catalogo-xbox360/game-097.jpg",
     "source": "https://github.com/xenia-manager/x360db/tree/main/titles/555307F3",
     "artwork_source": "https://raw.githubusercontent.com/xenia-manager/x360db/main/titles/555307F3/artwork/boxart.jpg",
-    "number": 136
+    "number": 132
   },
   {
     "id": 99,
@@ -1488,7 +1446,7 @@
     "cover": "assets/catalogo-xbox360/game-099.jpg",
     "source": "https://github.com/xenia-manager/x360db/tree/main/titles/5454082B",
     "artwork_source": "https://raw.githubusercontent.com/xenia-manager/x360db/main/titles/5454082B/artwork/boxart.jpg",
-    "number": 137
+    "number": 133
   },
   {
     "id": 100,
@@ -1499,7 +1457,7 @@
     "cover": "assets/catalogo-xbox360/game-100.jpg",
     "source": "https://github.com/xenia-manager/x360db/tree/main/titles/4343081C",
     "artwork_source": "https://raw.githubusercontent.com/xenia-manager/x360db/main/titles/4343081C/artwork/boxart.jpg",
-    "number": 138
+    "number": 134
   },
   {
     "id": 101,
@@ -1510,7 +1468,7 @@
     "cover": "assets/catalogo-xbox360/game-101.jpg",
     "source": "https://github.com/xenia-manager/x360db/tree/main/titles/434307D4",
     "artwork_source": "https://raw.githubusercontent.com/xenia-manager/x360db/main/titles/434307D4/artwork/boxart.jpg",
-    "number": 139
+    "number": 135
   },
   {
     "id": 102,
@@ -1521,7 +1479,7 @@
     "cover": "assets/catalogo-xbox360/game-102.jpg",
     "source": "https://github.com/xenia-manager/x360db/tree/main/titles/43430819",
     "artwork_source": "https://raw.githubusercontent.com/xenia-manager/x360db/main/titles/43430819/artwork/boxart.jpg",
-    "number": 140
+    "number": 136
   },
   {
     "id": 103,
@@ -1532,7 +1490,7 @@
     "cover": "assets/catalogo-xbox360/game-103.jpg",
     "source": "https://github.com/xenia-manager/x360db/tree/main/titles/43430841",
     "artwork_source": "https://raw.githubusercontent.com/xenia-manager/x360db/main/titles/43430841/artwork/boxart.jpg",
-    "number": 141
+    "number": 137
   },
   {
     "id": 104,
@@ -1543,7 +1501,7 @@
     "cover": "assets/catalogo-xbox360/game-104.jpg",
     "source": "https://github.com/xenia-manager/x360db/tree/main/titles/53510823",
     "artwork_source": "https://raw.githubusercontent.com/xenia-manager/x360db/main/titles/53510823/artwork/boxart.jpg",
-    "number": 142
+    "number": 138
   },
   {
     "id": 162,
@@ -1553,7 +1511,7 @@
     "page": "",
     "cover": null,
     "source": null,
-    "number": 143
+    "number": 139
   },
   {
     "id": 105,
@@ -1564,7 +1522,7 @@
     "cover": "assets/catalogo-xbox360/game-105.jpg",
     "source": "https://github.com/xenia-manager/x360db/tree/main/titles/454108E6",
     "artwork_source": "https://raw.githubusercontent.com/xenia-manager/x360db/main/titles/454108E6/artwork/boxart.jpg",
-    "number": 144
+    "number": 140
   },
   {
     "id": 163,
@@ -1575,7 +1533,7 @@
     "cover": "assets/catalogo-xbox360/game-163.jpg",
     "source": "https://github.com/xenia-manager/x360db/tree/main/titles/464F0803",
     "artwork_source": "https://raw.githubusercontent.com/xenia-manager/x360db/main/titles/464F0803/artwork/boxart.jpg",
-    "number": 145
+    "number": 141
   },
   {
     "id": 164,
@@ -1586,7 +1544,7 @@
     "cover": "assets/catalogo-xbox360/game-164.jpg",
     "source": "https://github.com/xenia-manager/x360db/tree/main/titles/5345085D",
     "artwork_source": "https://raw.githubusercontent.com/xenia-manager/x360db/main/titles/5345085D/artwork/boxart.jpg",
-    "number": 146
+    "number": 142
   },
   {
     "id": 108,
@@ -1596,7 +1554,7 @@
     "page": "",
     "cover": null,
     "source": null,
-    "number": 147
+    "number": 143
   },
   {
     "id": 109,
@@ -1607,7 +1565,7 @@
     "cover": "assets/catalogo-xbox360/game-109.jpg",
     "source": "https://github.com/xenia-manager/x360db/tree/main/titles/4E4D083D",
     "artwork_source": "https://raw.githubusercontent.com/xenia-manager/x360db/main/titles/4E4D083D/artwork/boxart.jpg",
-    "number": 148
+    "number": 144
   },
   {
     "id": 165,
@@ -1618,7 +1576,7 @@
     "cover": "assets/catalogo-xbox360/game-165.jpg",
     "source": "https://github.com/xenia-manager/x360db/tree/main/titles/555308C5",
     "artwork_source": "https://raw.githubusercontent.com/xenia-manager/x360db/main/titles/555308C5/artwork/boxart.jpg",
-    "number": 149
+    "number": 145
   },
   {
     "id": 110,
@@ -1629,7 +1587,7 @@
     "cover": "assets/catalogo-xbox360/game-110.jpg",
     "source": "https://github.com/xenia-manager/x360db/tree/main/titles/415607E2",
     "artwork_source": "https://raw.githubusercontent.com/xenia-manager/x360db/main/titles/415607E2/artwork/boxart.jpg",
-    "number": 150
+    "number": 146
   },
   {
     "id": 166,
@@ -1639,7 +1597,7 @@
     "page": "",
     "cover": null,
     "source": null,
-    "number": 151
+    "number": 147
   },
   {
     "id": 129,
@@ -1650,7 +1608,7 @@
     "cover": "assets/catalogo-xbox360/game-129.jpg",
     "source": "https://github.com/xenia-manager/x360db/tree/main/titles/41560900",
     "artwork_source": "https://raw.githubusercontent.com/xenia-manager/x360db/main/titles/41560900/artwork/boxart.jpg",
-    "number": 152
+    "number": 148
   },
   {
     "id": 111,
@@ -1660,7 +1618,7 @@
     "page": "",
     "cover": null,
     "source": null,
-    "number": 153
+    "number": 149
   },
   {
     "id": 112,
@@ -1670,7 +1628,7 @@
     "page": "",
     "cover": null,
     "source": null,
-    "number": 154
+    "number": 150
   },
   {
     "id": 107,
@@ -1681,7 +1639,7 @@
     "cover": "assets/catalogo-xbox360/game-107.jpg",
     "source": "https://github.com/xenia-manager/x360db/tree/main/titles/5752082C",
     "artwork_source": "https://raw.githubusercontent.com/xenia-manager/x360db/main/titles/5752082C/artwork/boxart.jpg",
-    "number": 155
+    "number": 151
   },
   {
     "id": 4,
@@ -1692,7 +1650,7 @@
     "cover": "assets/catalogo-xbox360/game-004.jpg",
     "source": "https://github.com/xenia-manager/x360db/tree/main/titles/415608B5",
     "artwork_source": "https://raw.githubusercontent.com/xenia-manager/x360db/main/titles/415608B5/artwork/boxart.jpg",
-    "number": 156
+    "number": 152
   },
   {
     "id": 115,
@@ -1703,7 +1661,7 @@
     "cover": "assets/catalogo-xbox360/game-115.jpg",
     "source": "https://github.com/xenia-manager/x360db/tree/main/titles/41560905",
     "artwork_source": "https://raw.githubusercontent.com/xenia-manager/x360db/main/titles/41560905/artwork/boxart.jpg",
-    "number": 157
+    "number": 153
   },
   {
     "id": 106,
@@ -1714,7 +1672,7 @@
     "cover": "assets/catalogo-xbox360/game-106.jpg",
     "source": "https://github.com/xenia-manager/x360db/tree/main/titles/425307E6",
     "artwork_source": "https://raw.githubusercontent.com/xenia-manager/x360db/main/titles/425307E6/artwork/boxart.jpg",
-    "number": 158
+    "number": 154
   },
   {
     "id": 113,
@@ -1725,7 +1683,7 @@
     "cover": "assets/catalogo-xbox360/game-113.jpg",
     "source": "https://github.com/xenia-manager/x360db/tree/main/titles/534507F1",
     "artwork_source": "https://raw.githubusercontent.com/xenia-manager/x360db/main/titles/534507F1/artwork/boxart.jpg",
-    "number": 159
+    "number": 155
   },
   {
     "id": 83,
@@ -1736,7 +1694,7 @@
     "cover": "assets/catalogo-xbox360/game-083.jpg",
     "source": "https://github.com/xenia-manager/x360db/tree/main/titles/57520841",
     "artwork_source": "https://raw.githubusercontent.com/xenia-manager/x360db/main/titles/57520841/artwork/boxart.jpg",
-    "number": 160
+    "number": 156
   },
   {
     "id": 114,
@@ -1747,7 +1705,7 @@
     "cover": "assets/catalogo-xbox360/game-114.jpg",
     "source": "https://github.com/xenia-manager/x360db/tree/main/titles/45410809",
     "artwork_source": "https://raw.githubusercontent.com/xenia-manager/x360db/main/titles/45410809/artwork/boxart.jpg",
-    "number": 161
+    "number": 157
   },
   {
     "id": 2,
@@ -1758,7 +1716,7 @@
     "cover": "assets/catalogo-xbox360/game-002.jpg",
     "source": "https://github.com/xenia-manager/x360db/tree/main/titles/454108E2",
     "artwork_source": "https://raw.githubusercontent.com/xenia-manager/x360db/main/titles/454108E2/artwork/boxart.jpg",
-    "number": 162
+    "number": 158
   },
   {
     "id": 167,
@@ -1769,7 +1727,7 @@
     "cover": "assets/catalogo-xbox360/game-167.jpg",
     "source": "https://github.com/xenia-manager/x360db/tree/main/titles/555308BD",
     "artwork_source": "https://raw.githubusercontent.com/xenia-manager/x360db/main/titles/555308BD/artwork/boxart.jpg",
-    "number": 163
+    "number": 159
   },
   {
     "id": 168,
@@ -1779,7 +1737,7 @@
     "page": "",
     "cover": null,
     "source": null,
-    "number": 164
+    "number": 160
   },
   {
     "id": 169,
@@ -1790,7 +1748,7 @@
     "cover": "assets/catalogo-xbox360/game-169.jpg",
     "source": "https://github.com/xenia-manager/x360db/tree/main/titles/53510803",
     "artwork_source": "https://raw.githubusercontent.com/xenia-manager/x360db/main/titles/53510803/artwork/boxart.jpg",
-    "number": 165
+    "number": 161
   },
   {
     "id": 170,
@@ -1801,7 +1759,7 @@
     "cover": "assets/catalogo-xbox360/game-170.jpg",
     "source": "https://github.com/xenia-manager/x360db/tree/main/titles/4541094D",
     "artwork_source": "https://raw.githubusercontent.com/xenia-manager/x360db/main/titles/4541094D/artwork/boxart.jpg",
-    "number": 166
+    "number": 162
   },
   {
     "id": 171,
@@ -1812,7 +1770,7 @@
     "cover": "assets/catalogo-xbox360/game-171.jpg",
     "source": "https://github.com/xenia-manager/x360db/tree/main/titles/4B5907EA",
     "artwork_source": "https://raw.githubusercontent.com/xenia-manager/x360db/main/titles/4B5907EA/artwork/boxart.jpg",
-    "number": 167
+    "number": 163
   },
   {
     "id": 116,
@@ -1822,7 +1780,7 @@
     "page": "Ultimate Ghosts 'n Goblins",
     "cover": "assets/catalogo-xbox360/game-116.jpg",
     "source": "https://en.wikipedia.org/wiki/Ultimate_Ghosts_%27n_Goblins",
-    "number": 168
+    "number": 164
   },
   {
     "id": 117,
@@ -1832,7 +1790,7 @@
     "page": "",
     "cover": null,
     "source": null,
-    "number": 169
+    "number": 165
   },
   {
     "id": 118,
@@ -1843,7 +1801,7 @@
     "cover": "assets/catalogo-xbox360/game-118.jpg",
     "source": "https://github.com/xenia-manager/x360db/tree/main/titles/5451082C",
     "artwork_source": "https://raw.githubusercontent.com/xenia-manager/x360db/main/titles/5451082C/artwork/boxart.jpg",
-    "number": 170
+    "number": 166
   },
   {
     "id": 119,
@@ -1854,7 +1812,7 @@
     "cover": "assets/catalogo-xbox360/game-119.jpg",
     "source": "https://github.com/xenia-manager/x360db/tree/main/titles/555308B7",
     "artwork_source": "https://raw.githubusercontent.com/xenia-manager/x360db/main/titles/555308B7/artwork/boxart.jpg",
-    "number": 171
+    "number": 167
   },
   {
     "id": 172,
@@ -1865,6 +1823,6 @@
     "cover": "assets/catalogo-xbox360/game-172.jpg",
     "source": "https://github.com/xenia-manager/x360db/tree/main/titles/41560816",
     "artwork_source": "https://raw.githubusercontent.com/xenia-manager/x360db/main/titles/41560816/artwork/boxart.jpg",
-    "number": 172
+    "number": 168
   }
 ]
