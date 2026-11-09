@@ -483,16 +483,6 @@
     }
   ],
   "errors": [],
-  "page_errors": [
-    "Cannot read properties of null (reading 'contains')",
-    "Cannot read properties of null (reading 'contains')",
-    "Cannot read properties of null (reading 'contains')",
-    "Cannot read properties of null (reading 'contains')",
-    "Cannot read properties of null (reading 'contains')",
-    "Cannot read properties of null (reading 'contains')",
-    "Cannot read properties of null (reading 'contains')",
-    "Cannot read properties of null (reading 'contains')",
-    "Cannot read properties of null (reading 'contains')"
-  ],
+  "page_errors": [],
   "failed_resources": []
 }
