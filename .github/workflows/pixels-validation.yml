@@ -26,7 +26,7 @@ jobs:
       - name: Test desktop, mobile and catalog interactions
         run: |
           if [ -f .maintenance/production.txt ]; then
-            python .maintenance/test.py --production
+            python .maintenance/diagnostic.py
           else
             python .maintenance/test.py
           fi
