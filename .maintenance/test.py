@@ -9,7 +9,7 @@ if production:
     ready=False
     for attempt in range(36):
         try:
-            with urllib.request.urlopen(base+"/assets/pixels-standard.css?v=20261109",timeout=15) as response:
+            with urllib.request.urlopen(urllib.request.Request(base+"/assets/pixels-standard.css?v=20261109",headers={"User-Agent":"Mozilla/5.0"}),timeout=15) as response:
                 ready="Pixels shared navigation — 2026-11-09" in response.read().decode()
             if ready:break
         except Exception:pass
