@@ -1,0 +1,134 @@
+[
+  {
+    "host": "pixelsfoz.com.br",
+    "dns": [
+      "pixelsfoz.com.br",
+      [],
+      [
+        "104.21.11.252",
+        "172.67.150.226"
+      ]
+    ],
+    "/": {
+      "status": 200,
+      "url": "https://pixelsfoz.com.br/",
+      "bytes": 52730,
+      "prefix": "<!DOCTYPE html>\n\n<html lang=\"pt-BR\">\n<head>\n<meta charset=\"utf-8\"/>\n<meta content=\"width=device-width, initial-scale=1.0\" name=\"viewport\"/>\n<title>Pixels Real Acessórios | História, games e criatividade</title>\n<meta content=\"Conheça a história d"
+    },
+    "/assets/pixels-standard.css?v=20261109": {
+      "status": 200,
+      "url": "https://pixelsfoz.com.br/assets/pixels-standard.css?v=20261109",
+      "bytes": 9531,
+      "prefix": "/* Pixels shared navigation — 2026-11-09. */\nhtml{scroll-padding-top:calc(var(--pixels-header-height,170px) + 16px)}\nhtml body .pixels-site-header{position:sticky!important;top:0!important;z-index:40!important;background:#071127!important;border:0!"
+    },
+    "browser": {
+      "status": 200,
+      "url": "https://pixelsfoz.com.br/catalogo-3d",
+      "title": "Impressões 3D | Pixels Real Acessórios",
+      "links": [
+        "Sobre",
+        "Nossa história",
+        "ACTION FIGURES",
+        "JOGOS PS2",
+        "JOGOS PS4",
+        "XBOX 360",
+        "NINTENDO SWITCH",
+        "NINTENDO WII",
+        "NINTENDO 3DS",
+        "IMPRESSÕES 3D",
+        "ANÚNCIOS",
+        "Contato",
+        "Central de Rifas"
+      ],
+      "logo": "assets/optimized/pixels-logo-b2952182f7a8e4b6.webp"
+    }
+  },
+  {
+    "host": "www.pixelsfoz.com.br",
+    "dns": [
+      "www.pixelsfoz.com.br",
+      [],
+      [
+        "104.21.11.252",
+        "172.67.150.226"
+      ]
+    ],
+    "/": {
+      "status": 200,
+      "url": "https://pixelsfoz.com.br/",
+      "bytes": 52730,
+      "prefix": "<!DOCTYPE html>\n\n<html lang=\"pt-BR\">\n<head>\n<meta charset=\"utf-8\"/>\n<meta content=\"width=device-width, initial-scale=1.0\" name=\"viewport\"/>\n<title>Pixels Real Acessórios | História, games e criatividade</title>\n<meta content=\"Conheça a história d"
+    },
+    "/assets/pixels-standard.css?v=20261109": {
+      "status": 200,
+      "url": "https://pixelsfoz.com.br/assets/pixels-standard.css?v=20261109",
+      "bytes": 9531,
+      "prefix": "/* Pixels shared navigation — 2026-11-09. */\nhtml{scroll-padding-top:calc(var(--pixels-header-height,170px) + 16px)}\nhtml body .pixels-site-header{position:sticky!important;top:0!important;z-index:40!important;background:#071127!important;border:0!"
+    },
+    "browser": {
+      "status": 200,
+      "url": "https://pixelsfoz.com.br/catalogo-3d",
+      "title": "Impressões 3D | Pixels Real Acessórios",
+      "links": [
+        "Sobre",
+        "Nossa história",
+        "ACTION FIGURES",
+        "JOGOS PS2",
+        "JOGOS PS4",
+        "XBOX 360",
+        "NINTENDO SWITCH",
+        "NINTENDO WII",
+        "NINTENDO 3DS",
+        "IMPRESSÕES 3D",
+        "ANÚNCIOS",
+        "Contato",
+        "Central de Rifas"
+      ],
+      "logo": "assets/optimized/pixels-logo-b2952182f7a8e4b6.webp"
+    }
+  },
+  {
+    "host": "cdcb219d.pixelsfoz-page.pages.dev",
+    "dns": [
+      "cdcb219d.pixelsfoz-page.pages.dev",
+      [],
+      [
+        "172.66.47.202",
+        "172.66.44.54"
+      ]
+    ],
+    "/": {
+      "status": 200,
+      "url": "https://cdcb219d.pixelsfoz-page.pages.dev/",
+      "bytes": 52363,
+      "prefix": "<!DOCTYPE html>\n\n<html lang=\"pt-BR\">\n<head>\n<meta charset=\"utf-8\"/>\n<meta content=\"width=device-width, initial-scale=1.0\" name=\"viewport\"/>\n<title>Pixels Real Acessórios | História, games e criatividade</title>\n<meta content=\"Conheça a história d"
+    },
+    "/assets/pixels-standard.css?v=20261109": {
+      "status": 200,
+      "url": "https://cdcb219d.pixelsfoz-page.pages.dev/assets/pixels-standard.css?v=20261109",
+      "bytes": 9531,
+      "prefix": "/* Pixels shared navigation — 2026-11-09. */\nhtml{scroll-padding-top:calc(var(--pixels-header-height,170px) + 16px)}\nhtml body .pixels-site-header{position:sticky!important;top:0!important;z-index:40!important;background:#071127!important;border:0!"
+    },
+    "browser": {
+      "status": 200,
+      "url": "https://cdcb219d.pixelsfoz-page.pages.dev/catalogo-3d",
+      "title": "Impressões 3D | Pixels Real Acessórios",
+      "links": [
+        "Sobre",
+        "Nossa história",
+        "ACTION FIGURES",
+        "JOGOS PS2",
+        "JOGOS PS4",
+        "XBOX 360",
+        "NINTENDO SWITCH",
+        "NINTENDO WII",
+        "NINTENDO 3DS",
+        "IMPRESSÕES 3D",
+        "ANÚNCIOS",
+        "Contato",
+        "Central de Rifas"
+      ],
+      "logo": "assets/optimized/pixels-logo-b2952182f7a8e4b6.webp"
+    }
+  }
+]
