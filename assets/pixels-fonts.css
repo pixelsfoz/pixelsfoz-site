@@ -1,28 +1,4 @@
-@font-face {
-  font-family: 'Press Start 2P';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url(fonts/pixels-font-0.ttf) format('truetype');
-}
-@font-face {
-  font-family: 'Rubik';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url(fonts/pixels-font-1.ttf) format('truetype');
-}
-@font-face {
-  font-family: 'Rubik';
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url(fonts/pixels-font-2.ttf) format('truetype');
-}
-@font-face {
-  font-family: 'Rubik';
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url(fonts/pixels-font-3.ttf) format('truetype');
-}
+@font-face{font-family:'Press Start 2P';font-style:normal;font-weight:400;font-display:swap;src:url(optimized/pixels-font-0-7b939b816f8c.woff2) format('woff2')}
+@font-face{font-family:'Rubik';font-style:normal;font-weight:400;font-display:swap;src:url(optimized/pixels-font-1-cc6a4222027f.woff2) format('woff2')}
+@font-face{font-family:'Rubik';font-style:normal;font-weight:500;font-display:swap;src:url(optimized/pixels-font-2-d73c60557ccc.woff2) format('woff2')}
+@font-face{font-family:'Rubik';font-style:normal;font-weight:700;font-display:swap;src:url(optimized/pixels-font-3-2d6393d64232.woff2) format('woff2')}

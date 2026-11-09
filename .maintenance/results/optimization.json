@@ -1,0 +1,84 @@
+{
+  "pages": [
+    {
+      "page": "anuncios-pixels.html",
+      "before": 9431126,
+      "after": 50431
+    },
+    {
+      "page": "app-rifa.html",
+      "before": 125123,
+      "after": 79351
+    },
+    {
+      "page": "catalogo-3d.html",
+      "before": 77684,
+      "after": 77629
+    },
+    {
+      "page": "catalogo-nintendo-3ds.html",
+      "before": 171990,
+      "after": 172157
+    },
+    {
+      "page": "catalogo-nintendo-switch-pixels.html",
+      "before": 2584583,
+      "after": 133328
+    },
+    {
+      "page": "catalogo-nintendo-wii.html",
+      "before": 92201,
+      "after": 92365
+    },
+    {
+      "page": "catalogo-pixels.html",
+      "before": 2146933,
+      "after": 51466
+    },
+    {
+      "page": "catalogo-ps2.html",
+      "before": 23744767,
+      "after": 228836
+    },
+    {
+      "page": "catalogo-ps4.html",
+      "before": 61191,
+      "after": 61440
+    },
+    {
+      "page": "catalogo-xbox360.html",
+      "before": 88079,
+      "after": 88317
+    },
+    {
+      "page": "central-rifas.html",
+      "before": 20155605,
+      "after": 71581
+    },
+    {
+      "page": "index.html",
+      "before": 12408876,
+      "after": 52363
+    }
+  ],
+  "images": 1913,
+  "source_image_bytes": 49083626,
+  "optimized_image_bytes": 43360017,
+  "logo": "assets/optimized/pixels-logo-b2952182f7a8e4b6.webp",
+  "logo_bytes": 61272,
+  "navigation": [
+    "Sobre",
+    "Nossa história",
+    "ACTION FIGURES",
+    "JOGOS PS2",
+    "JOGOS PS4",
+    "XBOX 360",
+    "NINTENDO SWITCH",
+    "NINTENDO WII",
+    "NINTENDO 3DS",
+    "IMPRESSÕES 3D",
+    "ANÚNCIOS",
+    "Contato",
+    "Central de Rifas"
+  ]
+}

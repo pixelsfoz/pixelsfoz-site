@@ -1,0 +1,498 @@
+{
+  "production": false,
+  "checks": [
+    {
+      "page": "anuncios-pixels.html",
+      "width": 360,
+      "pass": true,
+      "overflow": false,
+      "logoWidth": 96,
+      "logoHeight": 96,
+      "source": "assets/optimized/pixels-logo-b2952182f7a8e4b6.webp",
+      "font": "\"Press Start 2P\", monospace"
+    },
+    {
+      "page": "app-rifa.html",
+      "width": 360,
+      "pass": true,
+      "overflow": false,
+      "logoWidth": 96,
+      "logoHeight": 96,
+      "source": "assets/optimized/pixels-logo-b2952182f7a8e4b6.webp",
+      "font": "\"Press Start 2P\", monospace"
+    },
+    {
+      "page": "catalogo-3d.html",
+      "width": 360,
+      "pass": true,
+      "overflow": false,
+      "logoWidth": 96,
+      "logoHeight": 96,
+      "source": "assets/optimized/pixels-logo-b2952182f7a8e4b6.webp",
+      "font": "\"Press Start 2P\", monospace"
+    },
+    {
+      "page": "catalogo-nintendo-3ds.html",
+      "width": 360,
+      "pass": true,
+      "overflow": false,
+      "logoWidth": 96,
+      "logoHeight": 96,
+      "source": "assets/optimized/pixels-logo-b2952182f7a8e4b6.webp",
+      "font": "\"Press Start 2P\", monospace"
+    },
+    {
+      "page": "catalogo-nintendo-switch-pixels.html",
+      "width": 360,
+      "pass": true,
+      "overflow": false,
+      "logoWidth": 96,
+      "logoHeight": 96,
+      "source": "assets/optimized/pixels-logo-b2952182f7a8e4b6.webp",
+      "font": "\"Press Start 2P\", monospace"
+    },
+    {
+      "page": "catalogo-nintendo-wii.html",
+      "width": 360,
+      "pass": true,
+      "overflow": false,
+      "logoWidth": 96,
+      "logoHeight": 96,
+      "source": "assets/optimized/pixels-logo-b2952182f7a8e4b6.webp",
+      "font": "\"Press Start 2P\", monospace"
+    },
+    {
+      "page": "catalogo-pixels.html",
+      "width": 360,
+      "pass": true,
+      "overflow": false,
+      "logoWidth": 96,
+      "logoHeight": 96,
+      "source": "assets/optimized/pixels-logo-b2952182f7a8e4b6.webp",
+      "font": "\"Press Start 2P\", monospace"
+    },
+    {
+      "page": "catalogo-ps2.html",
+      "width": 360,
+      "pass": true,
+      "overflow": false,
+      "logoWidth": 96,
+      "logoHeight": 96,
+      "source": "assets/optimized/pixels-logo-b2952182f7a8e4b6.webp",
+      "font": "\"Press Start 2P\", monospace"
+    },
+    {
+      "page": "catalogo-ps4.html",
+      "width": 360,
+      "pass": true,
+      "overflow": false,
+      "logoWidth": 96,
+      "logoHeight": 96,
+      "source": "assets/optimized/pixels-logo-b2952182f7a8e4b6.webp",
+      "font": "\"Press Start 2P\", monospace"
+    },
+    {
+      "page": "catalogo-xbox360.html",
+      "width": 360,
+      "pass": true,
+      "overflow": false,
+      "logoWidth": 96,
+      "logoHeight": 96,
+      "source": "assets/optimized/pixels-logo-b2952182f7a8e4b6.webp",
+      "font": "\"Press Start 2P\", monospace"
+    },
+    {
+      "page": "central-rifas.html",
+      "width": 360,
+      "pass": true,
+      "overflow": false,
+      "logoWidth": 96,
+      "logoHeight": 96,
+      "source": "assets/optimized/pixels-logo-b2952182f7a8e4b6.webp",
+      "font": "\"Press Start 2P\", monospace"
+    },
+    {
+      "page": "index.html",
+      "width": 360,
+      "pass": true,
+      "overflow": false,
+      "logoWidth": 96,
+      "logoHeight": 96,
+      "source": "assets/optimized/pixels-logo-b2952182f7a8e4b6.webp",
+      "font": "\"Press Start 2P\", monospace"
+    },
+    {
+      "page": "anuncios-pixels.html",
+      "width": 390,
+      "pass": true,
+      "overflow": false,
+      "logoWidth": 96,
+      "logoHeight": 96,
+      "source": "assets/optimized/pixels-logo-b2952182f7a8e4b6.webp",
+      "font": "\"Press Start 2P\", monospace"
+    },
+    {
+      "page": "app-rifa.html",
+      "width": 390,
+      "pass": true,
+      "overflow": false,
+      "logoWidth": 96,
+      "logoHeight": 96,
+      "source": "assets/optimized/pixels-logo-b2952182f7a8e4b6.webp",
+      "font": "\"Press Start 2P\", monospace"
+    },
+    {
+      "page": "catalogo-3d.html",
+      "width": 390,
+      "pass": true,
+      "overflow": false,
+      "logoWidth": 96,
+      "logoHeight": 96,
+      "source": "assets/optimized/pixels-logo-b2952182f7a8e4b6.webp",
+      "font": "\"Press Start 2P\", monospace"
+    },
+    {
+      "page": "catalogo-nintendo-3ds.html",
+      "width": 390,
+      "pass": true,
+      "overflow": false,
+      "logoWidth": 96,
+      "logoHeight": 96,
+      "source": "assets/optimized/pixels-logo-b2952182f7a8e4b6.webp",
+      "font": "\"Press Start 2P\", monospace"
+    },
+    {
+      "page": "catalogo-nintendo-switch-pixels.html",
+      "width": 390,
+      "pass": true,
+      "overflow": false,
+      "logoWidth": 96,
+      "logoHeight": 96,
+      "source": "assets/optimized/pixels-logo-b2952182f7a8e4b6.webp",
+      "font": "\"Press Start 2P\", monospace"
+    },
+    {
+      "page": "catalogo-nintendo-wii.html",
+      "width": 390,
+      "pass": true,
+      "overflow": false,
+      "logoWidth": 96,
+      "logoHeight": 96,
+      "source": "assets/optimized/pixels-logo-b2952182f7a8e4b6.webp",
+      "font": "\"Press Start 2P\", monospace"
+    },
+    {
+      "page": "catalogo-pixels.html",
+      "width": 390,
+      "pass": true,
+      "overflow": false,
+      "logoWidth": 96,
+      "logoHeight": 96,
+      "source": "assets/optimized/pixels-logo-b2952182f7a8e4b6.webp",
+      "font": "\"Press Start 2P\", monospace"
+    },
+    {
+      "page": "catalogo-ps2.html",
+      "width": 390,
+      "pass": true,
+      "overflow": false,
+      "logoWidth": 96,
+      "logoHeight": 96,
+      "source": "assets/optimized/pixels-logo-b2952182f7a8e4b6.webp",
+      "font": "\"Press Start 2P\", monospace"
+    },
+    {
+      "page": "catalogo-ps4.html",
+      "width": 390,
+      "pass": true,
+      "overflow": false,
+      "logoWidth": 96,
+      "logoHeight": 96,
+      "source": "assets/optimized/pixels-logo-b2952182f7a8e4b6.webp",
+      "font": "\"Press Start 2P\", monospace"
+    },
+    {
+      "page": "catalogo-xbox360.html",
+      "width": 390,
+      "pass": true,
+      "overflow": false,
+      "logoWidth": 96,
+      "logoHeight": 96,
+      "source": "assets/optimized/pixels-logo-b2952182f7a8e4b6.webp",
+      "font": "\"Press Start 2P\", monospace"
+    },
+    {
+      "page": "central-rifas.html",
+      "width": 390,
+      "pass": true,
+      "overflow": false,
+      "logoWidth": 96,
+      "logoHeight": 96,
+      "source": "assets/optimized/pixels-logo-b2952182f7a8e4b6.webp",
+      "font": "\"Press Start 2P\", monospace"
+    },
+    {
+      "page": "index.html",
+      "width": 390,
+      "pass": true,
+      "overflow": false,
+      "logoWidth": 96,
+      "logoHeight": 96,
+      "source": "assets/optimized/pixels-logo-b2952182f7a8e4b6.webp",
+      "font": "\"Press Start 2P\", monospace"
+    },
+    {
+      "page": "anuncios-pixels.html",
+      "width": 768,
+      "pass": true,
+      "overflow": false,
+      "logoWidth": 96,
+      "logoHeight": 96,
+      "source": "assets/optimized/pixels-logo-b2952182f7a8e4b6.webp",
+      "font": "\"Press Start 2P\", monospace"
+    },
+    {
+      "page": "app-rifa.html",
+      "width": 768,
+      "pass": true,
+      "overflow": false,
+      "logoWidth": 96,
+      "logoHeight": 96,
+      "source": "assets/optimized/pixels-logo-b2952182f7a8e4b6.webp",
+      "font": "\"Press Start 2P\", monospace"
+    },
+    {
+      "page": "catalogo-3d.html",
+      "width": 768,
+      "pass": true,
+      "overflow": false,
+      "logoWidth": 96,
+      "logoHeight": 96,
+      "source": "assets/optimized/pixels-logo-b2952182f7a8e4b6.webp",
+      "font": "\"Press Start 2P\", monospace"
+    },
+    {
+      "page": "catalogo-nintendo-3ds.html",
+      "width": 768,
+      "pass": true,
+      "overflow": false,
+      "logoWidth": 96,
+      "logoHeight": 96,
+      "source": "assets/optimized/pixels-logo-b2952182f7a8e4b6.webp",
+      "font": "\"Press Start 2P\", monospace"
+    },
+    {
+      "page": "catalogo-nintendo-switch-pixels.html",
+      "width": 768,
+      "pass": true,
+      "overflow": false,
+      "logoWidth": 96,
+      "logoHeight": 96,
+      "source": "assets/optimized/pixels-logo-b2952182f7a8e4b6.webp",
+      "font": "\"Press Start 2P\", monospace"
+    },
+    {
+      "page": "catalogo-nintendo-wii.html",
+      "width": 768,
+      "pass": true,
+      "overflow": false,
+      "logoWidth": 96,
+      "logoHeight": 96,
+      "source": "assets/optimized/pixels-logo-b2952182f7a8e4b6.webp",
+      "font": "\"Press Start 2P\", monospace"
+    },
+    {
+      "page": "catalogo-pixels.html",
+      "width": 768,
+      "pass": true,
+      "overflow": false,
+      "logoWidth": 96,
+      "logoHeight": 96,
+      "source": "assets/optimized/pixels-logo-b2952182f7a8e4b6.webp",
+      "font": "\"Press Start 2P\", monospace"
+    },
+    {
+      "page": "catalogo-ps2.html",
+      "width": 768,
+      "pass": true,
+      "overflow": false,
+      "logoWidth": 96,
+      "logoHeight": 96,
+      "source": "assets/optimized/pixels-logo-b2952182f7a8e4b6.webp",
+      "font": "\"Press Start 2P\", monospace"
+    },
+    {
+      "page": "catalogo-ps4.html",
+      "width": 768,
+      "pass": true,
+      "overflow": false,
+      "logoWidth": 96,
+      "logoHeight": 96,
+      "source": "assets/optimized/pixels-logo-b2952182f7a8e4b6.webp",
+      "font": "\"Press Start 2P\", monospace"
+    },
+    {
+      "page": "catalogo-xbox360.html",
+      "width": 768,
+      "pass": true,
+      "overflow": false,
+      "logoWidth": 96,
+      "logoHeight": 96,
+      "source": "assets/optimized/pixels-logo-b2952182f7a8e4b6.webp",
+      "font": "\"Press Start 2P\", monospace"
+    },
+    {
+      "page": "central-rifas.html",
+      "width": 768,
+      "pass": true,
+      "overflow": false,
+      "logoWidth": 96,
+      "logoHeight": 96,
+      "source": "assets/optimized/pixels-logo-b2952182f7a8e4b6.webp",
+      "font": "\"Press Start 2P\", monospace"
+    },
+    {
+      "page": "index.html",
+      "width": 768,
+      "pass": true,
+      "overflow": false,
+      "logoWidth": 96,
+      "logoHeight": 96,
+      "source": "assets/optimized/pixels-logo-b2952182f7a8e4b6.webp",
+      "font": "\"Press Start 2P\", monospace"
+    },
+    {
+      "page": "anuncios-pixels.html",
+      "width": 1440,
+      "pass": true,
+      "overflow": false,
+      "logoWidth": 144,
+      "logoHeight": 144,
+      "source": "assets/optimized/pixels-logo-b2952182f7a8e4b6.webp",
+      "font": "\"Press Start 2P\", monospace"
+    },
+    {
+      "page": "app-rifa.html",
+      "width": 1440,
+      "pass": true,
+      "overflow": false,
+      "logoWidth": 144,
+      "logoHeight": 144,
+      "source": "assets/optimized/pixels-logo-b2952182f7a8e4b6.webp",
+      "font": "\"Press Start 2P\", monospace"
+    },
+    {
+      "page": "catalogo-3d.html",
+      "width": 1440,
+      "pass": true,
+      "overflow": false,
+      "logoWidth": 144,
+      "logoHeight": 144,
+      "source": "assets/optimized/pixels-logo-b2952182f7a8e4b6.webp",
+      "font": "\"Press Start 2P\", monospace"
+    },
+    {
+      "page": "catalogo-nintendo-3ds.html",
+      "width": 1440,
+      "pass": true,
+      "overflow": false,
+      "logoWidth": 144,
+      "logoHeight": 144,
+      "source": "assets/optimized/pixels-logo-b2952182f7a8e4b6.webp",
+      "font": "\"Press Start 2P\", monospace"
+    },
+    {
+      "page": "catalogo-nintendo-switch-pixels.html",
+      "width": 1440,
+      "pass": true,
+      "overflow": false,
+      "logoWidth": 144,
+      "logoHeight": 144,
+      "source": "assets/optimized/pixels-logo-b2952182f7a8e4b6.webp",
+      "font": "\"Press Start 2P\", monospace"
+    },
+    {
+      "page": "catalogo-nintendo-wii.html",
+      "width": 1440,
+      "pass": true,
+      "overflow": false,
+      "logoWidth": 144,
+      "logoHeight": 144,
+      "source": "assets/optimized/pixels-logo-b2952182f7a8e4b6.webp",
+      "font": "\"Press Start 2P\", monospace"
+    },
+    {
+      "page": "catalogo-pixels.html",
+      "width": 1440,
+      "pass": true,
+      "overflow": false,
+      "logoWidth": 144,
+      "logoHeight": 144,
+      "source": "assets/optimized/pixels-logo-b2952182f7a8e4b6.webp",
+      "font": "\"Press Start 2P\", monospace"
+    },
+    {
+      "page": "catalogo-ps2.html",
+      "width": 1440,
+      "pass": true,
+      "overflow": false,
+      "logoWidth": 144,
+      "logoHeight": 144,
+      "source": "assets/optimized/pixels-logo-b2952182f7a8e4b6.webp",
+      "font": "\"Press Start 2P\", monospace"
+    },
+    {
+      "page": "catalogo-ps4.html",
+      "width": 1440,
+      "pass": true,
+      "overflow": false,
+      "logoWidth": 144,
+      "logoHeight": 144,
+      "source": "assets/optimized/pixels-logo-b2952182f7a8e4b6.webp",
+      "font": "\"Press Start 2P\", monospace"
+    },
+    {
+      "page": "catalogo-xbox360.html",
+      "width": 1440,
+      "pass": true,
+      "overflow": false,
+      "logoWidth": 144,
+      "logoHeight": 144,
+      "source": "assets/optimized/pixels-logo-b2952182f7a8e4b6.webp",
+      "font": "\"Press Start 2P\", monospace"
+    },
+    {
+      "page": "central-rifas.html",
+      "width": 1440,
+      "pass": true,
+      "overflow": false,
+      "logoWidth": 144,
+      "logoHeight": 144,
+      "source": "assets/optimized/pixels-logo-b2952182f7a8e4b6.webp",
+      "font": "\"Press Start 2P\", monospace"
+    },
+    {
+      "page": "index.html",
+      "width": 1440,
+      "pass": true,
+      "overflow": false,
+      "logoWidth": 144,
+      "logoHeight": 144,
+      "source": "assets/optimized/pixels-logo-b2952182f7a8e4b6.webp",
+      "font": "\"Press Start 2P\", monospace"
+    }
+  ],
+  "errors": [],
+  "page_errors": [
+    "Cannot read properties of null (reading 'contains')",
+    "Cannot read properties of null (reading 'contains')",
+    "Cannot read properties of null (reading 'contains')",
+    "Cannot read properties of null (reading 'contains')",
+    "Cannot read properties of null (reading 'contains')",
+    "Cannot read properties of null (reading 'contains')",
+    "Cannot read properties of null (reading 'contains')",
+    "Cannot read properties of null (reading 'contains')",
+    "Cannot read properties of null (reading 'contains')"
+  ],
+  "failed_resources": []
+}
