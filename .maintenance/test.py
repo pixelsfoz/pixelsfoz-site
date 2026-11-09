@@ -1,10 +1,20 @@
-import os, re, json, threading, http.server, socketserver, traceback, sys
+import os, re, json, threading, http.server, socketserver, traceback, sys, time, urllib.request
 from pathlib import Path
 from playwright.sync_api import sync_playwright
 
 out=Path(".maintenance/results");out.mkdir(parents=True,exist_ok=True)
 production="--production" in sys.argv
 base="https://pixelsfoz.com.br" if production else "http://127.0.0.1:8765"
+if production:
+    ready=False
+    for attempt in range(36):
+        try:
+            with urllib.request.urlopen(base+"/assets/pixels-standard.css?v=20261109",timeout=15) as response:
+                ready="Pixels shared navigation — 2026-11-09" in response.read().decode()
+            if ready:break
+        except Exception:pass
+        time.sleep(5)
+    if not ready:raise RuntimeError("Published version not available yet")
 if not production:
     class Handler(http.server.SimpleHTTPRequestHandler):
         def log_message(self,*args):pass
@@ -18,7 +28,7 @@ def check(condition,message):
 try:
     with sync_playwright() as p:
         browser=p.chromium.launch()
-        for width in [360,390,768,1440]:
+        for width in ([390,1440] if production else [360,390,768,1440]):
             context=browser.new_context(viewport={"width":width,"height":900},device_scale_factor=1)
             page=context.new_page()
             page.set_default_timeout(8000)
