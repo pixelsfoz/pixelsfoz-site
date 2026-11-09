@@ -7,7 +7,7 @@ permissions:
   contents: write
 jobs:
   verify:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
@@ -35,7 +35,9 @@ jobs:
         run: |
           git config user.name "Pixels site validation"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -- '*.html' assets _headers .maintenance/results
+          git add -- '*.html' assets
+          if [ -f _headers ]; then git add -- _headers; fi
+          if [ -d .maintenance/results ]; then git add -- .maintenance/results; fi
           if ! git diff --cached --quiet; then
             git commit -m "Prepare optimized pages and record browser validation"
             git push origin HEAD:codex/pixels-navigation-20261109
