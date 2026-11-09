@@ -21,7 +21,8 @@ try:
         for width in [360,390,768,1440]:
             context=browser.new_context(viewport={"width":width,"height":900},device_scale_factor=1)
             page=context.new_page()
-            page.on("pageerror",lambda e:console_errors.append(str(e)))
+            page.set_default_timeout(8000)
+            page.on("pageerror",lambda e:console_errors.append({"url":page.url,"error":str(e),"stack":e.stack}))
             page.on("response",lambda r:resources.append({"url":r.url,"status":r.status}) if r.status>=400 and r.url.startswith(base) and "/api/" not in r.url else None)
             for filename in pages:
                 current=filename+" @ "+str(width)

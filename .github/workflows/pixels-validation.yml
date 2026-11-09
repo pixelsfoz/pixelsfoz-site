@@ -21,7 +21,7 @@ jobs:
           python -m pip install Pillow==11.3.0 fonttools==4.59.0 brotli==1.1.0 playwright==1.55.0
           python -m playwright install --with-deps chromium
       - name: Prepare optimized site
-        if: ${{ hashFiles('.maintenance/production.txt') == '' }}
+        if: ${{ hashFiles('.maintenance/production.txt') == '' && hashFiles('.maintenance/results/optimization.json') == '' }}
         run: python .maintenance/prepare.py
       - name: Test desktop, mobile and catalog interactions
         run: |

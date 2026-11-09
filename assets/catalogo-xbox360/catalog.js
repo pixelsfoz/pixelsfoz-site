@@ -5,7 +5,6 @@
   const setMenu=open=>{menu.setAttribute('aria-expanded',String(open));links.classList.toggle('px-open',open)};
   root.classList.add('px-ready');menu.addEventListener('click',()=>setMenu(menu.getAttribute('aria-expanded')!=='true'));
   root.addEventListener('keydown',event=>{if(event.key==='Escape'&&menu.getAttribute('aria-expanded')==='true'){setMenu(false);menu.focus()}});
-  document.addEventListener('click',event=>{if(!root.querySelector('.px-nav').contains(event.target))setMenu(false)});
   const norm=s=>s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toUpperCase();
   const cards=[...root.querySelectorAll('.px-game')].map(node=>({node,title:norm(node.querySelector('h3').textContent),search:norm(node.textContent)}));
   const input=root.querySelector('#px-search'),count=root.querySelector('#px-count'),letters=root.querySelector('.px-letters');
