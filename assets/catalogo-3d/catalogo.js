@@ -28,11 +28,6 @@
     const next = cards.find(c => !c.hidden && !previous.has(c));
     if(next) next.querySelector('a').focus({preventScroll:true});
   });
-  const menu = document.querySelector('.menu-toggle'), nav = document.getElementById('navigation');
-  const closeMenu = () => { nav.classList.remove('open'); menu.setAttribute('aria-expanded','false'); menu.setAttribute('aria-label','Abrir menu'); };
-  menu.addEventListener('click', () => { const open = nav.classList.toggle('open'); menu.setAttribute('aria-expanded',String(open)); menu.setAttribute('aria-label',open?'Fechar menu':'Abrir menu'); });
-  nav.addEventListener('click', e => { if(e.target.closest('a')) closeMenu(); });
-  document.addEventListener('keydown', e => {if(e.key==='Escape')closeMenu();});
   const dialog = document.getElementById('product-dialog');
   let active = null, photoIndex = 0, opener = null;
   const path = 'assets/catalogo-3d/';
