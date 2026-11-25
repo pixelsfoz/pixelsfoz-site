@@ -1,0 +1,25 @@
+{
+  "passed": true,
+  "base": "https://pixelsfoz.com.br",
+  "sizes": {},
+  "checks": [
+    {
+      "width": 390,
+      "cards": 67,
+      "filter": true,
+      "posters": true,
+      "modal": true,
+      "whatsapp": true,
+      "jsErrors": []
+    },
+    {
+      "width": 1440,
+      "cards": 67,
+      "filter": true,
+      "posters": true,
+      "modal": true,
+      "whatsapp": true,
+      "jsErrors": []
+    }
+  ]
+}
