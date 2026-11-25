@@ -1,0 +1,42 @@
+{
+  "passed": true,
+  "base": "http://127.0.0.1:8765",
+  "sizes": {
+    "ps4": {
+      "dimensions": [
+        1122,
+        1402
+      ],
+      "original": 2733918,
+      "webp": 238894
+    },
+    "ps5": {
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "original": 3080202,
+      "webp": 331870
+    }
+  },
+  "checks": [
+    {
+      "width": 390,
+      "cards": 67,
+      "filter": true,
+      "posters": true,
+      "modal": true,
+      "whatsapp": true,
+      "jsErrors": []
+    },
+    {
+      "width": 1440,
+      "cards": 67,
+      "filter": true,
+      "posters": true,
+      "modal": true,
+      "whatsapp": true,
+      "jsErrors": []
+    }
+  ]
+}
