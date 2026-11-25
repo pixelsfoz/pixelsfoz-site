@@ -1,0 +1,35 @@
+name: Validate controller announcements
+on:
+  push:
+    branches: [codex/anuncios-controles-20261125]
+    paths: ['.maintenance/**', '.github/workflows/controller-ads.yml']
+permissions:
+  contents: write
+jobs:
+  validate:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: codex/anuncios-controles-20261125
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install test dependencies
+        run: |
+          python -m pip install Pillow==11.3.0 playwright==1.55.0
+          python -m playwright install --with-deps chromium
+      - name: Prepare and test announcements
+        run: python .maintenance/check.py
+      - name: Save validation results
+        if: always()
+        run: |
+          git config user.name "Pixels site validation"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- .maintenance
+          if [ -d assets/anuncios ]; then git add -- assets/anuncios; fi
+          if ! git diff --cached --quiet; then
+            git commit -m "Optimize controller posters and record browser validation"
+            git push origin HEAD:codex/anuncios-controles-20261125
+          fi
